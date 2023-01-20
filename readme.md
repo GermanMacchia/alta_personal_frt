@@ -49,13 +49,12 @@ npm create vite
 ```
 npm i @mui/material @emotion/react @emotion/styled @mui/icons-material
 npm i @tanstack/react-query
+npm i @tanstack/react-query-devtools 
 npm i react-router-dom
 npm i react-hook-form
 npm i axios
 npm i --save-dev @mui/types
-npm i --save-dev @types/react-router 
-
-
+npm i --save-dev @types/react-router
 ```
 
 # Documentación

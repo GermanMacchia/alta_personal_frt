@@ -35,7 +35,7 @@ export const Navbar = () => {
           setValue( newValue )
         } }
       >
-        { botones.map( btn => <BottomNavigationAction label={ btn.label } icon={ btn.icon } /> ) }
+        { botones.map( btn => <BottomNavigationAction key={ btn.label } label={ btn.label } icon={ btn.icon } /> ) }
       </BottomNavigation>
     </>
   )

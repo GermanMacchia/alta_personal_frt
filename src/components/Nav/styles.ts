@@ -1,3 +1,4 @@
+import { BorderBottom } from "@mui/icons-material"
 
 export const styles = {
     title: {
@@ -20,6 +21,7 @@ export const styles = {
         }
     },
     navbar: {
-        borderTop: '5px solid #0e6983'
+        borderTop: '5px solid #0e6983',
+        BorderBottom: '2px solid #0e6983'
     }
 }
