@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow'
 import CancelIcon from '@mui/icons-material/Cancel'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { Area, Empleado } from '../../interfaces'
-import { Botonera } from './Botonera'
+import { Botonera } from '../../shared'
 
 interface Props {
   handleFilter: ( e: React.SyntheticEvent ) => void,

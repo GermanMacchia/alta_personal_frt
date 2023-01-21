@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom"
-import { NewUserForm, UserList, About, NotFound } from '../views'
+import { EmpleadosInfo, EmpleadosList, About, NotFound, AreasList } from '../views'
 import App from '../App'
 
 export const router = createBrowserRouter( [
@@ -10,12 +10,17 @@ export const router = createBrowserRouter( [
         children: [
             {
                 path: '/lista-empleados',
-                element: <UserList />,
+                element: <EmpleadosList />,
+                errorElement: <NotFound />
+            },
+            {
+                path: '/lista-areas',
+                element: <AreasList />,
                 errorElement: <NotFound />
             },
             {
                 path: '/alta-empleados',
-                element: <NewUserForm />,
+                element: <EmpleadosInfo />,
                 errorElement: <NotFound />
 
             },

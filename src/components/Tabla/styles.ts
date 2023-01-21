@@ -8,14 +8,12 @@ export const styles = {
         },
         tableItem: {
             '&:hover': {
-                cursor: "pointer",
                 background: "rgba(101, 158, 65, 0.08)"
             },
         },
         tableButtons: {
             display: 'flex',
-            justifyContent: 'space-around'
+            justifyContent: 'space-around',
         }
-
     }
 }
