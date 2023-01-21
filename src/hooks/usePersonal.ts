@@ -3,13 +3,13 @@ import { api } from "../api/api"
 import { sleep } from '../helpers/sleep'
 
 const fetchEmpleados = async () => {
-    await sleep( 1.5 )
+    await sleep( 1 )
     const { data } = await api.get( '/api/empleado' )
     return data
 }
 
 const fetchAreas = async () => {
-    await sleep( 1.5 )
+    await sleep( 1 )
     const { data } = await api.get( '/api/area' )
     return data
 }
