@@ -14,9 +14,10 @@ export const UserList = () => {
 
     if ( areas.error ) return <h4>Error de conexión</h4>
     if ( areas.isLoading || empleados.isLoading ) return <LinearProgress sx={ style.loading } color="success" />
+
     return (
         <div>
-            <Tabla areas={ areas } empleados={ empleados } />
+            <Tabla areas={ areas.data } empleados={ empleados.data } />
         </div>
     )
 }
