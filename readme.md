@@ -55,6 +55,7 @@ npm i react-hook-form
 npm i axios
 npm i --save-dev @mui/types
 npm i --save-dev @types/react-router
+npm i --save-dev @types/react-router-dom
 ```
 
 # Documentación

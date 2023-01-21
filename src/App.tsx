@@ -1,12 +1,11 @@
 import { Navbar } from './components/Nav/Navbar'
-import { UserList } from './views/UserList'
-
+import { Outlet } from "react-router-dom"
 
 function App () {
   return (
     <div>
       <Navbar />
-      <UserList />
+      <Outlet />
     </div>
   )
 }
