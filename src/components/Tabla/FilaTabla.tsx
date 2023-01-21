@@ -10,6 +10,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { Area, Empleado } from '../../interfaces'
 import { Botonera } from '../../shared'
 
+
 interface Props {
   handleFilter: ( e: React.SyntheticEvent ) => void,
   empleados: Empleado[],
@@ -43,10 +44,9 @@ const getAreaName = ( areas: Area[], id: string ) => {
 
 export const FilaTabla: FC<Props> = ( { handleFilter, empleados, areas } ) => {
 
-  const handleModal = () => { }
-
   return (
     <>
+
       <TableHead>
         <TableRow sx={ styles.table.tableHeader }>
           { retonarHeaders() }
@@ -60,7 +60,6 @@ export const FilaTabla: FC<Props> = ( { handleFilter, empleados, areas } ) => {
           <TableRow
             key={ empleado._id }
             sx={ { '&:last-child td, &:last-child th': { border: 0 }, ...styles.table.tableItem } }
-            onClick={ handleModal }
           >
             <TableCell component="th" scope="row">{ empleado.dni }</TableCell>
             <TableCell align="right">{ empleado.nombre.toUpperCase() }</TableCell>
@@ -74,7 +73,7 @@ export const FilaTabla: FC<Props> = ( { handleFilter, empleados, areas } ) => {
             </TableCell>
             <TableCell align="right">{ getAreaName( areas, empleado.area )?.toUpperCase() }</TableCell>
             <TableCell sx={ styles.table.tableButtons }>
-              <Botonera />
+              <Botonera data={ empleado } />
             </TableCell>
           </TableRow>
         ) ) }

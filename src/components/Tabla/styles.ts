@@ -12,8 +12,7 @@ export const styles = {
             },
         },
         tableButtons: {
-            display: 'flex',
-            justifyContent: 'space-around',
+            paddingLeft: '5rem'
         }
     }
 }
