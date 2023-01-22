@@ -1,32 +1,17 @@
 import { Box, Typography, TextField } from '@mui/material/'
 import { useFormContext } from 'react-hook-form'
 import { FC } from 'react'
-import { styles } from '../components/AreaForm/styles'
 
 interface Props {
     name: string,
     rules: any
     placeholder: string
-    defaultValue?: string
-    value?: string
     type?: string
-    disabled?: boolean
 }
 
 
-export const Input: FC<Props> = ( {
-    name,
-    rules,
-    placeholder,
-    defaultValue,
-    type = 'string',
-    disabled = false,
-    value
-} ) => {
-    const {
-        register,
-        formState: { errors },
-    } = useFormContext()
+export const Input: FC<Props> = ( { name, rules, placeholder, type = 'string', } ) => {
+    const { register, formState: { errors } } = useFormContext()
 
     return (
         <Box sx={ { display: 'flex', justifyContent: 'end', marginBottom: '5px' } }>
@@ -35,14 +20,11 @@ export const Input: FC<Props> = ( {
                 type={ type }
                 InputProps={ {
                     style: {
-                        color: 'white',
+                        color: 'whitesmoke',
                     }
                 } }
                 variant="standard"
                 placeholder={ placeholder }
-                defaultValue={ defaultValue }
-                disabled={ disabled }
-                value={ value }
                 color='success'
             />
             <br />
@@ -54,7 +36,7 @@ export const Input: FC<Props> = ( {
                     className="errorText"
 
                 >
-                    { errors[ name ].message }
+                    { ( errors as any )[ name ].message }
                 </Typography>
             ) }
         </Box>

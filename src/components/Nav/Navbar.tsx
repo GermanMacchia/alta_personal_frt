@@ -43,7 +43,6 @@ export const Navbar = () => {
       </Box>
       <BottomNavigation
         sx={ { ...styles.navbar, ...( condition && styles.blur ) } }
-        className={ condition }
         showLabels
         value={ value }
         onChange={ ( event, newValue ) => {

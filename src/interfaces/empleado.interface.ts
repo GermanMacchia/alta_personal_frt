@@ -1,6 +1,6 @@
 
 export interface Empleado {
-    _id: string
+    _id?: string
     descripcion: string
     dni: number
     esDesarrollador: boolean

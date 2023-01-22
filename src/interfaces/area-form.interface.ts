@@ -1,4 +1,5 @@
-export interface AreaForm {
+import { Area } from "./area.interface"
+
+export interface AreaForm extends Area {
     formtype: string,
-    nombre: string
 }

@@ -11,7 +11,7 @@ import { ConfirmDelete } from './ConfirmDelete'
 import { AlertSnackBar } from './AlertSnackBar'
 
 const styles = {
-    margin: '0.9rem',
+    margin: '0.4rem',
     '&:hover': {
         color: "#0e6983"
     }
@@ -19,11 +19,11 @@ const styles = {
 
 interface Props {
     data: any
-    isArea?: boolean
+    isUser?: boolean
 }
 
 const areaDeleteSuccessMsg = "Area eliminada"
-export const Botonera: FC<Props> = ( { isArea, data } ) => {
+export const Botonera: FC<Props> = ( { isUser, data } ) => {
 
     const [ isEditOpen, setIsEditOpen ] = useState( false )
     const [ isInfoOpen, setIsInfoOpen ] = useState( false )
@@ -44,7 +44,7 @@ export const Botonera: FC<Props> = ( { isArea, data } ) => {
 
     return (
         <>
-            { areaDelete.isError && <AlertSnackBar isOpen={ true } severity='error' message={ areaDelete.error.response.data } /> }
+            { areaDelete.isError && <AlertSnackBar isOpen={ true } severity='error' message={ ( areaDelete.error.response.data ) } /> }
             { areaDelete.isSuccess && <AlertSnackBar isOpen={ true } severity='success' message={ areaDeleteSuccessMsg } /> }
             { isEditOpen && <WithModal open={ isEditOpen } handleClose={ handleOpenEdit } children={ <h1>EDIT</h1> } /> }
             { isInfoOpen && <WithModal open={ isInfoOpen } handleClose={ handleOpenInfo } children={ <h1>INFO</h1> } /> }
@@ -56,17 +56,20 @@ export const Botonera: FC<Props> = ( { isArea, data } ) => {
                     deleteHandler={ areaDelete }
                     data={ data } />
             }
-            <IconButton aria-label="file" onClick={ handleOpenInfo } >
-                <BadgeIcon sx={ styles } />
-            </IconButton>
+            {
+                isUser &&
+                <IconButton aria-label="file" onClick={ handleOpenInfo } >
+                    <BadgeIcon sx={ styles } />
+                </IconButton>
+            }
             <IconButton aria-label="edit" onClick={ handleOpenEdit } >
                 <BorderColorIcon sx={ styles } />
             </IconButton>
             <IconButton aria-label="remove" onClick={ handleConfirmDelete }>
                 {
-                    isArea
-                        ? <DeleteIcon sx={ styles } />
-                        : <PersonRemoveIcon sx={ styles } />
+                    isUser
+                        ? <PersonRemoveIcon sx={ styles } />
+                        : <DeleteIcon sx={ styles } />
                 }
             </IconButton>
         </>

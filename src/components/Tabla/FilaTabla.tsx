@@ -73,7 +73,7 @@ export const FilaTabla: FC<Props> = ( { handleFilter, empleados, areas } ) => {
             </TableCell>
             <TableCell align="right">{ getAreaName( areas, empleado.area )?.toUpperCase() }</TableCell>
             <TableCell sx={ styles.table.tableButtons }>
-              <Botonera data={ empleado } />
+              <Botonera data={ empleado } isUser={ true } />
             </TableCell>
           </TableRow>
         ) ) }

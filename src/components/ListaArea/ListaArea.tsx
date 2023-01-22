@@ -36,7 +36,7 @@ export const ListaArea: FC<Props> = ( { areas } ) => {
                                     { area.nombre.toUpperCase() }
                                 </TableCell>
                                 <TableCell align="right">
-                                    <Botonera isArea={ true } data={ area } />
+                                    <Botonera data={ area } />
                                 </TableCell>
                             </TableRow>
                         ) ) }

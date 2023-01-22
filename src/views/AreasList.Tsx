@@ -1,5 +1,5 @@
 import { WithFormProvider } from '../shared'
-import { AltaAreaForm } from '../components/AreaForm/AreaForm'
+import { AreaForm } from '../components/AreaForm/AreaForm'
 import { useAreaForm } from '../hooks/useAreaForm'
 import { Box, LinearProgress } from '@mui/material'
 import { ListaArea } from "../components/ListaArea"
@@ -22,14 +22,16 @@ const messageSuccess = 'Los datos fueron actualizados'
 export const AreasList = () => {
     const { altaArea, areas } = useAreaForm()
 
-    const areaForm = () => <AltaAreaForm isLoading={ altaArea.isLoading } />
+    const areaForm = () => <AreaForm isLoading={ altaArea.isLoading } />
 
     if ( areas.isLoading ) return <LinearProgress sx={ style.loading } color="success" />
+    const tablaVacia = areas?.data.length === 0
 
     return (
         <Box sx={ style.container } >
             { altaArea.isSuccess && <AlertSnackBar severity='success' message={ messageSuccess } isOpen={ true } /> }
-            <ListaArea areas={ areas.data } />
+            { tablaVacia && <h2>Tabla sin datos</h2> }
+            { !tablaVacia && <ListaArea areas={ areas.data } /> }
             <WithFormProvider children={ areaForm() } handleSubmit={ altaArea.mutateAsync } />
         </Box>
     )

@@ -1,5 +1,5 @@
 
 export interface Area {
-    _id: string
+    _id?: string
     nombre: string
 }

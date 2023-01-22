@@ -11,7 +11,7 @@ interface Props {
     isLoading: boolean
 }
 
-export const AltaAreaForm: FC<Props> = ( { isLoading } ) => {
+export const AreaForm: FC<Props> = ( { isLoading } ) => {
     const { register, reset } = useFormContext()
 
     useEffect( () => {
