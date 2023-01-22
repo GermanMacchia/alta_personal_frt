@@ -2,6 +2,7 @@ import { LinearProgress } from "@mui/material"
 import { Tabla } from "../components/Tabla"
 import { usePersonal } from '../hooks/usePersonal'
 
+
 const style = {
     loading: {
         height: '20px',
@@ -10,14 +11,14 @@ const style = {
 }
 
 export const EmpleadosList = () => {
-    const { empleados, areas } = usePersonal()
+    const { empleados: { data, isLoading }, areas } = usePersonal()
 
     if ( areas.error ) return <h4>Error de conexión</h4>
-    if ( areas.isLoading || empleados.isLoading ) return <LinearProgress sx={ style.loading } color="success" />
-    if ( empleados.data.length === 0 ) return <h2>Tabla sin datos</h2>
+    if ( areas.isLoading || isLoading ) return <LinearProgress sx={ style.loading } color="success" />
+    if ( data.length === 0 ) return <h2>Tabla sin datos</h2>
     return (
         <div>
-            <Tabla areas={ areas.data } empleados={ empleados.data } />
+            <Tabla areas={ areas.data } empleados={ data } />
         </div>
     )
 }

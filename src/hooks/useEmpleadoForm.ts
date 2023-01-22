@@ -11,15 +11,10 @@ const fetchAreas = async () => {
 
 
 const postEmpleado = async ( nuevoEmpleado: EmpleadoForm ) => {
-    console.log( nuevoEmpleado )
     await sleep( 1 )
     return await api.post( '/api/empleado', nuevoEmpleado )
 }
 
-const deleteEmpleado = async ( id: string ) => {
-    await sleep( 1 )
-    return await api.delete( `/api/empleado/${ id }` )
-}
 
 
 export const useEmpleadoForm = () => {
@@ -33,26 +28,15 @@ export const useEmpleadoForm = () => {
         }
     )
 
-    const areaMutation = useMutation(
+    const altaEmpleadoMutation = useMutation(
         ( nuevoEmpleado: EmpleadoForm ) => postEmpleado( nuevoEmpleado ),
-        {
-            onSuccess: () => {
-            },
-        } )
-
-
-    const areaDelete = useMutation(
-        ( id: string ) => deleteEmpleado( id ),
-        {
-            onSuccess: () => {
-            },
-        } )
+    )
 
 
     return {
         areas: areaQuery.data,
-        altaEmpleado: areaMutation,
-        empleadoDelete: areaDelete,
+        altaEmpleado: altaEmpleadoMutation,
+
     }
 
 

@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query"
+import { useMutation, useQuery } from "@tanstack/react-query"
 import { api } from "../api/api"
 import { sleep } from '../helpers/sleep'
 
@@ -13,6 +13,13 @@ const fetchAreas = async () => {
     const { data } = await api.get( '/api/area' )
     return data
 }
+
+
+const deleteEmpleado = async ( id: string ) => {
+    await sleep( 1 )
+    return await api.delete( `/api/empleado/${ id }` )
+}
+
 
 export const usePersonal = () => {
 
@@ -30,13 +37,22 @@ export const usePersonal = () => {
         fetchEmpleados,
         {
             enabled: areaQuery.data ? true : false,
-            refetchOnMount: false,
-            refetchOnWindowFocus: false
+            refetchOnMount: true,
+            refetchOnWindowFocus: false,
         }
     )
 
+    const empleadoDelete = useMutation(
+        ( id: string ) => deleteEmpleado( id ),
+        {
+            onSuccess: () => {
+                empleadosQuery.refetch()
+            },
+        } )
+
     return {
         empleados: empleadosQuery,
-        areas: areaQuery
+        areas: areaQuery,
+        empleadoDelete: empleadoDelete,
     }
 }

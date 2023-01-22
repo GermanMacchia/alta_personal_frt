@@ -18,7 +18,6 @@ export const AreaSelect: FC<Props> = ( { name, rules } ) => {
     const { register, formState: { errors } } = useFormContext()
 
     const handleChange = ( event: SelectChangeEvent ) => {
-        console.log( event.target.value )
         setArea( event.target.value )
     }
 

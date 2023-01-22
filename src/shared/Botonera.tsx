@@ -9,6 +9,7 @@ import { WithModal } from './WithModal'
 import { useAreaForm } from '../hooks/useAreaForm'
 import { ConfirmDelete } from './ConfirmDelete'
 import { AlertSnackBar } from './AlertSnackBar'
+import { usePersonal } from '../hooks/usePersonal'
 
 const styles = {
     margin: '0.4rem',
@@ -23,49 +24,62 @@ interface Props {
 }
 
 const areaDeleteSuccessMsg = "Area eliminada"
-export const Botonera: FC<Props> = ( { isUser, data } ) => {
+const empleadoDeleteSuccessMsg = "Empleado borrado"
+export const Botonera: FC<Props> = ( { isUser = false, data } ) => {
 
     const [ isEditOpen, setIsEditOpen ] = useState( false )
+    const [ isEditAreaOpen, setIsEditAreaOpen ] = useState( false )
     const [ isInfoOpen, setIsInfoOpen ] = useState( false )
+    const [ isConfirmDeleteAreaOpen, setIsConfirmDeleteAreaOpen ] = useState( false )
     const [ isConfirmDeleteOpen, setIsConfirmDeleteOpen ] = useState( false )
     const { areaDelete } = useAreaForm()
+    const { empleadoDelete } = usePersonal()
 
-    const handleOpenEdit = () => {
-        setIsEditOpen( !isEditOpen )
-    }
-
-    const handleOpenInfo = () => {
-        setIsInfoOpen( !isInfoOpen )
-    }
-
-    const handleConfirmDelete = () => {
-        setIsConfirmDeleteOpen( !isConfirmDeleteOpen )
-    }
 
     return (
         <>
+            { empleadoDelete.isError && <AlertSnackBar isOpen={ true } severity='error' message={ ( empleadoDelete.error as any ).response.data } /> }
+            { empleadoDelete.isSuccess && <AlertSnackBar isOpen={ true } severity='success' message={ empleadoDeleteSuccessMsg } /> }
             { areaDelete.isError && <AlertSnackBar isOpen={ true } severity='error' message={ ( areaDelete.error as any ).response.data } /> }
             { areaDelete.isSuccess && <AlertSnackBar isOpen={ true } severity='success' message={ areaDeleteSuccessMsg } /> }
-            { isEditOpen && <WithModal open={ isEditOpen } handleClose={ handleOpenEdit } children={ <h1>EDIT</h1> } /> }
-            { isInfoOpen && <WithModal open={ isInfoOpen } handleClose={ handleOpenInfo } children={ <h1>INFO</h1> } /> }
+            { <WithModal open={ isEditAreaOpen } handleClose={ () => setIsEditAreaOpen( !isEditAreaOpen ) } children={ <h1>EDIT Area</h1> } /> }
+            { <WithModal open={ isInfoOpen } handleClose={ () => setIsInfoOpen( !isInfoOpen ) } children={ <h1>INFO User</h1> } /> }
+            { <WithModal open={ isEditOpen } handleClose={ () => setIsEditOpen( !isEditOpen ) } children={ <h1>EDIT User</h1> } /> }
+            { <ConfirmDelete
+                handleOpen={ () => setIsConfirmDeleteAreaOpen( !isConfirmDeleteAreaOpen ) }
+                isOpen={ isConfirmDeleteAreaOpen }
+                deleteHandler={ areaDelete }
+                data={ data } />
+            }
             {
-                isConfirmDeleteOpen
-                && <ConfirmDelete
-                    handleOpen={ handleConfirmDelete }
+                <ConfirmDelete
+                    handleOpen={ () => setIsConfirmDeleteOpen( !isConfirmDeleteOpen ) }
                     isOpen={ isConfirmDeleteOpen }
-                    deleteHandler={ areaDelete }
+                    deleteHandler={ empleadoDelete }
                     data={ data } />
             }
             {
                 isUser &&
-                <IconButton aria-label="file" onClick={ handleOpenInfo } >
+                <IconButton aria-label="file" onClick={ () => setIsInfoOpen( !isInfoOpen ) } >
                     <BadgeIcon sx={ styles } />
                 </IconButton>
             }
-            <IconButton aria-label="edit" onClick={ handleOpenEdit } >
+            <IconButton aria-label="edit"
+                onClick={
+                    isUser
+                        ? () => setIsEditOpen( !isEditOpen )
+                        : () => setIsEditAreaOpen( !isEditAreaOpen )
+                }
+            >
                 <BorderColorIcon sx={ styles } />
             </IconButton>
-            <IconButton aria-label="remove" onClick={ handleConfirmDelete }>
+            <IconButton aria-label="remove"
+                onClick={
+                    isUser
+                        ? () => setIsConfirmDeleteOpen( !isConfirmDeleteOpen )
+                        : () => setIsConfirmDeleteAreaOpen( !isConfirmDeleteAreaOpen )
+                }
+            >
                 {
                     isUser
                         ? <PersonRemoveIcon sx={ styles } />
