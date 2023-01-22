@@ -23,5 +23,8 @@ export const styles = {
     navbar: {
         borderTop: '5px solid #0e6983',
         BorderBottom: '2px solid #0e6983'
+    },
+    blur: {
+        filter: 'opacity(0.20)'
     }
 }
