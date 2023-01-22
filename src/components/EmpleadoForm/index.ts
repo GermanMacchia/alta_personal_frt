@@ -1,0 +1,1 @@
+export { EmpleadoForm } from "./EmpleadoForm"

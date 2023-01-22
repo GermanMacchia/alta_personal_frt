@@ -3,8 +3,8 @@ import { Typography, Box, CircularProgress, Button } from '@mui/material'
 import { Container } from "@mui/system"
 import { styles } from './styles'
 import { useFormContext } from 'react-hook-form'
-import { FC } from 'react'
-import { Input } from '../../shared/'
+import { FC, useEffect } from 'react'
+import { Input } from '../../shared'
 
 
 interface Props {
@@ -12,7 +12,13 @@ interface Props {
 }
 
 export const AltaAreaForm: FC<Props> = ( { isLoading } ) => {
-    const { register } = useFormContext()
+    const { register, reset } = useFormContext()
+
+    useEffect( () => {
+        if ( !isLoading ) {
+            reset()
+        }
+    }, [ isLoading ] )
 
     return (
         <Container sx={ styles.container } maxWidth="sm">

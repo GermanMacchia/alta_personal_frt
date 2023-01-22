@@ -8,6 +8,7 @@ import { FC, useState } from 'react'
 import { WithModal } from './WithModal'
 import { useAreaForm } from '../hooks/useAreaForm'
 import { ConfirmDelete } from './ConfirmDelete'
+import { AlertSnackBar } from './AlertSnackBar'
 
 const styles = {
     margin: '0.9rem',
@@ -21,6 +22,7 @@ interface Props {
     isArea?: boolean
 }
 
+const areaDeleteSuccessMsg = "Area eliminada"
 export const Botonera: FC<Props> = ( { isArea, data } ) => {
 
     const [ isEditOpen, setIsEditOpen ] = useState( false )
@@ -42,6 +44,8 @@ export const Botonera: FC<Props> = ( { isArea, data } ) => {
 
     return (
         <>
+            { areaDelete.isError && <AlertSnackBar isOpen={ true } severity='error' message={ areaDelete.error.response.data } /> }
+            { areaDelete.isSuccess && <AlertSnackBar isOpen={ true } severity='success' message={ areaDeleteSuccessMsg } /> }
             { isEditOpen && <WithModal open={ isEditOpen } handleClose={ handleOpenEdit } children={ <h1>EDIT</h1> } /> }
             { isInfoOpen && <WithModal open={ isInfoOpen } handleClose={ handleOpenInfo } children={ <h1>INFO</h1> } /> }
             {

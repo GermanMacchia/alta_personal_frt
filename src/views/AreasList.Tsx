@@ -1,9 +1,9 @@
 import { WithFormProvider } from '../shared'
-import { AltaAreaForm } from '../components/AltaAreaForm/AltaAreaForm'
+import { AltaAreaForm } from '../components/AreaForm/AreaForm'
 import { useAreaForm } from '../hooks/useAreaForm'
 import { Box, LinearProgress } from '@mui/material'
 import { ListaArea } from "../components/ListaArea"
-import { TransitionAlert } from '../shared/TransitionAlert'
+import { AlertSnackBar } from '../shared/AlertSnackBar'
 
 const style = {
     container: {
@@ -18,6 +18,7 @@ const style = {
     }
 }
 
+const messageSuccess = 'Los datos fueron actualizados'
 export const AreasList = () => {
     const { altaArea, areas } = useAreaForm()
 
@@ -27,7 +28,7 @@ export const AreasList = () => {
 
     return (
         <Box sx={ style.container } >
-            { altaArea.isSuccess && <TransitionAlert status='success' /> }
+            { altaArea.isSuccess && <AlertSnackBar severity='success' message={ messageSuccess } isOpen={ true } /> }
             <ListaArea areas={ areas.data } />
             <WithFormProvider children={ areaForm() } handleSubmit={ altaArea.mutateAsync } />
         </Box>

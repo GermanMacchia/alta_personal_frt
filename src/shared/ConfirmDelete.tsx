@@ -21,7 +21,7 @@ export const ConfirmDelete: FC<Props> = ( { isOpen, handleOpen, deleteHandler, d
 
     const handleConfirm = async () => {
         await deleteHandler.mutateAsync( data._id )
-        if ( !deleteHandler.isLoading ) handleOpen()
+            .finally( () => handleOpen() )
     }
 
     return (

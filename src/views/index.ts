@@ -1,5 +1,3 @@
-export { AltaEmpleadoForm } from "./AltaEmpleadoForm"
-export { EmpleadosInfo } from "./EmpleadosInfo"
 export { EmpleadosList } from "./EmpleadosList"
 export { About } from "./About"
 export { NotFound } from "./NotFound"

@@ -1,7 +1,7 @@
 import { Box, Typography, TextField } from '@mui/material/'
 import { useFormContext } from 'react-hook-form'
 import { FC } from 'react'
-import { styles } from '../components/AltaAreaForm/styles'
+import { styles } from '../components/AreaForm/styles'
 
 interface Props {
     name: string,
