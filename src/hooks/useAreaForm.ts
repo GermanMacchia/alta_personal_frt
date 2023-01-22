@@ -15,6 +15,12 @@ const postAreas = async ( nuevaArea: AreaForm ) => {
     return await api.post( '/api/area', { nombre } )
 }
 
+const deleteArea = async ( id: string ) => {
+    await sleep( 1 )
+    return await api.delete( `/api/area/${ id }` )
+}
+
+
 export const useAreaForm = () => {
 
     const areaQuery = useQuery(
@@ -26,6 +32,7 @@ export const useAreaForm = () => {
         }
     )
 
+
     const areaMutation = useMutation(
         ( nuevaArea: AreaForm ) => postAreas( nuevaArea ),
         {
@@ -34,9 +41,20 @@ export const useAreaForm = () => {
             },
         } )
 
+
+    const areaDelete = useMutation(
+        ( id: string ) => deleteArea( id ),
+        {
+            onSuccess: () => {
+                areaQuery.refetch()
+            },
+        } )
+
+
     return {
         altaArea: areaMutation,
-        areas: areaQuery
+        areas: areaQuery,
+        areaDelete: areaDelete,
     }
 
 

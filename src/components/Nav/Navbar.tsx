@@ -12,16 +12,18 @@ const botones = [
     label: 'Plantilla',
     icon: <ListIcon />,
     link: '/lista-empleados'
-  }, {
-    label: 'Areas',
-    icon: <AccountTreeIcon />,
-    link: '/lista-areas'
-  }, {
+  },
+  {
     label: 'Alta Empleados',
     icon: <GroupAddIcon />,
     link: '/alta-empleados'
-
-  }, {
+  },
+  {
+    label: 'Areas',
+    icon: <AccountTreeIcon />,
+    link: '/lista-areas'
+  },
+  {
     label: 'Acerca',
     icon: <InfoIcon />,
     link: '/about'
