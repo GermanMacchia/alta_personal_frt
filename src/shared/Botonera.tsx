@@ -44,7 +44,7 @@ export const Botonera: FC<Props> = ( { isUser, data } ) => {
 
     return (
         <>
-            { areaDelete.isError && <AlertSnackBar isOpen={ true } severity='error' message={ ( areaDelete.error.response.data ) } /> }
+            { areaDelete.isError && <AlertSnackBar isOpen={ true } severity='error' message={ ( areaDelete.error as any ).response.data } /> }
             { areaDelete.isSuccess && <AlertSnackBar isOpen={ true } severity='success' message={ areaDeleteSuccessMsg } /> }
             { isEditOpen && <WithModal open={ isEditOpen } handleClose={ handleOpenEdit } children={ <h1>EDIT</h1> } /> }
             { isInfoOpen && <WithModal open={ isInfoOpen } handleClose={ handleOpenInfo } children={ <h1>INFO</h1> } /> }

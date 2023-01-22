@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 interface Props {
     isOpen: boolean,
     severity: AlertColor
-    message: string
+    message: any
 }
 
 export const AlertSnackBar: FC<Props> = ( { isOpen, severity, message } ) => {

@@ -6,15 +6,14 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import { FC } from 'react'
 import { Area, Empleado } from '../interfaces/'
-import { UseMutationResult } from '@tanstack/react-query'
 import { CircularProgress } from '@mui/material'
 
 
 interface Props {
     handleOpen: () => void
     isOpen: boolean
-    deleteHandler: UseMutationResult
-    data: Area | Empleado
+    deleteHandler: any
+    data: any
 }
 
 export const ConfirmDelete: FC<Props> = ( { isOpen, handleOpen, deleteHandler, data } ) => {
@@ -39,7 +38,7 @@ export const ConfirmDelete: FC<Props> = ( { isOpen, handleOpen, deleteHandler, d
                     { deleteHandler.isLoading
                         ? <CircularProgress />
                         : <DialogContentText id="alert-dialog-description">
-                            Seguro deseas borrar { data.nombre.toUpperCase() } { data.apellido?.toUpperCase() }
+                            Seguro deseas borrar { data.nombre.toUpperCase() }  { data.apellido?.toUpperCase() }
                         </DialogContentText>
                     }
                 </DialogContent>
