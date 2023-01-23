@@ -27,7 +27,7 @@ export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
                 <CardMedia
 
                     component="img"
-                    image="./src/assets/user-circle.png"
+                    image="https://i.pinimg.com/originals/e2/7c/87/e27c8735da98ec6ccdcf12e258b26475.png"
                     alt="user circle"
                     sx={ styles.container.image }
                 />
