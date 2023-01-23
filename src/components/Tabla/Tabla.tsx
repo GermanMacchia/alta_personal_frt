@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { styles } from './styles'
 import { filter, debounce } from '../../helpers/'
 import { Area, Empleado } from '../../interfaces'

@@ -1,6 +1,6 @@
 
 import Card from '@mui/material/Card'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
@@ -27,7 +27,7 @@ export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
                 <CardMedia
 
                     component="img"
-                    image="/src/assets/User_Circle.png"
+                    image="./src/assets/user-circle.png"
                     alt="user circle"
                     sx={ styles.container.image }
                 />

@@ -4,8 +4,6 @@ import { styles } from './styles'
 import { useFormContext } from 'react-hook-form'
 import { FC, useEffect } from 'react'
 import { AreaInput } from './AreaInput'
-import React from 'react'
-
 
 interface Props {
     isLoading: boolean

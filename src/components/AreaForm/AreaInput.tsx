@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { Input } from '../../shared/Input'
 import { Typography } from '@mui/material/'
 import { Label, styles } from './styles'

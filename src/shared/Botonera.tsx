@@ -13,7 +13,6 @@ import { usePersonal } from '../hooks/usePersonal'
 import { CardInfo } from '../components/CardInfo'
 import { CardEditForm } from '../components/CardEditEmpleado'
 import { CardEditAreaForm } from '../components/CardEditArea/CardEditAreaForm'
-import React from 'react'
 
 const styles = {
     margin: '0.4rem',

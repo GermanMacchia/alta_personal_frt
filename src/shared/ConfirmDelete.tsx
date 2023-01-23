@@ -6,8 +6,6 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import { FC } from 'react'
 import { CircularProgress } from '@mui/material'
-import React from 'react'
-
 
 interface Props {
     handleOpen: () => void

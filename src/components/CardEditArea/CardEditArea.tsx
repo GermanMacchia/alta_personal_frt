@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { FormControl } from '@mui/material/'
 import { Box, FormLabel, FormControlLabel, Switch } from '@mui/material'
 import { styles } from './styles'

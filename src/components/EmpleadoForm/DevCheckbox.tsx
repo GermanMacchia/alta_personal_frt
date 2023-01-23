@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import Checkbox from '@mui/material/Checkbox'
-import React, { FC, useState } from 'react'
+import { FC, useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 interface Props {
     devCheckActivo?: boolean

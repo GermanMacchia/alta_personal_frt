@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react'
 import { Typography, Box, CircularProgress, Button } from '@mui/material'
 import { Container } from "@mui/system"
 import { styles } from './styles'

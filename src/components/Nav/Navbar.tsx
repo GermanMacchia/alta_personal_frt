@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { styles } from './styles'
 import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
 import ListIcon from '@mui/icons-material/List'

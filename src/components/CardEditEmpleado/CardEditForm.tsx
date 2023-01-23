@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { WithFormProvider } from '../../shared/WithFormProvider'
 import { CardEdit } from './CardEdit'
 import { Box } from '@mui/material'

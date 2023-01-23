@@ -1,4 +1,3 @@
-import React from 'react'
 import { WithFormProvider } from '../shared'
 import { AreaForm } from '../components/AreaForm/AreaForm'
 import { useAreaForm } from '../hooks/useAreaForm'
