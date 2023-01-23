@@ -10,6 +10,9 @@ import { useAreaForm } from '../hooks/useAreaForm'
 import { ConfirmDelete } from './ConfirmDelete'
 import { AlertSnackBar } from './AlertSnackBar'
 import { usePersonal } from '../hooks/usePersonal'
+import { CardInfo } from '../components/CardInfo'
+import { Empleado } from '../interfaces/empleado.interface'
+import { CardEdit } from '../components/CardEdit/CardEdit'
 
 const styles = {
     margin: '0.4rem',
@@ -42,9 +45,9 @@ export const Botonera: FC<Props> = ( { isUser = false, data } ) => {
             { empleadoDelete.isSuccess && <AlertSnackBar isOpen={ true } severity='success' message={ empleadoDeleteSuccessMsg } /> }
             { areaDelete.isError && <AlertSnackBar isOpen={ true } severity='error' message={ ( areaDelete.error as any ).response.data } /> }
             { areaDelete.isSuccess && <AlertSnackBar isOpen={ true } severity='success' message={ areaDeleteSuccessMsg } /> }
-            { <WithModal open={ isEditAreaOpen } handleClose={ () => setIsEditAreaOpen( !isEditAreaOpen ) } children={ <h1>EDIT Area</h1> } /> }
-            { <WithModal open={ isInfoOpen } handleClose={ () => setIsInfoOpen( !isInfoOpen ) } children={ <h1>INFO User</h1> } /> }
-            { <WithModal open={ isEditOpen } handleClose={ () => setIsEditOpen( !isEditOpen ) } children={ <h1>EDIT User</h1> } /> }
+            { <WithModal open={ isEditAreaOpen } children={ <h1>EDIT Area</h1> } /> }
+            { <WithModal open={ isInfoOpen } children={ <CardInfo empleado={ data } handleClose={ () => setIsInfoOpen( !isInfoOpen ) } /> } /> }
+            { <WithModal open={ isEditOpen } children={ <CardEdit handleClose={ () => setIsEditOpen( !isEditOpen ) } /> } /> }
             { <ConfirmDelete
                 handleOpen={ () => setIsConfirmDeleteAreaOpen( !isConfirmDeleteAreaOpen ) }
                 isOpen={ isConfirmDeleteAreaOpen }
