@@ -15,7 +15,7 @@ export const styles = {
             height: '200px',
             width: '200px',
             border: '1px solid rgba(184, 166, 175, 0.21)',
-            boxShadow: '6px 8px 6px -6px black'
+            boxShadow: '6px 8px 6px -6px black',
         },
         right: {
             justifyContent: 'space-between',

@@ -1,5 +1,5 @@
 
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useEmpleadoForm } from '../../hooks/useEmpleadoForm'
 import { Area } from '../../interfaces/area.interface'
@@ -7,12 +7,7 @@ import { styles } from './styles'
 import { Typography, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material/'
 
 
-interface Props {
-    name: string,
-    rules: any
-}
-
-export const AreaSelect: FC<Props> = ( { name, rules } ) => {
+export const AreaSelect = () => {
     const { areas: listaAreas } = useEmpleadoForm()
     const [ area, setArea ] = useState( '' )
     const { register, formState: { errors } } = useFormContext()
@@ -33,17 +28,17 @@ export const AreaSelect: FC<Props> = ( { name, rules } ) => {
                 defaultValue={ "" }
                 displayEmpty
             >
-                <MenuItem value="" disabled sx={ { color: 'text.disabled' } }>Back End</MenuItem>
+                <MenuItem value="" disabled sx={ { color: 'text.disabled' } }>Área</MenuItem>
                 { listaAreas && listaAreas.map( ( area: Area ) => <MenuItem key={ area._id } value={ area._id }>{ area.nombre.toUpperCase() }</MenuItem> ) }
             </Select>
-            { errors[ name ] && (
+            { errors.name && (
                 <Typography
                     variant="caption"
                     sx={ { position: 'absolute', margin: '-21px 0', right: 0 } }
                     color="#fc746d"
                     className="errorText"
                 >
-                    { ( errors as any )[ name ].message }
+                    { ( errors as any ).name.message }
                 </Typography>
             ) }
         </FormControl>

@@ -1,14 +1,13 @@
-import { SnackbarCloseReason } from '@mui/base'
-import { Alert, Snackbar } from '@mui/material'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 import { AlertSnackBar } from './AlertSnackBar'
-
+import { useEmpleadoEdit } from '../hooks/useEmpleadoEdit'
 
 interface Props {
     children: React.ReactNode,
-    handleSubmit: ( data: any ) => Promise<unknown>,
+    handleSubmit: ( data: any ) => any,
 }
+
 const successMessage = "Los datos fueron actualizados"
 
 export const WithFormProvider: FC<Props> = ( { children, handleSubmit } ) => {

@@ -5,7 +5,6 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import { FC } from 'react'
-import { Area, Empleado } from '../interfaces/'
 import { CircularProgress } from '@mui/material'
 
 

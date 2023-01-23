@@ -66,7 +66,7 @@ export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
                     </Typography>
                 </CardContent>
                 <CardActions sx={ styles.container.actions }>
-                    <Button variant='contained' color='success' onClick={ handleClose } size="small">Cerrar</Button>
+                    <Button variant='outlined' color='success' onClick={ handleClose } size="small">Cerrar</Button>
                 </CardActions>
             </Box>
         </Card >

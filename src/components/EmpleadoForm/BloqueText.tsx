@@ -1,9 +1,15 @@
+import { FC } from 'react'
 import { Input } from '../../shared'
 import { Label, styles } from './styles'
 import { Box, Typography } from '@mui/material'
 
+interface Props {
+    nombreActivo?: boolean
+    apellidoActivo?: boolean
+    descripcionActiva?: boolean
+}
 
-export const BloqueText = () => {
+export const BloqueText: FC<Props> = ( { nombreActivo, apellidoActivo, descripcionActiva } ) => {
     return (
         <Box sx={ styles.form }>
             <Label>
@@ -16,6 +22,7 @@ export const BloqueText = () => {
                     </Typography>
                 </Box>
                 <Input
+                    disabled={ nombreActivo }
                     name="nombre"
                     rules={ {
                         required: 'requerido',
@@ -38,6 +45,7 @@ export const BloqueText = () => {
                     </Typography>
                 </Box>
                 <Input
+                    disabled={ apellidoActivo }
                     name="apellido"
                     rules={ {
                         required: 'requerido',
@@ -60,6 +68,7 @@ export const BloqueText = () => {
                     </Typography>
                 </Box>
                 <Input
+                    disabled={ descripcionActiva }
                     name="descripcion"
                     rules={ {
                         required: 'requerido',

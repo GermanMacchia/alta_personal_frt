@@ -1,6 +1,5 @@
 import { Snackbar, Alert, AlertColor } from '@mui/material'
 import { FC, useState } from 'react'
-import Button from '@mui/material/Button'
 
 interface Props {
     isOpen: boolean,
@@ -10,10 +9,6 @@ interface Props {
 
 export const AlertSnackBar: FC<Props> = ( { isOpen, severity, message } ) => {
     const [ open, setOpen ] = useState( isOpen )
-
-    const handleClick = () => {
-        setOpen( true )
-    }
 
     const handleClose = ( event: React.SyntheticEvent | Event, reason?: string ) => {
         if ( reason === 'clickaway' ) {

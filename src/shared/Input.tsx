@@ -1,17 +1,22 @@
 import { Box, Typography, TextField } from '@mui/material/'
 import { useFormContext } from 'react-hook-form'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 
 interface Props {
     name: string,
     rules: any
+    disabled?: boolean
     placeholder: string
     type?: string
 }
 
 
-export const Input: FC<Props> = ( { name, rules, placeholder, type = 'string', } ) => {
+export const Input: FC<Props> = ( { name, rules, placeholder, type = 'string', disabled } ) => {
     const { register, formState: { errors } } = useFormContext()
+
+    useEffect( () => {
+    }, [ disabled ] )
+
 
     return (
         <Box sx={ { display: 'flex', justifyContent: 'end', marginBottom: '5px' } }>
@@ -23,6 +28,7 @@ export const Input: FC<Props> = ( { name, rules, placeholder, type = 'string', }
                         color: 'whitesmoke',
                     }
                 } }
+                disabled={ disabled }
                 variant="standard"
                 placeholder={ placeholder }
                 color='success'

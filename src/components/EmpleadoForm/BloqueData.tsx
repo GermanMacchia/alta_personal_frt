@@ -1,8 +1,8 @@
+import { FC } from 'react'
 import { Input } from '../../shared'
 import { AreaSelect } from './AreaSelect'
 import { Label, styles } from './styles'
 import { Box, Typography } from '@mui/material'
-
 
 export const BloqueData = () => {
     return (
@@ -56,12 +56,7 @@ export const BloqueData = () => {
                         *
                     </Typography>
                 </Box>
-                <AreaSelect
-                    name='area'
-                    rules={ {
-                        required: 'requerida',
-                    } }
-                />
+                <AreaSelect />
             </Label>
         </Box>
     )
