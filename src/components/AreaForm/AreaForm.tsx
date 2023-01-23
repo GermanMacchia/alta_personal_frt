@@ -6,6 +6,7 @@ import { useFormContext } from 'react-hook-form'
 import { FC, useEffect } from 'react'
 import { Input } from '../../shared'
 import { AreaInput } from './AreaInput'
+import React from 'react'
 
 
 interface Props {

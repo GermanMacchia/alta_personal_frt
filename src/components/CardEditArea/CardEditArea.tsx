@@ -1,11 +1,10 @@
+import React, { FC, useState, useEffect } from 'react'
 import { FormControl } from '@mui/material/'
 import { Box, FormLabel, FormControlLabel, Switch } from '@mui/material'
 import { styles } from './styles'
-import { FC, useState, useEffect } from 'react'
 import Button from '@mui/material/Button'
 import { useFormContext } from 'react-hook-form'
 import { AreaInput } from '../AreaForm/AreaInput'
-
 
 interface Props {
     area: any

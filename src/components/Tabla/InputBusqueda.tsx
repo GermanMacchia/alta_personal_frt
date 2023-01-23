@@ -1,8 +1,8 @@
+import React, { FC } from 'react'
 import Paper from '@mui/material/Paper'
 import InputBase from '@mui/material/InputBase'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
-import { FC } from 'react'
 
 interface Props {
     handleChange: ( event: any ) => void

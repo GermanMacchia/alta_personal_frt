@@ -8,7 +8,14 @@ A. [Librerias utilizadas](#librerias-utilizadas)
 
 B. [Creación](#creación)
 
-c. [Documentacion](#documentación)
+c. [Documentacion relevante](#documentación-relevante)
+
+D. [Documentación del proyecto](#documentación-del-proyecto)
+
+* [Técnologias](#tecnologías)
+
+* [Funcionalidades](#functionalidades)
+
 
 <br><br><br>
 
@@ -58,10 +65,22 @@ npm i --save-dev @types/react-router
 npm i --save-dev @types/react-router-dom
 ```
 
-# Documentación
+# Documentación relevante
 
 [React hook forms](https://react-hook-form.com/)
 
 [React Router](https://reactrouter.com/en/main)
 
 [React Query](https://tanstack.com/query/latest)
+
+[React Hook Form](https://react-hook-form.com/)
+
+[Material UI](https://mui.com/)
+
+# Documentación del proyecto
+
+
+## Tecnologías
+
+## Functionalidades
+

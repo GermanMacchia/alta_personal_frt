@@ -1,13 +1,11 @@
-
+import React, { FC, useEffect } from 'react'
 import { Typography, Box, CircularProgress, Button } from '@mui/material'
 import { Container } from "@mui/system"
 import { styles } from './styles'
 import { useFormContext } from 'react-hook-form'
-import { FC, useEffect } from 'react'
 import { BloqueText } from './BloqueText'
 import { BloqueData } from './BloqueData'
 import { DevCheckbox } from './DevCheckbox'
-
 
 interface Props {
     isLoading: boolean

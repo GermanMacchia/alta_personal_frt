@@ -6,7 +6,7 @@ export const filter = ( array: Empleado[], entrada: string ) => {
     const regex = new RegExp( entrada.toLowerCase(), 'gi' )
 
     const filtrarNumeros = () => {
-        const aux = array.filter( empl => regex.test( empl._id ) || regex.test( empl.dni.toString() ) )
+        const aux = array.filter( ( data: any ) => regex.test( data._id ) || regex.test( data.dni.toString() ) )
         return aux
     }
 

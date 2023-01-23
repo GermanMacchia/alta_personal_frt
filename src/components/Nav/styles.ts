@@ -8,7 +8,7 @@ export const styles = {
     container: {
         height: '20vh',
         minHeight: '100px',
-        backgroundImage: `url(${ "/src/assets/5291450.jpg" })`,
+        backgroundImage: `url(${ "src/assets/5291450.jpg" })`,
         backgroundPosition: 'top',
         backgroundSize: 'cover',
         position: 'relative',

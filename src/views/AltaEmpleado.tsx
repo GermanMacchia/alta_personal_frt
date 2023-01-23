@@ -1,7 +1,7 @@
+import React from 'react'
 import { EmpleadoForm } from '../components/EmpleadoForm/EmpleadoForm'
 import { useEmpleadoForm } from '../hooks/useEmpleadoForm'
 import { WithFormProvider } from '../shared'
-
 
 export const AltaEmpleado = () => {
     const { altaEmpleado } = useEmpleadoForm()

@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import { CardEditActive } from './CardEditActive'
 import { Box } from '@mui/material'
 import { styles } from './styles'

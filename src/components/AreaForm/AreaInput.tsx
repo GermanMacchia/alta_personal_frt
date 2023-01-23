@@ -1,9 +1,9 @@
+import React, { FC } from 'react'
 import { Input } from '../../shared/Input'
 import { Typography } from '@mui/material/'
 import { Label, styles } from './styles'
 import { Box } from '@mui/material'
 import { useFormContext } from 'react-hook-form'
-import { FC } from 'react'
 
 export const AreaInput: FC<{ active?: boolean }> = ( { active } ) => {
     const { register } = useFormContext()

@@ -1,12 +1,10 @@
-import { FC } from "react"
+import React, { FC } from 'react'
 import { WithFormProvider } from '../../shared/WithFormProvider'
 import { CardEdit } from './CardEdit'
 import { Box } from '@mui/material'
 import Button from '@mui/material/Button'
 import { usePersonal } from '../../hooks/usePersonal'
 import { styles } from './styles'
-import { useEmpleadoEdit } from '../../hooks/useEmpleadoEdit'
-
 
 interface Props {
     handleClose: () => void,

@@ -1,11 +1,10 @@
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useEmpleadoForm } from '../../hooks/useEmpleadoForm'
 import { Area } from '../../interfaces/area.interface'
 import { styles } from './styles'
 import { Typography, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material/'
-
 
 export const AreaSelect = () => {
     const { areas: listaAreas } = useEmpleadoForm()

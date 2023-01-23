@@ -1,8 +1,7 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { Input } from '../../shared'
 import { Label, styles } from './styles'
 import { Box, Typography } from '@mui/material'
-
 interface Props {
     nombreActivo?: boolean
     apellidoActivo?: boolean

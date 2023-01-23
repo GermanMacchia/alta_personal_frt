@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { styles } from './styles'
 import { InputBusqueda } from './InputBusqueda'
 import TableBody from '@mui/material/TableBody'
@@ -9,7 +9,6 @@ import CancelIcon from '@mui/icons-material/Cancel'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { Area, Empleado } from '../../interfaces'
 import { Botonera } from '../../shared'
-
 
 interface Props {
   handleFilter: ( e: React.SyntheticEvent ) => void,

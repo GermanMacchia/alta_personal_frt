@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { styles } from './styles'
 import { filter, debounce } from '../../helpers/'
 import { Area, Empleado } from '../../interfaces'
@@ -7,7 +7,6 @@ import TableContainer from '@mui/material/TableContainer'
 import Paper from '@mui/material/Paper'
 import { FilaTabla } from './FilaTabla'
 import { usePersonal } from '../../hooks/usePersonal'
-
 interface Props {
     areas: Area[]
     empleados: Empleado[]

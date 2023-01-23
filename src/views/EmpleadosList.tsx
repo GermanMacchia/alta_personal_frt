@@ -1,7 +1,7 @@
+import React from 'react'
 import { LinearProgress } from "@mui/material"
 import { Tabla } from "../components/Tabla"
 import { usePersonal } from '../hooks/usePersonal'
-
 
 const style = {
     loading: {

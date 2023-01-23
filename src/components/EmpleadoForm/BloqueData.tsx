@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React from 'react'
 import { Input } from '../../shared'
 import { AreaSelect } from './AreaSelect'
 import { Label, styles } from './styles'

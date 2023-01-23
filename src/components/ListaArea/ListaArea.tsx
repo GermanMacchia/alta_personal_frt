@@ -1,3 +1,4 @@
+import React, { FC } from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
@@ -6,7 +7,6 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { Area } from '../../interfaces'
-import { FC } from 'react'
 import { Botonera } from '../../shared'
 
 interface Props {

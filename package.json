@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -16,10 +18,12 @@
     "@tanstack/react-query": "^4.22.0",
     "@tanstack/react-query-devtools": "^4.22.0",
     "axios": "^1.2.3",
+    "ghpages": "^0.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.42.1",
-    "react-router-dom": "^6.7.0"
+    "react-router-dom": "^6.7.0",
+    "save": "^2.9.0"
   },
   "devDependencies": {
     "@mui/types": "^7.2.3",
