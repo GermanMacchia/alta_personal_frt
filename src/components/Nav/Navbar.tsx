@@ -11,22 +11,22 @@ const botones = [
   {
     label: 'Plantilla',
     icon: <ListIcon />,
-    link: '/lista-empleados'
+    link: '/alta_personal_frt/lista-empleados'
   },
   {
     label: 'Alta Empleados',
     icon: <GroupAddIcon />,
-    link: '/alta-empleados'
+    link: '/alta_personal_frt/alta-empleados'
   },
   {
     label: 'Areas',
     icon: <AccountTreeIcon />,
-    link: '/lista-areas'
+    link: '/alta_personal_frt/lista-areas'
   },
   {
     label: 'Acerca',
     icon: <InfoIcon />,
-    link: '/about'
+    link: '/alta_personal_frt/about'
   }
 ]
 

@@ -8,32 +8,32 @@ import React from 'react'
 
 export const router = createBrowserRouter( [
     {
-        path: '/',
+        path: '/alta_personal_frt',
         element: <App />,
         errorElement: <NotFound />,
         children: [
             {
-                path: '/',
+                path: '/alta_personal_frt',
                 element: <SignIn />,
                 errorElement: <NotFound />
             },
             {
-                path: '/lista-empleados',
+                path: '/alta_personal_frt/lista-empleados',
                 element: <EmpleadosList />,
                 errorElement: <NotFound />
             },
             {
-                path: '/lista-areas',
+                path: '/alta_personal_frt/lista-areas',
                 element: <AreasList />,
                 errorElement: <NotFound />
             },
             {
-                path: '/alta-empleados',
+                path: '/alta_personal_frt/alta-empleados',
                 element: <AltaEmpleado />,
                 errorElement: <NotFound />
             },
             {
-                path: '/about',
+                path: '/alta_personal_frt/about',
                 element: <About />,
                 errorElement: <NotFound />
             }

@@ -21,7 +21,7 @@ export const SignIn = () => {
   return (
     <Box sx={ styles.container }>
       <h1>Sign In</h1>
-      <Button variant="contained" color="success" onClick={ () => navigate( '/lista-empleados' ) }>Login</Button>
+      <Button variant="contained" color="success" onClick={ () => navigate( '/alta_personal_frt/lista-empleados' ) }>Login</Button>
     </Box>
   )
 }

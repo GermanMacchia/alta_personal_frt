@@ -8,7 +8,7 @@ export const styles = {
     container: {
         height: '20vh',
         minHeight: '100px',
-        backgroundImage: `url(${ "src/assets/5291450.jpg" })`,
+        backgroundImage: `url(${ "https://img.freepik.com/vector-gratis/fondo-geometrico-plano_23-2148957201.jpg?w=2000" })`,
         backgroundPosition: 'top',
         backgroundSize: 'cover',
         position: 'relative',

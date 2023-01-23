@@ -1,10 +1,8 @@
-import { Label } from './styles'
 import { Typography, Box, CircularProgress, Button } from '@mui/material'
 import { Container } from "@mui/system"
 import { styles } from './styles'
 import { useFormContext } from 'react-hook-form'
 import { FC, useEffect } from 'react'
-import { Input } from '../../shared'
 import { AreaInput } from './AreaInput'
 import React from 'react'
 
