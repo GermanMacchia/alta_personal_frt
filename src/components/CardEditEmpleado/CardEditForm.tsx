@@ -13,7 +13,7 @@ interface Props {
 export const CardEditForm: FC<Props> = ( { handleClose, empleado } ) => {
     const { empleadoEdit } = useEmpleadoList()
 
-    const card = () => <CardEdit data={ empleado } />
+    const card = () => <CardEdit data={ empleado } isLoading={ empleadoEdit.isLoading } />
 
     return (
         <Box sx={ styles.modal }>
