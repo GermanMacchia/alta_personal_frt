@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Input } from '../../shared'
 import { Label, styles } from './styles'
 import { Box, Typography } from '@mui/material'
+
 interface Props {
     nombreActivo?: boolean
     apellidoActivo?: boolean
@@ -10,9 +11,9 @@ interface Props {
 
 export const BloqueText: FC<Props> = ( { nombreActivo, apellidoActivo, descripcionActiva } ) => {
     return (
-        <Box sx={ styles.form }>
+        <Box sx={ styles.container.form }>
             <Label>
-                <Box sx={ styles.tag }>
+                <Box sx={ styles.container.form.tag }>
                     <Typography fontWeight={ 400 } display={ 'inline-block' }>
                         Nombre &nbsp;
                     </Typography>
@@ -35,7 +36,7 @@ export const BloqueText: FC<Props> = ( { nombreActivo, apellidoActivo, descripci
                 />
             </Label>
             <Label>
-                <Box sx={ styles.tag }>
+                <Box sx={ styles.container.form.tag }>
                     <Typography fontWeight={ 400 } display={ 'inline-block' }>
                         Apellido &nbsp;
                     </Typography>
@@ -58,7 +59,7 @@ export const BloqueText: FC<Props> = ( { nombreActivo, apellidoActivo, descripci
                 />
             </Label>
             <Label>
-                <Box sx={ styles.tag }>
+                <Box sx={ styles.container.form.tag }>
                     <Typography fontWeight={ 400 } display={ 'inline-block' }>
                         Descripción &nbsp;
                     </Typography>

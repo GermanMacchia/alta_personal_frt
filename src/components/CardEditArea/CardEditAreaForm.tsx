@@ -1,11 +1,15 @@
 import { FC } from "react"
+<<<<<<< HEAD
 import { WithFormProvider } from '../../shared/WithFormProvider'
 import { Box } from '@mui/material'
 import Button from '@mui/material/Button'
+=======
+>>>>>>> main
 import { styles } from './styles'
+import { WithFormProvider } from '../../shared/WithFormProvider'
+import { Box, Button } from '@mui/material'
 import { CardEditArea } from "./CardEditArea"
 import { useAreaForm } from '../../hooks/useAreaForm'
-
 
 interface Props {
     handleClose: () => void,
@@ -15,12 +19,12 @@ interface Props {
 export const CardEditAreaForm: FC<Props> = ( { handleClose, area } ) => {
     const { areaEdit } = useAreaForm()
 
-    const card = () => <CardEditArea area={ area } />
+    const card = () => <CardEditArea area={ area } isLoading={ areaEdit.isLoading } />
 
     return (
         <Box sx={ styles.modal }>
             <WithFormProvider children={ card() } handleSubmit={ areaEdit.mutateAsync } />
-            <Box sx={ styles.modal.buttonModal }>
+            <Box sx={ styles.modal.cerrar }>
                 <Button variant='outlined' color='success' onClick={ handleClose }>Cerrar</Button>
             </Box>
         </Box>

@@ -5,6 +5,7 @@ import { Box, LinearProgress } from '@mui/material'
 import { ListaArea } from "../components/ListaArea"
 import { AlertSnackBar } from '../shared/AlertSnackBar'
 
+const messageSuccess = 'Los datos fueron actualizados'
 const style = {
     container: {
         display: 'flex',
@@ -18,14 +19,12 @@ const style = {
     }
 }
 
-const messageSuccess = 'Los datos fueron actualizados'
 export const AreasList = () => {
     const { altaArea, areas } = useAreaForm()
-
     const areaForm = () => <AreaForm isLoading={ altaArea.isLoading } />
+    const tablaVacia = areas?.data.length === 0
 
     if ( areas.isLoading ) return <LinearProgress sx={ style.loading } color="success" />
-    const tablaVacia = areas?.data.length === 0
 
     return (
         <Box sx={ style.container } >

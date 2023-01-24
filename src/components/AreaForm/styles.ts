@@ -3,34 +3,33 @@ import styled from '@emotion/styled'
 export const styles = {
   container: {
     margin: '6vh auto auto auto',
-    // width: { md: '80%', lg: '70%', xl: '55%' },
     flexGrow: 1,
     maxWidth: 'sm',
-  },
-  title: {
-    fontWeight: '600',
-    fontSize: '20px'
-  },
-  subtitle: {
-    opacity: '0.7',
-    marginTop: '1vh',
-    marginBottom: '3vh',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.4vh',
-  },
-  tag: {
-    marginBottom: '2%',
-  },
-  button: {
-    color: '#fff',
-    width: '100%',
-    textTransform: 'none',
-    height: '45px',
-    borderRadius: '8px',
-    marginTop: '4vh',
+    title: {
+      fontWeight: '600',
+      fontSize: '20px'
+    },
+    subtitle: {
+      opacity: '0.7',
+      marginTop: '1vh',
+      marginBottom: '3vh',
+    },
+    form: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.4vh',
+      tag: {
+        marginBottom: '10%',
+      },
+    },
+    submit: {
+      color: '#fff',
+      width: '100%',
+      textTransform: 'none',
+      height: '45px',
+      borderRadius: '8px',
+      marginTop: '4vh',
+    },
   },
 }
 

@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import { Typography, Box, CircularProgress, Button } from '@mui/material'
 import { Container } from "@mui/system"
-import { styles } from './styles'
-import { useFormContext } from 'react-hook-form'
+=======
 import { FC, useEffect } from 'react'
+>>>>>>> main
+import { styles } from './styles'
+import { Typography, Box, CircularProgress, Button, Container } from '@mui/material'
+import { useFormContext } from 'react-hook-form'
+<<<<<<< HEAD
+import { FC, useEffect } from 'react'
+=======
+>>>>>>> main
 import { AreaInput } from './AreaInput'
 
 interface Props {
@@ -13,23 +21,21 @@ export const AreaForm: FC<Props> = ( { isLoading } ) => {
     const { reset } = useFormContext()
 
     useEffect( () => {
-        if ( !isLoading ) {
-            reset()
-        }
+        if ( !isLoading ) reset()
     }, [ isLoading ] )
 
     return (
         <Container sx={ styles.container } maxWidth="sm">
             <Box >
-                <Typography sx={ styles.title }>
+                <Typography sx={ styles.container.title }>
                     Alta Área
                 </Typography>
-                <Typography sx={ styles.subtitle }>
+                <Typography sx={ styles.container.subtitle }>
                     Define el nombre de una nueva área en que pueda desempeñarse un empleado
                 </Typography>
             </Box>
             <AreaInput />
-            <Button variant="contained" type="submit" disableElevation sx={ styles.button }>
+            <Button variant="contained" type="submit" disableElevation sx={ styles.container.submit }>
                 { isLoading ? <CircularProgress /> : 'Enviar' }
             </Button>
         </Container >

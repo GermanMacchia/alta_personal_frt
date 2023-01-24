@@ -1,18 +1,25 @@
 import { FC } from 'react'
+<<<<<<< HEAD
+=======
+import { Label, styles } from './styles'
+>>>>>>> main
 import { Input } from '../../shared/Input'
 import { Typography } from '@mui/material/'
-import { Label, styles } from './styles'
 import { Box } from '@mui/material'
 import { useFormContext } from 'react-hook-form'
 
-export const AreaInput: FC<{ active?: boolean }> = ( { active } ) => {
+interface Props {
+    active?: boolean
+}
+
+export const AreaInput: FC<Props> = ( { active } ) => {
     const { register } = useFormContext()
 
     return (
-        <Box sx={ styles.form }>
+        <Box sx={ styles.container.form }>
             <input { ...register( 'formType' ) } type="hidden" value="AltaArea" />
             <Label>
-                <Box sx={ styles.tag }>
+                <Box sx={ styles.container.form.tag }>
                     <Typography fontWeight={ 400 } display={ 'inline-block' }>
                         Nombre &nbsp;
                     </Typography>

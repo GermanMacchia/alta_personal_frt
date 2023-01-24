@@ -1,25 +1,34 @@
+import { containerClasses } from "@mui/system"
+
 export const styles = {
     modal: {
         display: 'flex',
         flexDirection: 'column',
         color: 'whitesmoke',
-        buttonModal: {
-            display: 'flex',
-            justifyContent: 'flex-end',
+        cerrar: {
             marginTop: '1rem'
-        }
+        },
+        container: {
+            display: 'flex',
+            flexDirection: 'column',
+            width: '30vw',
+            form: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                __switch: {
+                    borderLeft: '1px solid rgba(184, 166, 175, 0.21)',
+                    padding: '10px'
+                },
+            },
+            submit: {
+                marginTop: '1rem'
+            }
+        },
     },
-    containter: {
+    frame: {
         display: 'flex',
         alignItems: 'center',
-        padding: '1rem',
+        padding: '4rem',
         backgroundColor: '#242424',
-        switchs: {
-            borderLeft: '1px solid rgba(184, 166, 175, 0.21)',
-            padding: '10px'
-        },
-        button: {
-
-        }
     }
 }

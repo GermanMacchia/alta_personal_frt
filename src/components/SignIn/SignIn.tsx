@@ -1,18 +1,6 @@
 import { Button, Box } from '@mui/material'
 import { useNavigate } from 'react-router'
-
-const styles = {
-  container: {
-    width: 500,
-    border: '1px solid whitesmoke',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justyfyContent: 'space-between',
-    margin: '20vh auto',
-    padding: '20px'
-  }
-}
+import { styles } from './styles'
 
 export const SignIn = () => {
   const navigate = useNavigate()
@@ -20,7 +8,14 @@ export const SignIn = () => {
   return (
     <Box sx={ styles.container }>
       <h1>Sign In</h1>
+<<<<<<< HEAD
       <Button variant="contained" color="success" onClick={ () => navigate( '/alta_personal_frt/lista-empleados' ) }>Login</Button>
+=======
+      <Button variant="contained" color="success"
+        onClick={ () => navigate( '/lista-empleados' ) }>
+        Login
+      </Button>
+>>>>>>> main
     </Box>
   )
 }

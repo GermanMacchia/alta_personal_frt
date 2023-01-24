@@ -2,7 +2,6 @@ import { Empleado } from '../interfaces/'
 
 
 export const filter = ( array: Empleado[], entrada: string ) => {
-
     const regex = new RegExp( entrada.toLowerCase(), 'gi' )
 
     const filtrarNumeros = () => {

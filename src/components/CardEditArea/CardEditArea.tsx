@@ -1,17 +1,24 @@
 import { FC, useState, useEffect } from 'react'
+<<<<<<< HEAD
 import { FormControl } from '@mui/material/'
 import { Box, FormLabel, FormControlLabel, Switch } from '@mui/material'
 import { styles } from './styles'
 import Button from '@mui/material/Button'
+=======
+>>>>>>> main
 import { useFormContext } from 'react-hook-form'
-import { AreaInput } from '../AreaForm/AreaInput'
+import { styles } from './styles'
+import { Box, FormLabel, FormControlLabel, Switch, CircularProgress, Button, FormControl } from '@mui/material'
+import { AreaInput } from '../AreaForm'
+import { Area } from '../../interfaces'
 
 interface Props {
-    area: any
+    area: Area
+    isLoading: boolean
 }
 
-export const CardEditArea: FC<Props> = ( { area } ) => {
-    const [ state, setState ] = useState( true )
+export const CardEditArea: FC<Props> = ( { area, isLoading } ) => {
+    const [ isActive, setIsActive ] = useState( true )
     const { setValue } = useFormContext()
 
     useEffect( () => {
@@ -20,26 +27,26 @@ export const CardEditArea: FC<Props> = ( { area } ) => {
     }, [ area ] )
 
     return (
-        <Box sx={ styles.modal }>
-            <Box sx={ { ...styles.containter } }>
-                <Box sx={ { display: 'flex', justifyContent: 'space-between', width: '40vw' } }>
-                    <Box >
-                        <AreaInput active={ state } />
-                    </Box >
-                    <Box sx={ styles.containter.switchs }>
-                        <FormControl component="fieldset" variant="standard">
-                            <FormLabel component="legend">EDIT</FormLabel>
-                            <FormControlLabel
-                                control={
-                                    <Switch checked={ state } onChange={ () => setState( !state ) } name="nombre" />
-                                }
-                                label="Nombre"
-                            />
-                        </FormControl>
-                    </Box>
+        <Box sx={ styles.modal.container }>
+            <Box sx={ styles.modal.container.flex }>
+                <Box >
+                    <AreaInput active={ isActive } />
+                </Box >
+                <Box sx={ styles.modal.container.flex.switch }>
+                    <FormControl component="fieldset" variant="standard">
+                        <FormLabel component="legend" sx={ styles.modal.container.flex.switch.tag } color='warning'>EDITAR</FormLabel>
+                        <FormControlLabel
+                            control={
+                                <Switch checked={ isActive } onChange={ () => setIsActive( !isActive ) } name="nombre" />
+                            }
+                            label="Nombre"
+                        />
+                    </FormControl>
                 </Box>
-                <Button sx={ { width: '100%', marginTop: '0.5rem' } } variant='contained' type="submit">Enviar</Button>
             </Box>
-        </Box >
+            <Button sx={ styles.modal.container.submit } variant='contained' type="submit">
+                { isLoading ? <CircularProgress /> : 'Enviar' }
+            </Button>
+        </Box>
     )
 }
