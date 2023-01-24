@@ -42,9 +42,9 @@ export const ConfirmDelete: FC<Props> = ( { isOpen, handleOpen, deleteHandler, d
                         </DialogContentText>
                     }
                 </DialogContent>
-                <DialogActions>
-                    <Button disabled={ deleteHandler.isLoading } onClick={ handleOpen }>Cancelar</Button>
-                    <Button disabled={ deleteHandler.isLoading } onClick={ handleConfirm } autoFocus>
+                <DialogActions sx={ { display: 'flex', justifyContent: 'center', padding: 2.5 } }>
+                    <Button variant='outlined' color='error' disabled={ deleteHandler.isLoading } onClick={ handleOpen }>Cancelar</Button>
+                    <Button variant='outlined' color='success' disabled={ deleteHandler.isLoading } onClick={ handleConfirm } autoFocus>
                         Confirmar
                     </Button>
                 </DialogActions>
