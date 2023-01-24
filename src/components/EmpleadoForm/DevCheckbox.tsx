@@ -1,5 +1,5 @@
 import { Box, Checkbox } from '@mui/material'
-import { FC, useState } from 'react'
+import { ChangeEvent, FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
 
 interface Props {
@@ -8,11 +8,15 @@ interface Props {
 
 export const DevCheckbox: FC<Props> = ( { devCheckActivo } ) => {
     const [ checked, setChecked ] = useState( false )
-    const { register } = useFormContext()
+    const { register, formState: { isSubmitted } } = useFormContext()
 
-    const handleChange = ( event: React.ChangeEvent<HTMLInputElement> ) => {
+    const handleChange = ( event: ChangeEvent<HTMLInputElement> ) => {
         setChecked( event.target.checked )
     }
+
+    useEffect( () => {
+        setChecked( false )
+    }, [ isSubmitted ] )
 
     return (
         <Box sx={ { display: 'flex', justifyContent: 'space-between', width: '50%' } }>

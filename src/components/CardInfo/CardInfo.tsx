@@ -2,17 +2,16 @@ import { FC } from 'react'
 import { styles } from './styles'
 import { Empleado, Area } from '../../interfaces'
 import { Box, Typography, Button, CardMedia, CardContent, CardActions, Card } from '@mui/material'
-import { useEmpleadoList } from '../../hooks'
 import { capitalize } from '../../helpers'
 import userImage from '../../assets/user-circle.png'
 
 interface Props {
     empleado: Empleado
+    areas: Area[]
     handleClose: () => void
 }
 
-export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
-    const { areas } = useEmpleadoList()
+export const CardInfo: FC<Props> = ( { empleado, handleClose, areas } ) => {
 
     return (
         <Card sx={ styles.container }>
@@ -49,7 +48,7 @@ export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
                     </Typography>
                     <Typography gutterBottom variant="body2" >
                         <p><b>Área:</b></p>
-                        { areas.data.find( ( area: Area ) => area._id === empleado.area ).nombre.toUpperCase() }
+                        { areas.find( ( area: Area ) => area._id === empleado.area )?.nombre.toUpperCase() }
                     </Typography>
                     <Typography gutterBottom maxHeight='10px' variant="body2" >
                         <p><b>Otros:</b></p>

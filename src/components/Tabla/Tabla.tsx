@@ -14,11 +14,10 @@ interface Props {
 
 export const Tabla: FC<Props> = ( { areas, empleados } ) => {
     const [ listaEmpleados, setListaEmpleados ] = useState( empleados )
-    const { empleados: query } = useEmpleadoList()
 
     useEffect( () => {
-        setListaEmpleados( query.data )
-    }, [ query.isFetching ] )
+        setListaEmpleados( empleados )
+    }, [ empleados ] )
 
     const handleFilter = ( event: any ) => {
         const entrada = event.target.value
