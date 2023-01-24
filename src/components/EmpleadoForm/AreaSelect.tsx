@@ -1,10 +1,10 @@
 
-import React, { useState } from 'react'
-import { useFormContext } from 'react-hook-form'
-import { useEmpleadoForm } from '../../hooks/useEmpleadoForm'
-import { Area } from '../../interfaces/area.interface'
+import { useState } from 'react'
 import { styles } from './styles'
-import { Typography, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material/'
+import { useFormContext } from 'react-hook-form'
+import { useEmpleadoForm } from '../../hooks'
+import { Area } from '../../interfaces'
+import { Typography, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 
 export const AreaSelect = () => {
     const { areas: listaAreas } = useEmpleadoForm()
@@ -16,9 +16,9 @@ export const AreaSelect = () => {
     }
 
     return (
-        <FormControl variant='standard' color='success' sx={ { minWidth: 120 } } size="small">
+        <FormControl variant='standard' color='success' sx={ { minWidth: 120 } } size="medium">
             <Select
-                MenuProps={ styles.select.menuprops }
+                MenuProps={ styles.container.form.select.__menuprops }
                 { ...register( 'area', { required: 'requerido' } ) }
                 sx={ { color: area ? 'whitesmoke' : 'grey' } }
                 variant="standard"

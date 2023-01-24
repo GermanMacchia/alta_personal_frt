@@ -1,9 +1,9 @@
-import React, { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react'
+import { styles } from './styles'
 import { CardEditActive } from './CardEditActive'
 import { Box } from '@mui/material'
-import { styles } from './styles'
 import { useFormContext } from 'react-hook-form'
-import { primeraMayuscula } from '../../helpers/primeraMayuscula'
+import { capitalize } from '../../helpers'
 
 interface Props {
     data: any
@@ -13,9 +13,9 @@ export const CardEdit: FC<Props> = ( { data } ) => {
     const { setValue } = useFormContext()
 
     useEffect( () => {
-        setValue( '_id', primeraMayuscula( data._id ) )
-        setValue( 'nombre', primeraMayuscula( data.nombre ) )
-        setValue( 'apellido', primeraMayuscula( data.apellido ) )
+        setValue( '_id', capitalize( data._id ) )
+        setValue( 'nombre', capitalize( data.nombre ) )
+        setValue( 'apellido', capitalize( data.apellido ) )
         setValue( 'descripcion', data.descripcion )
         setValue( 'dni', data.dni )
         setValue( 'fechaNac', data.fechaNac )
@@ -23,9 +23,8 @@ export const CardEdit: FC<Props> = ( { data } ) => {
         setValue( 'esDesarrollador', data.esDesarrollador )
     }, [ data ] )
 
-
     return (
-        <Box sx={ styles.containter }>
+        <Box sx={ styles.frame }>
             <CardEditActive />
         </Box>
     )

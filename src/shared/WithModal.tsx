@@ -1,8 +1,5 @@
-import Box from '@mui/material/Box'
-import Modal from '@mui/material/Modal'
-import React from 'react'
-import { FC } from 'react'
-
+import React, { FC, ReactNode } from 'react'
+import { Modal, Box } from '@mui/material'
 
 export const styles = {
     container: {
@@ -18,15 +15,12 @@ export const styles = {
     }
 }
 
-
 interface Props {
     open: boolean
-    children?: React.ReactNode
+    children?: ReactNode
 }
 
 export const WithModal: FC<Props> = ( { open, children } ) => {
-
-
     return (
         <div>
             <Modal

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const style = {
     container: {
         margin: '10vh 10vw'

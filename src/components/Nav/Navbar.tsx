@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
+import { useMatches, useNavigate } from 'react-router'
 import { styles } from './styles'
 import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
 import ListIcon from '@mui/icons-material/List'
 import InfoIcon from '@mui/icons-material/Info'
 import AccountTreeIcon from '@mui/icons-material/AccountTree'
 import GroupAddIcon from '@mui/icons-material/GroupAdd'
-import { useMatches, useNavigate } from 'react-router'
 
 const botones = [
   {
@@ -33,8 +33,9 @@ const botones = [
 export const Navbar = () => {
   const [ value, setValue ] = useState( 0 )
   const navigate = useNavigate()
-  const match = useMatches()
-  const condition = match[ 1 ].pathname === '/'
+  const [ _, match ] = useMatches()
+  const condition = match.pathname === '/'
+
   return (
     <>
       <h1 style={ styles.title }>Alta Usuarios</h1>
@@ -42,7 +43,7 @@ export const Navbar = () => {
         <h2 style={ styles.container.subtitle as React.CSSProperties }>GOTAM-UPE</h2>
       </Box>
       <BottomNavigation
-        sx={ { ...styles.navbar, ...( condition && styles.blur ) } }
+        sx={ { ...styles.container.navbar, ...( condition && styles.container.navbar.__blur ) } }
         showLabels
         value={ value }
         onChange={ ( event, newValue ) => {

@@ -1,5 +1,3 @@
-import { BorderBottom } from "@mui/icons-material"
-
 export const styles = {
     title: {
         fontSize: '1.5rem',
@@ -8,7 +6,7 @@ export const styles = {
     container: {
         height: '20vh',
         minHeight: '100px',
-        backgroundImage: `url(${ "src/assets/5291450.jpg" })`,
+        backgroundImage: `url(${ "src/assets/banner.jpg" })`,
         backgroundPosition: 'top',
         backgroundSize: 'cover',
         position: 'relative',
@@ -18,13 +16,13 @@ export const styles = {
             position: 'absolute',
             bottom: 0,
             right: 30,
-        }
+        },
+        navbar: {
+            borderTop: '5px solid #0e6983',
+            BorderBottom: '2px solid #0e6983',
+            __blur: {
+                filter: 'opacity(0.20)'
+            }
+        },
     },
-    navbar: {
-        borderTop: '5px solid #0e6983',
-        BorderBottom: '2px solid #0e6983'
-    },
-    blur: {
-        filter: 'opacity(0.20)'
-    }
 }

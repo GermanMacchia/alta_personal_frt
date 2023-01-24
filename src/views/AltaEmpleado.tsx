@@ -1,4 +1,3 @@
-import React from 'react'
 import { EmpleadoForm } from '../components/EmpleadoForm/EmpleadoForm'
 import { useEmpleadoForm } from '../hooks/useEmpleadoForm'
 import { WithFormProvider } from '../shared'

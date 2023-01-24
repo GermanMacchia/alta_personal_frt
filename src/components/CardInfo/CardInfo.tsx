@@ -1,16 +1,9 @@
-
-import Card from '@mui/material/Card'
-import React, { FC } from 'react'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-import { Empleado, Area } from '../../interfaces'
+import { FC } from 'react'
 import { styles } from './styles'
-import { primeraMayuscula } from '../../helpers/primeraMayuscula'
-import { Box } from '@mui/material'
-import { usePersonal } from '../../hooks/usePersonal'
+import { Empleado, Area } from '../../interfaces'
+import { Box, Typography, Button, CardMedia, CardContent, CardActions, Card } from '@mui/material'
+import { useEmpleadoList } from '../../hooks'
+import { capitalize } from '../../helpers'
 
 interface Props {
     empleado: Empleado
@@ -18,22 +11,20 @@ interface Props {
 }
 
 export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
-
-    const { areas } = usePersonal()
+    const { areas } = useEmpleadoList()
 
     return (
         <Card sx={ styles.container }>
             <Box sx={ styles.container.column }>
                 <CardMedia
-
                     component="img"
-                    image="/src/assets/User_Circle.png"
+                    image="/src/assets/user-circle.png"
                     alt="user circle"
                     sx={ styles.container.image }
                 />
                 <Box sx={ { margin: '1rem' } }>
                     <Typography gutterBottom variant="h5" component="div">
-                        { primeraMayuscula( empleado.nombre ) + ' ' + primeraMayuscula( empleado.apellido ) }
+                        { capitalize( empleado.nombre ) + ' ' + capitalize( empleado.apellido ) }
                     </Typography>
                     <Typography gutterBottom variant="body2" component="div">
                         <b>DNI:</b> { ' ' }

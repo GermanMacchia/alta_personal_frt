@@ -1,19 +1,18 @@
 
+import { FC, useState } from 'react'
 import IconButton from '@mui/material/IconButton'
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 import BadgeIcon from '@mui/icons-material/Badge'
 import DeleteIcon from '@mui/icons-material/Delete'
-import { FC, useState } from 'react'
 import { WithModal } from './WithModal'
-import { useAreaForm } from '../hooks/useAreaForm'
+import { useAreaForm } from '../hooks'
 import { ConfirmDelete } from './ConfirmDelete'
 import { AlertSnackBar } from './AlertSnackBar'
-import { usePersonal } from '../hooks/usePersonal'
+import { useEmpleadoList } from '../hooks/useEmpleadoList'
 import { CardInfo } from '../components/CardInfo'
 import { CardEditForm } from '../components/CardEditEmpleado'
 import { CardEditAreaForm } from '../components/CardEditArea/CardEditAreaForm'
-import React from 'react'
 
 const styles = {
     margin: '0.4rem',
@@ -39,7 +38,7 @@ export const Botonera: FC<Props> = ( { isUser = false, data } ) => {
     const [ isConfirmDeleteAreaOpen, setIsConfirmDeleteAreaOpen ] = useState( false )
     const [ isConfirmDeleteOpen, setIsConfirmDeleteOpen ] = useState( false )
     const { areaDelete } = useAreaForm()
-    const { empleadoDelete } = usePersonal()
+    const { empleadoDelete } = useEmpleadoList()
 
 
     return (

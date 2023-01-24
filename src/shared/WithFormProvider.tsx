@@ -1,8 +1,6 @@
 import { FC, useState } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 import { AlertSnackBar } from './AlertSnackBar'
-import { useEmpleadoEdit } from '../hooks/useEmpleadoEdit'
-
 interface Props {
     children: React.ReactNode,
     handleSubmit: ( data: any ) => any,

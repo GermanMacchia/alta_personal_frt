@@ -1,4 +1,3 @@
-import React from 'react'
 import { Input } from '../../shared'
 import { AreaSelect } from './AreaSelect'
 import { Label, styles } from './styles'
@@ -6,9 +5,9 @@ import { Box, Typography } from '@mui/material'
 
 export const BloqueData = () => {
     return (
-        <Box sx={ styles.form }>
+        <Box sx={ styles.container.form }>
             <Label>
-                <Box sx={ styles.tag }>
+                <Box sx={ styles.container.form.tag }>
                     <Typography fontWeight={ 400 } display={ 'inline-block' }>
                         DNI &nbsp;
                     </Typography>
@@ -30,7 +29,7 @@ export const BloqueData = () => {
                 />
             </Label>
             <Label>
-                <Box sx={ styles.tag }>
+                <Box sx={ styles.container.form.tag }>
                     <Typography fontWeight={ 400 } display={ 'inline-block' }>
                         Fecha Nacimiento &nbsp;
                     </Typography>
@@ -48,7 +47,7 @@ export const BloqueData = () => {
                 />
             </Label>
             <Label>
-                <Box sx={ styles.tag }>
+                <Box sx={ styles.container.form.tag }>
                     <Typography fontWeight={ 400 } display={ 'inline-block' }>
                         Área &nbsp;
                     </Typography>

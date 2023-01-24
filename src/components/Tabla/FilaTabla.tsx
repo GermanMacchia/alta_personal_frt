@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { styles } from './styles'
 import { InputBusqueda } from './InputBusqueda'
 import TableBody from '@mui/material/TableBody'
