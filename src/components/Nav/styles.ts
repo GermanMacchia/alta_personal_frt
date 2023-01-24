@@ -1,3 +1,5 @@
+import banner from '../../assets/banner.jpg'
+
 export const styles = {
     title: {
         fontSize: '1.5rem',
@@ -6,7 +8,7 @@ export const styles = {
     container: {
         height: '20vh',
         minHeight: '100px',
-        backgroundImage: `url(${ "https://img.freepik.com/vector-gratis/fondo-geometrico-plano_23-2148957201.jpg?w=2000" })`,
+        backgroundImage: `url(${ banner })`,
         backgroundPosition: 'top',
         backgroundSize: 'cover',
         position: 'relative',

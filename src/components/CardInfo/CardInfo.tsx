@@ -4,6 +4,7 @@ import { Empleado, Area } from '../../interfaces'
 import { Box, Typography, Button, CardMedia, CardContent, CardActions, Card } from '@mui/material'
 import { useEmpleadoList } from '../../hooks'
 import { capitalize } from '../../helpers'
+import userImage from '../../assets/user-circle.png'
 
 interface Props {
     empleado: Empleado
@@ -18,7 +19,7 @@ export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
             <Box sx={ styles.container.column }>
                 <CardMedia
                     component="img"
-                    image="https://i.pinimg.com/originals/e2/7c/87/e27c8735da98ec6ccdcf12e258b26475.png"
+                    image={ userImage }
                     alt="user circle"
                     sx={ styles.container.image }
                 />
