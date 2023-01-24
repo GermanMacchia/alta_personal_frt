@@ -59,12 +59,11 @@ export const Botonera: FC<Props> = ( { isUser = false, data } ) => {
                 deleteHandler={ areaDelete }
                 data={ data } />
             }
-            {
-                <ConfirmDelete
-                    handleOpen={ () => setIsConfirmDeleteOpen( !isConfirmDeleteOpen ) }
-                    isOpen={ isConfirmDeleteOpen }
-                    deleteHandler={ empleadoDelete }
-                    data={ data } />
+            { <ConfirmDelete
+                handleOpen={ () => setIsConfirmDeleteOpen( !isConfirmDeleteOpen ) }
+                isOpen={ isConfirmDeleteOpen }
+                deleteHandler={ empleadoDelete }
+                data={ data } />
             }
             {/*ACCIONES*/ }
             {
