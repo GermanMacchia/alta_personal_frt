@@ -7,11 +7,11 @@ import { capitalize } from '../../helpers'
 
 interface Props {
     empleado: Empleado
+    areas: Area[]
     handleClose: () => void
 }
 
-export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
-    const { areas } = useEmpleadoList()
+export const CardInfo: FC<Props> = ( { empleado, handleClose, areas } ) => {
 
     return (
         <Card sx={ styles.container }>
@@ -48,7 +48,7 @@ export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
                     </Typography>
                     <Typography gutterBottom variant="body2" >
                         <p><b>Área:</b></p>
-                        { areas.data.find( ( area: Area ) => area._id === empleado.area ).nombre.toUpperCase() }
+                        { areas.find( ( area: Area ) => area._id === empleado.area )?.nombre.toUpperCase() }
                     </Typography>
                     <Typography gutterBottom maxHeight='10px' variant="body2" >
                         <p><b>Otros:</b></p>

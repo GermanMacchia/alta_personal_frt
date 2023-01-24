@@ -37,7 +37,7 @@ export const Botonera: FC<Props> = ( { isUser = false, data } ) => {
     const [ isInfoOpen, setIsInfoOpen ] = useState( false )
     const [ isConfirmDeleteAreaOpen, setIsConfirmDeleteAreaOpen ] = useState( false )
     const [ isConfirmDeleteOpen, setIsConfirmDeleteOpen ] = useState( false )
-    const { areaDelete } = useAreaForm()
+    const { areaDelete, areas } = useAreaForm()
     const { empleadoDelete } = useEmpleadoList()
 
 
@@ -50,7 +50,7 @@ export const Botonera: FC<Props> = ( { isUser = false, data } ) => {
             { areaDelete.isSuccess && <AlertSnackBar isOpen={ true } severity='success' message={ areaDeleteSuccessMsg } /> }
             {/*MODALES*/ }
             { <WithModal open={ isEditAreaOpen } children={ <CardEditAreaForm area={ data } handleClose={ () => setIsEditAreaOpen( !isEditAreaOpen ) } /> } /> }
-            { <WithModal open={ isInfoOpen } children={ <CardInfo empleado={ data } handleClose={ () => setIsInfoOpen( !isInfoOpen ) } /> } /> }
+            { <WithModal open={ isInfoOpen } children={ <CardInfo empleado={ data } areas={ areas.data } handleClose={ () => setIsInfoOpen( !isInfoOpen ) } /> } /> }
             { <WithModal open={ isEditOpen } children={ <CardEditForm empleado={ data } handleClose={ () => setIsEditOpen( !isEditOpen ) } /> } /> }
             {/*CONFIRMACIONES DE ELIMINACION*/ }
             { <ConfirmDelete

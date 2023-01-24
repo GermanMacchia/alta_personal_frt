@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { deleteArea, editArea, fetchAreas, postAreas } from '../api'
+import { Area } from '../interfaces'
 
 export const useAreaForm = () => {
 
