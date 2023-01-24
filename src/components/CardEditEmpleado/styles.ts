@@ -21,7 +21,8 @@ export const styles = {
                 },
             },
             submit: {
-                marginTop: '1rem'
+                marginTop: '1rem',
+                height: '45px',
             }
         },
     },

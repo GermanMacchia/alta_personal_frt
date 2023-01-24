@@ -1,10 +1,15 @@
 import { styles } from './styles'
-import { FormControlLabel, FormGroup, FormLabel, Switch, Box, Button } from '@mui/material'
+import { FormControlLabel, FormGroup, FormLabel, Switch, Box, Button, CircularProgress } from '@mui/material'
 import { FormControl } from '@mui/material'
 import { BloqueText } from '../EmpleadoForm'
 import { useEmpleadoList } from '../../hooks'
+import { FC } from 'react'
 
-export const CardEditActive = () => {
+interface Props {
+    isLoading: boolean
+}
+
+export const CardEditActive: FC<Props> = ( { isLoading } ) => {
     const { isActive, handleActiveCheck } = useEmpleadoList()
 
     return (
@@ -41,7 +46,9 @@ export const CardEditActive = () => {
                     </FormControl>
                 </Box >
             </Box>
-            <Button sx={ styles.modal.container.submit } variant='contained' type="submit">Enviar</Button>
+            <Button sx={ styles.modal.container.submit } variant='contained' type="submit">
+                { isLoading ? <CircularProgress /> : 'Enviar' }
+            </Button>
         </Box>
     )
 }

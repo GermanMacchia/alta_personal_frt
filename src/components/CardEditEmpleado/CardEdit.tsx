@@ -7,9 +7,10 @@ import { capitalize } from '../../helpers'
 
 interface Props {
     data: any
+    isLoading: boolean
 }
 
-export const CardEdit: FC<Props> = ( { data } ) => {
+export const CardEdit: FC<Props> = ( { data, isLoading } ) => {
     const { setValue } = useFormContext()
 
     useEffect( () => {
@@ -25,7 +26,7 @@ export const CardEdit: FC<Props> = ( { data } ) => {
 
     return (
         <Box sx={ styles.frame }>
-            <CardEditActive />
+            <CardEditActive isLoading={ isLoading } />
         </Box>
     )
 }
