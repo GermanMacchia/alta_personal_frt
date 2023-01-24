@@ -1,10 +1,3 @@
-
-<<<<<<< HEAD
-import { FormControlLabel, FormGroup, FormLabel, Switch, Box, Button } from '@mui/material'
-import { FormControl } from '@mui/material/'
-import { useEmpleadoEdit } from '../../hooks/useEmpleadoEdit'
-=======
->>>>>>> main
 import { styles } from './styles'
 import { FormControlLabel, FormGroup, FormLabel, Switch, Box, Button } from '@mui/material'
 import { FormControl } from '@mui/material'

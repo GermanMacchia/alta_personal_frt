@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-import { Typography, Box, CircularProgress, Button } from '@mui/material'
-import { Container } from "@mui/system"
-=======
 import { FC, useEffect } from 'react'
->>>>>>> main
 import { styles } from './styles'
 import { Typography, Box, CircularProgress, Button, Container } from '@mui/material'
 import { useFormContext } from 'react-hook-form'
-<<<<<<< HEAD
-import { FC, useEffect } from 'react'
-=======
->>>>>>> main
 import { AreaInput } from './AreaInput'
 
 interface Props {

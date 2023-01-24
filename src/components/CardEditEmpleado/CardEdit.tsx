@@ -1,8 +1,5 @@
 import { FC, useEffect } from 'react'
-<<<<<<< HEAD
-=======
 import { styles } from './styles'
->>>>>>> main
 import { CardEditActive } from './CardEditActive'
 import { Box } from '@mui/material'
 import { useFormContext } from 'react-hook-form'

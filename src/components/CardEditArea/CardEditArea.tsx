@@ -1,11 +1,4 @@
 import { FC, useState, useEffect } from 'react'
-<<<<<<< HEAD
-import { FormControl } from '@mui/material/'
-import { Box, FormLabel, FormControlLabel, Switch } from '@mui/material'
-import { styles } from './styles'
-import Button from '@mui/material/Button'
-=======
->>>>>>> main
 import { useFormContext } from 'react-hook-form'
 import { styles } from './styles'
 import { Box, FormLabel, FormControlLabel, Switch, CircularProgress, Button, FormControl } from '@mui/material'

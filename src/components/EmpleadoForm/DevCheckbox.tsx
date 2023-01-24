@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import { Box } from '@mui/material'
-import Checkbox from '@mui/material/Checkbox'
-=======
 import { Box, Checkbox } from '@mui/material'
->>>>>>> main
 import { FC, useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 

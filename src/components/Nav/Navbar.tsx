@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { useState } from 'react'
-=======
 import React, { useState } from 'react'
 import { useMatches, useNavigate } from 'react-router'
->>>>>>> main
 import { styles } from './styles'
 import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
 import ListIcon from '@mui/icons-material/List'

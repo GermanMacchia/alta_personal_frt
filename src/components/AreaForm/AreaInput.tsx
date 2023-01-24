@@ -1,8 +1,5 @@
 import { FC } from 'react'
-<<<<<<< HEAD
-=======
 import { Label, styles } from './styles'
->>>>>>> main
 import { Input } from '../../shared/Input'
 import { Typography } from '@mui/material/'
 import { Box } from '@mui/material'

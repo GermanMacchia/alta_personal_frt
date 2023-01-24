@@ -1,10 +1,4 @@
 import { FC } from "react"
-<<<<<<< HEAD
-import { WithFormProvider } from '../../shared/WithFormProvider'
-import { Box } from '@mui/material'
-import Button from '@mui/material/Button'
-=======
->>>>>>> main
 import { styles } from './styles'
 import { WithFormProvider } from '../../shared/WithFormProvider'
 import { Box, Button } from '@mui/material'

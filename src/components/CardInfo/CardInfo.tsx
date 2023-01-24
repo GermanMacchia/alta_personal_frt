@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-
-import Card from '@mui/material/Card'
 import { FC } from 'react'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-import { Empleado, Area } from '../../interfaces'
-=======
-import { FC } from 'react'
->>>>>>> main
 import { styles } from './styles'
 import { Empleado, Area } from '../../interfaces'
 import { Box, Typography, Button, CardMedia, CardContent, CardActions, Card } from '@mui/material'
@@ -30,11 +18,7 @@ export const CardInfo: FC<Props> = ( { empleado, handleClose } ) => {
             <Box sx={ styles.container.column }>
                 <CardMedia
                     component="img"
-<<<<<<< HEAD
                     image="https://i.pinimg.com/originals/e2/7c/87/e27c8735da98ec6ccdcf12e258b26475.png"
-=======
-                    image="/src/assets/user-circle.png"
->>>>>>> main
                     alt="user circle"
                     sx={ styles.container.image }
                 />

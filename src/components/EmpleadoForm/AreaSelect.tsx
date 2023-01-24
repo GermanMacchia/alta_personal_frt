@@ -1,11 +1,5 @@
 
 import { useState } from 'react'
-<<<<<<< HEAD
-import { useFormContext } from 'react-hook-form'
-import { useEmpleadoForm } from '../../hooks/useEmpleadoForm'
-import { Area } from '../../interfaces/area.interface'
-=======
->>>>>>> main
 import { styles } from './styles'
 import { useFormContext } from 'react-hook-form'
 import { useEmpleadoForm } from '../../hooks'

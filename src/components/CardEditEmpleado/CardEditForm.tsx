@@ -1,8 +1,5 @@
 import { FC } from 'react'
-<<<<<<< HEAD
-=======
 import { styles } from './styles'
->>>>>>> main
 import { WithFormProvider } from '../../shared/WithFormProvider'
 import { CardEdit } from './CardEdit'
 import { Box, Button } from '@mui/material'
