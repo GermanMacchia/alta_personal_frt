@@ -13,9 +13,11 @@ interface Props {
 
 export const EmpleadoForm: FC<Props> = ( { isLoading } ) => {
     const { register, reset } = useFormContext()
+    const [ trigger, setTrigger ] = useState( false )
 
     useEffect( () => {
         if ( !isLoading ) {
+            setTrigger( !trigger )
             reset()
         }
     }, [ isLoading ] )
@@ -34,9 +36,9 @@ export const EmpleadoForm: FC<Props> = ( { isLoading } ) => {
                 <input { ...register( 'formType' ) } type="hidden" value="AltaEmpleado" />
                 <Box sx={ styles.container.form.__inputData }>
                     <BloqueText />
-                    <BloqueData />
+                    <BloqueData trigger={ trigger } />
                 </Box>
-                <DevCheckbox />
+                <DevCheckbox trigger={ trigger } />
                 <Button variant="contained" type="submit" disableElevation sx={ styles.container.form.submit }>
                     { isLoading ? <CircularProgress /> : 'Enviar' }
                 </Button>

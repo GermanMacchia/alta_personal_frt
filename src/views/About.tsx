@@ -21,8 +21,9 @@ export const About = () => {
             <hr />
             <h2>Mejoras a realizar:</h2><hr />
             <ul>
-                <li>Login</li><br />
-                <li>Avatares</li>
+                <li>Login para admin</li><br />
+                <li>Avatares para empleado</li>
+                <li>Responsive design</li>
             </ul>
             <hr />
             <h2>Repositorios:</h2><hr />

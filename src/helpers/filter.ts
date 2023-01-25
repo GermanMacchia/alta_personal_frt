@@ -15,7 +15,7 @@ export const filter = ( array: Empleado[], entrada: string ) => {
         )
         return aux
     }
-
+    if ( entrada.toLowerCase() === 'dev' ) return array.filter( e => e.esDesarrollador )
     if ( /\d/g.test( entrada ) ) return filtrarNumeros()
     if ( /\D/g.test( entrada ) ) return filtrarLetras()
 }

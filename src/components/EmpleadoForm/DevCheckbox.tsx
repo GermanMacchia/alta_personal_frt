@@ -3,12 +3,12 @@ import { ChangeEvent, FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
 
 interface Props {
-    devCheckActivo?: boolean
+    trigger: boolean
 }
 
-export const DevCheckbox: FC<Props> = ( { devCheckActivo } ) => {
+export const DevCheckbox: FC<Props> = ( { trigger } ) => {
     const [ checked, setChecked ] = useState( false )
-    const { register, formState: { isSubmitted } } = useFormContext()
+    const { register } = useFormContext()
 
     const handleChange = ( event: ChangeEvent<HTMLInputElement> ) => {
         setChecked( event.target.checked )
@@ -16,13 +16,12 @@ export const DevCheckbox: FC<Props> = ( { devCheckActivo } ) => {
 
     useEffect( () => {
         setChecked( false )
-    }, [ isSubmitted ] )
+    }, [ trigger ] )
 
     return (
         <Box sx={ { display: 'flex', justifyContent: 'space-between', width: '50%' } }>
             <h4 style={ { color: "whitesmoke" } }>Es desarrollador?</h4>
             <Checkbox
-                disabled={ devCheckActivo }
                 { ...register( 'esDesarrollador' ) }
                 checked={ checked }
                 onChange={ handleChange }
