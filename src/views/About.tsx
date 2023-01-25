@@ -17,7 +17,7 @@ export const About = () => {
             <hr />
             <h1 style={ styles.container.title }>Alta Empleados</h1><hr /><br />
             <p>Aplicación CRUD realizado para el challenge Gotam-Upe por{ ' ' }
-                <a style={ styles.container.link } href="www.linkedin.com/in/germanmacchia" target="_blank">Germán O. Macchia</a></p>
+                <a style={ styles.container.link } href="https://www.linkedin.com/in/germanmacchia" target="_blank">Germán O. Macchia</a></p>
             <hr />
             <h2>Mejoras a realizar:</h2><hr />
             <ul>
