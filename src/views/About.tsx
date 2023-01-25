@@ -22,7 +22,7 @@ export const About = () => {
             <h2>Mejoras a realizar:</h2><hr />
             <ul>
                 <li>Login para admin</li><br />
-                <li>Avatares para empleado</li>
+                <li>Avatares para empleado</li><br />
                 <li>Responsive design</li>
             </ul>
             <hr />
