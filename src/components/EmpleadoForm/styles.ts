@@ -31,11 +31,10 @@ export const styles = {
       },
       submit: {
         color: '#fff',
-        width: '100%',
+        width: '25%',
         textTransform: 'none',
         height: '45px',
         borderRadius: '8px',
-        marginTop: '4vh',
       },
       select: {
         __menuprops: {

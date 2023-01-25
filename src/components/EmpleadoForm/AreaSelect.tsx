@@ -13,13 +13,14 @@ interface Props {
 export const AreaSelect: FC<Props> = ( { trigger } ) => {
     const { areas: listaAreas } = useEmpleadoForm()
     const [ area, setArea ] = useState( '' )
-    const { register, formState: { errors } } = useFormContext()
+    const { register, setError, formState: { errors, isSubmitted } } = useFormContext()
 
     const handleChange = ( event: SelectChangeEvent ) => {
         setArea( event.target.value )
     }
 
     useEffect( () => {
+        if ( isSubmitted && area === '' ) setError( 'area', { type: 'custom', message: 'requerido' } )
         setArea( '' )
     }, [ trigger ] )
 
@@ -38,14 +39,14 @@ export const AreaSelect: FC<Props> = ( { trigger } ) => {
                 <MenuItem value="" disabled sx={ { color: 'text.disabled' } }>Área</MenuItem>
                 { listaAreas && listaAreas.map( ( area: Area ) => <MenuItem key={ area._id } value={ area._id }>{ area.nombre.toUpperCase() }</MenuItem> ) }
             </Select>
-            { errors.name && (
+            { errors.area && (
                 <Typography
                     variant='caption'
                     sx={ { position: 'absolute', margin: '-21px 0', right: 0 } }
                     color='#fc746d'
                     className='errorText'
                 >
-                    { ( errors as any ).name.message }
+                    { ( errors as any ).area.message }
                 </Typography>
             ) }
         </FormControl>

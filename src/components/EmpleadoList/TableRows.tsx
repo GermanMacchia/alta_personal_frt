@@ -94,7 +94,7 @@ export const TableRows: FC<Props> = ( { handleFilter, empleados, areas } ) => {
       <Box sx={ styles.table.container }>
         <TablePagination
           sx={ styles.table.container.pagination }
-          rowsPerPageOptions={ [ 10, 15, 30 ] }
+          rowsPerPageOptions={ [ 5, 10, 20 ] }
           count={ empleados.length }
           rowsPerPage={ rowsPerPage }
           page={ page }

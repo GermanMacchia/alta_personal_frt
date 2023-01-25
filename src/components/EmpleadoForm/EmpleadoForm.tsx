@@ -24,13 +24,16 @@ export const EmpleadoForm: FC<Props> = ( { isLoading } ) => {
 
     return (
         <Container sx={ styles.container } maxWidth="sm">
-            <Box >
-                <Typography sx={ styles.container.title }>
-                    Alta Empleado
-                </Typography>
-                <Typography sx={ styles.container.subtitle }>
-                    Introduzca los datos del empleado
-                </Typography>
+            <Box display='flex' alignItems="flex-start" justifyContent="space-between">
+                <Box>
+                    <Typography sx={ styles.container.title }>
+                        Alta Empleado
+                    </Typography>
+                    <Typography sx={ styles.container.subtitle }>
+                        Introduzca los datos del empleado
+                    </Typography>
+                </Box>
+
             </Box>
             <Box sx={ styles.container.form }>
                 <input { ...register( 'formType' ) } type="hidden" value="AltaEmpleado" />
@@ -38,10 +41,12 @@ export const EmpleadoForm: FC<Props> = ( { isLoading } ) => {
                     <TextInputBlock />
                     <DataInputBlock trigger={ trigger } />
                 </Box>
-                <IsDevCheckbox trigger={ trigger } />
-                <Button variant="contained" type="submit" disableElevation sx={ styles.container.form.submit }>
-                    { isLoading ? <CircularProgress /> : 'Enviar' }
-                </Button>
+                <Box display='flex' alignItems="flex-start" justifyContent="space-between">
+                    <IsDevCheckbox trigger={ trigger } />
+                    <Button variant="contained" type="submit" disableElevation sx={ styles.container.form.submit }>
+                        { isLoading ? <CircularProgress /> : 'Enviar' }
+                    </Button>
+                </Box>
             </Box>
         </Container >
     )
