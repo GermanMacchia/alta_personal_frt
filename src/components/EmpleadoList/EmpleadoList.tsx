@@ -1,18 +1,18 @@
 import { FC, useEffect, useState } from 'react'
 import { styles } from './styles'
-import { filter, debounce } from '../../helpers/'
+import { filter, debounce } from '../../helpers'
 import { Area, Empleado } from '../../interfaces'
 import Table from '@mui/material/Table'
 import TableContainer from '@mui/material/TableContainer'
 import Paper from '@mui/material/Paper'
-import { FilaTabla } from './FilaTabla'
-import { useEmpleadoList } from '../../hooks'
+import { TableRows } from './TableRows'
+
 interface Props {
     areas: Area[]
     empleados: Empleado[]
 }
 
-export const Tabla: FC<Props> = ( { areas, empleados } ) => {
+export const EmpleadosList: FC<Props> = ( { areas, empleados } ) => {
     const [ listaEmpleados, setListaEmpleados ] = useState( empleados )
 
     useEffect( () => {
@@ -30,7 +30,7 @@ export const Tabla: FC<Props> = ( { areas, empleados } ) => {
     return (
         <TableContainer sx={ styles.table } component={ Paper }>
             <Table aria-label="simple table">
-                <FilaTabla handleFilter={ handleFilter } empleados={ listaEmpleados } areas={ areas } />
+                <TableRows handleFilter={ handleFilter } empleados={ listaEmpleados } areas={ areas } />
             </Table>
         </TableContainer>
     )

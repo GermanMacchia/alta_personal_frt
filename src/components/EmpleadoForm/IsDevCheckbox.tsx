@@ -6,7 +6,7 @@ interface Props {
     trigger: boolean
 }
 
-export const DevCheckbox: FC<Props> = ( { trigger } ) => {
+export const IsDevCheckbox: FC<Props> = ( { trigger } ) => {
     const [ checked, setChecked ] = useState( false )
     const { register } = useFormContext()
 

@@ -1,9 +1,7 @@
 import App from '../App'
 import { createBrowserRouter } from "react-router-dom"
-import { EmpleadosList, About, NotFound, AreasList, AltaEmpleado } from '../views'
+import { ListaEmpleado, About, NotFound, ListaArea, AltaEmpleado } from '../views'
 import { SignIn } from '../components/SignIn'
-import React from 'react'
-
 
 
 export const router = createBrowserRouter( [
@@ -19,12 +17,12 @@ export const router = createBrowserRouter( [
             },
             {
                 path: '/lista-empleados',
-                element: <EmpleadosList />,
+                element: <ListaEmpleado />,
                 errorElement: <NotFound />
             },
             {
                 path: '/lista-areas',
-                element: <AreasList />,
+                element: <ListaArea />,
                 errorElement: <NotFound />
             },
             {

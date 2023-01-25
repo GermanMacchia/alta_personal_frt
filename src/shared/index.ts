@@ -1,4 +1,4 @@
-export { Botonera } from "./Botonera"
+export { OptionsButtons } from "./OptionsButtons"
 export { WithFormProvider } from "./WithFormProvider"
 export { Input } from "./Input"
 export { AlertSnackBar } from "./AlertSnackBar"

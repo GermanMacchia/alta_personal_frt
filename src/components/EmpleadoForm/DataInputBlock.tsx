@@ -8,7 +8,7 @@ interface Props {
     trigger: boolean
 }
 
-export const BloqueData: FC<Props> = ( { trigger } ) => {
+export const DataInputBlock: FC<Props> = ( { trigger } ) => {
     return (
         <Box sx={ styles.container.form }>
             <Label>

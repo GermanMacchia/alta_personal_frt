@@ -8,7 +8,7 @@ interface Props {
     handleChange: ( event: any ) => void
 }
 
-export const InputBusqueda: FC<Props> = ( { handleChange } ) => {
+export const InputSearch: FC<Props> = ( { handleChange } ) => {
     return (
         <Paper
             sx={ { p: '2px 4px', display: 'flex', alignItems: 'center' } }

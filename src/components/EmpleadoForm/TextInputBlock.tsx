@@ -9,7 +9,7 @@ interface Props {
     descripcionActiva?: boolean
 }
 
-export const BloqueText: FC<Props> = ( { nombreActivo, apellidoActivo, descripcionActiva } ) => {
+export const TextInputBlock: FC<Props> = ( { nombreActivo, apellidoActivo, descripcionActiva } ) => {
     return (
         <Box sx={ styles.container.form }>
             <Label>

@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import { FC, SyntheticEvent } from 'react'
 import { styles } from './styles'
-import { InputBusqueda } from './InputBusqueda'
+import { InputSearch } from './InputSearch'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
@@ -8,10 +8,10 @@ import TableRow from '@mui/material/TableRow'
 import CancelIcon from '@mui/icons-material/Cancel'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { Area, Empleado } from '../../interfaces'
-import { Botonera } from '../../shared'
+import { OptionsButtons } from '../../shared'
 
 interface Props {
-  handleFilter: ( e: React.SyntheticEvent ) => void,
+  handleFilter: ( e: SyntheticEvent ) => void,
   empleados: Empleado[],
   areas: Area[]
 }
@@ -41,7 +41,7 @@ const getAreaName = ( areas: Area[], id: string ) => {
 }
 
 
-export const FilaTabla: FC<Props> = ( { handleFilter, empleados, areas } ) => {
+export const TableRows: FC<Props> = ( { handleFilter, empleados, areas } ) => {
 
   return (
     <>
@@ -50,7 +50,7 @@ export const FilaTabla: FC<Props> = ( { handleFilter, empleados, areas } ) => {
         <TableRow sx={ styles.table.tableHeader }>
           { retonarHeaders() }
           <TableCell align="right">
-            <InputBusqueda handleChange={ handleFilter } />
+            <InputSearch handleChange={ handleFilter } />
           </TableCell>
         </TableRow>
       </TableHead>
@@ -72,7 +72,7 @@ export const FilaTabla: FC<Props> = ( { handleFilter, empleados, areas } ) => {
             </TableCell>
             <TableCell align="right">{ getAreaName( areas, empleado.area )?.toUpperCase() }</TableCell>
             <TableCell sx={ styles.table.tableButtons }>
-              <Botonera data={ empleado } isUser={ true } />
+              <OptionsButtons data={ empleado } isUser={ true } />
             </TableCell>
           </TableRow>
         ) ) }

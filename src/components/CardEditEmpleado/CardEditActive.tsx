@@ -2,7 +2,7 @@
 import { styles } from './styles'
 import { FormControlLabel, FormGroup, FormLabel, Switch, Box, Button, CircularProgress } from '@mui/material'
 import { FormControl } from '@mui/material'
-import { BloqueText } from '../EmpleadoForm'
+import { TextInputBlock } from '../EmpleadoForm'
 import { useEmpleadoList } from '../../hooks'
 import { FC } from 'react'
 
@@ -17,7 +17,7 @@ export const CardEditActive: FC<Props> = ( { isLoading } ) => {
         <Box sx={ styles.modal.container } >
             <Box sx={ styles.modal.container.form } >
                 <Box>
-                    <BloqueText nombreActivo={ isActive.nombre } apellidoActivo={ isActive.apellido } descripcionActiva={ isActive.descripcion } />
+                    <TextInputBlock nombreActivo={ isActive.nombre } apellidoActivo={ isActive.apellido } descripcionActiva={ isActive.descripcion } />
                 </Box>
                 <Box>
                 </Box>

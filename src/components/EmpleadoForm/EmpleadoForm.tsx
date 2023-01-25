@@ -3,9 +3,9 @@ import { Typography, Box, CircularProgress, Button } from '@mui/material'
 import { Container } from "@mui/system"
 import { styles } from './styles'
 import { useFormContext } from 'react-hook-form'
-import { BloqueText } from './BloqueText'
-import { BloqueData } from './BloqueData'
-import { DevCheckbox } from './DevCheckbox'
+import { TextInputBlock } from './TextInputBlock'
+import { DataInputBlock } from './DataInputBlock'
+import { IsDevCheckbox } from './IsDevCheckbox'
 
 interface Props {
     isLoading: boolean
@@ -35,10 +35,10 @@ export const EmpleadoForm: FC<Props> = ( { isLoading } ) => {
             <Box sx={ styles.container.form }>
                 <input { ...register( 'formType' ) } type="hidden" value="AltaEmpleado" />
                 <Box sx={ styles.container.form.__inputData }>
-                    <BloqueText />
-                    <BloqueData trigger={ trigger } />
+                    <TextInputBlock />
+                    <DataInputBlock trigger={ trigger } />
                 </Box>
-                <DevCheckbox trigger={ trigger } />
+                <IsDevCheckbox trigger={ trigger } />
                 <Button variant="contained" type="submit" disableElevation sx={ styles.container.form.submit }>
                     { isLoading ? <CircularProgress /> : 'Enviar' }
                 </Button>

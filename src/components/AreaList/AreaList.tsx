@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material'
 import { Area } from '../../interfaces'
-import { Botonera } from '../../shared'
+import { OptionsButtons } from '../../shared'
 
 interface Props {
     areas: Area[]
 }
 
-export const ListaArea: FC<Props> = ( { areas } ) => {
+export const AreaList: FC<Props> = ( { areas } ) => {
     return (
         <>
             <TableContainer component={ Paper } sx={ { width: 550 } }>
@@ -28,7 +28,7 @@ export const ListaArea: FC<Props> = ( { areas } ) => {
                                     { area.nombre.toUpperCase() }
                                 </TableCell>
                                 <TableCell align="right">
-                                    <Botonera data={ area } />
+                                    <OptionsButtons data={ area } />
                                 </TableCell>
                             </TableRow>
                         ) ) }

@@ -30,7 +30,7 @@ interface Props {
 const areaDeleteSuccessMsg = "Area eliminada"
 const empleadoDeleteSuccessMsg = "Empleado borrado"
 
-export const Botonera: FC<Props> = ( { isUser = false, data } ) => {
+export const OptionsButtons: FC<Props> = ( { isUser = false, data } ) => {
 
     const [ isEditOpen, setIsEditOpen ] = useState( false )
     const [ isEditAreaOpen, setIsEditAreaOpen ] = useState( false )
