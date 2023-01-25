@@ -3,6 +3,8 @@ import Paper from '@mui/material/Paper'
 import InputBase from '@mui/material/InputBase'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
+import { styles } from './styles'
+import { Box } from '@mui/material'
 
 interface Props {
     handleChange: ( event: any ) => void
@@ -10,18 +12,19 @@ interface Props {
 
 export const InputSearch: FC<Props> = ( { handleChange } ) => {
     return (
-        <Paper
-            sx={ { p: '2px 4px', display: 'flex', alignItems: 'center' } }
-        >
-            <InputBase
-                sx={ { ml: 1, flex: 1 } }
-                placeholder="Buscar"
-                onChange={ handleChange }
-                color='success'
-            />
-            <IconButton disabled type="button" sx={ { p: '10px' } } aria-label="search">
-                <SearchIcon />
-            </IconButton>
-        </Paper>
+        <Box sx={ { display: 'flex', justifyContent: 'center', alignContent: 'center', margin: '10px 0' } }>
+            <Paper sx={ styles.table.inputSearch }>
+                <InputBase
+                    sx={ styles.table.inputSearch }
+                    placeholder="Buscar"
+                    onChange={ handleChange }
+
+                    color='success'
+                />
+                <IconButton disabled type="button" sx={ { padding: '10px' } } aria-label="search">
+                    <SearchIcon />
+                </IconButton>
+            </Paper >
+        </Box>
     )
 }

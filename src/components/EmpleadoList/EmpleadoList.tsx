@@ -6,6 +6,7 @@ import Table from '@mui/material/Table'
 import TableContainer from '@mui/material/TableContainer'
 import Paper from '@mui/material/Paper'
 import { TableRows } from './TableRows'
+import { Box, Hidden } from '@mui/material'
 
 interface Props {
     areas: Area[]
@@ -29,7 +30,7 @@ export const EmpleadosList: FC<Props> = ( { areas, empleados } ) => {
 
     return (
         <TableContainer sx={ styles.table } component={ Paper }>
-            <Table aria-label="simple table">
+            <Table size='small' padding='none' aria-label="simple table">
                 <TableRows handleFilter={ handleFilter } empleados={ listaEmpleados } areas={ areas } />
             </Table>
         </TableContainer>

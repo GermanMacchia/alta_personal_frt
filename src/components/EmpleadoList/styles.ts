@@ -1,18 +1,33 @@
 export const styles = {
     table: {
-        minWidth: 650,
-        margin: "10px auto",
         borderRadius: 0,
-        tableHeader: {
-            borderBottom: '4px solid #375944',
+        inputSearch: {
+            width: '60%',
+            height: '40px'
         },
         tableItem: {
+            widht: '40%',
             '&:hover': {
                 background: "rgba(101, 158, 65, 0.08)"
             },
         },
         tableButtons: {
             paddingLeft: '5rem'
+        },
+        container: {
+            display: 'flex',
+            marging: 0,
+            justifyContent: 'flex-end',
+            background: '#242424',
+            width: '100%',
+            position: 'fixed',
+            bottom: 0,
+            pagination: {
+                color: 'aliceblue',
+                '& .MuiTablePagination-selectIcon, .MuiSvgIcon-root': {
+                    fill: 'aliceblue'
+                },
+            }
         }
     }
 }
