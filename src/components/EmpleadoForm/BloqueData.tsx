@@ -4,7 +4,11 @@ import { AreaSelect } from './AreaSelect'
 import { Label, styles } from './styles'
 import { Box, Typography } from '@mui/material'
 
-export const BloqueData = () => {
+interface Props {
+    trigger: boolean
+}
+
+export const BloqueData: FC<Props> = ( { trigger } ) => {
     return (
         <Box sx={ styles.container.form }>
             <Label>
@@ -56,7 +60,7 @@ export const BloqueData = () => {
                         *
                     </Typography>
                 </Box>
-                <AreaSelect />
+                <AreaSelect trigger={ trigger } />
             </Label>
         </Box>
     )

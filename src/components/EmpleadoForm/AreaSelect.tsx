@@ -6,10 +6,14 @@ import { useEmpleadoForm } from '../../hooks'
 import { Area } from '../../interfaces'
 import { Typography, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 
-export const AreaSelect = () => {
+interface Props {
+    trigger: boolean
+}
+
+export const AreaSelect: FC<Props> = ( { trigger } ) => {
     const { areas: listaAreas } = useEmpleadoForm()
     const [ area, setArea ] = useState( '' )
-    const { register, formState: { errors, isSubmitted } } = useFormContext()
+    const { register, formState: { errors } } = useFormContext()
 
     const handleChange = ( event: SelectChangeEvent ) => {
         setArea( event.target.value )
@@ -17,7 +21,7 @@ export const AreaSelect = () => {
 
     useEffect( () => {
         setArea( '' )
-    }, [ isSubmitted ] )
+    }, [ trigger ] )
 
     return (
         <FormControl variant='standard' color='success' sx={ { minWidth: 120 } } size="medium">
