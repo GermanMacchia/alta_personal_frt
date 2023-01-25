@@ -2,7 +2,6 @@ import { FC } from 'react'
 import { styles } from './styles'
 import { Empleado, Area } from '../../interfaces'
 import { Box, Typography, Button, CardMedia, CardContent, CardActions, Card } from '@mui/material'
-import { useEmpleadoList } from '../../hooks'
 import { capitalize } from '../../helpers'
 
 interface Props {

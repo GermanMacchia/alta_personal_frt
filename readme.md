@@ -1,4 +1,4 @@
-<h1 style="color: Cyan">Challenge Alta Personal</h1> 
+<h1>Challenge Alta Personal</h1> 
 <img style="height:200px; width: 350px"  src="https://miro.medium.com/max/1024/1*Ukhx76VQ8E6JXEW7xfIzSA.png" alt="imagen" />
 <br>
 
@@ -24,6 +24,8 @@ D. [Documentación del proyecto](#documentación-del-proyecto)
     * [Hooks](#hooks)
 
     * [Shared](#shared)
+
+    * [Composición](#composición)
 
 
 <br><br><br>
@@ -99,17 +101,17 @@ para pensar sobre un proyecto escalable.
 
 ## Tecnologías
 
-**React hook forms**
+**React hook forms**<br> 
 React hook forms nos permite hacer formularios sin necesidad de controlarlos por medio de 
 funciones. De esta manera reducimos los renders de nuestros componentes.
 Además nos otorga hooks para evaluar errores, establecer requerimientos, saber si esta 
 escrito el input ets.
 
-**React Router**
+**React Router**<br> 
 Esta libreria nos permite generar un ruteado. Aunque el desarrollado en esta ocación es 
 el básico, React Router nos ofrece una variedad de utilidades.
 
-**React Query**
+**React Query**<br> 
 Esta libreria nos permite generar peticiones y mutaciones a una api determinada. <br>
 Una de las mayores utilidades que presenta esta librería es que guarda los datos en caché. Esto
 presenta un cambio rotundo en la forma que desarrollabamos ya que (dependiendo las necesidad) 
@@ -120,7 +122,7 @@ para realizarlas.<br>
 React Query nos provee un devtool incluido. Se trata de una ui que nos permite ver el estado 
 de nuestas query.
 
-**Material Ui**
+**Material Ui**<br> 
 Material UI es una conocida libreria de bootstraps que nos proporciona componentes *out of the box*
 para poder desplegar en nuestra aplicacion o página web. Aunque este proyecto no lo presenta,
 se pueden configurar tematicas centralizadas para llevar una linea en el diseño de nuestra apliación.
@@ -134,14 +136,17 @@ se pueden configurar tematicas centralizadas para llevar una linea en el diseño
 
 <br />
 
-<p style="color: orange">Capitalize</p>
-Capitalize es una función que nos permite establecer la primera letra como mayuscula  <hr>
-<p style="color: orange">Debounce</p>
+**Capitalize**<br> 
+Capitalize es una función que nos permite establecer la primera letra como mayuscula <hr>
+
+**Debounce**<br> 
 Debounce es una funcion que tiene un timer para llamar un callback. De esta manera evitamos 
 llamar repetidamente una función.<hr>
-<p style="color: orange">Filter</p>
+
+**Filter**<br> 
 Filter es un filtro básico que devuelve un array de acuerdo a lo que se le envia en un input<hr>
-<p style="color: orange">Sleep</p>
+
+**Sleep**<br> 
 Sleep es una función pensada para el desarrollo que permite emular la espera de una petición
 para poder visualizar los componentes de progreso.<hr>
 
@@ -152,33 +157,55 @@ para poder visualizar los componentes de progreso.<hr>
 
 <br />
 
-<p style="color: orange">useAreaForm</p>
+**useAreaForm**<br> 
 Contiene queries y mutaciones para la interfaz Area  <hr>
-<p style="color: orange">useEmpleadoForm</p>
+
+**useEmpleadoForm**<br> 
 Contiene query de getAreas y mutacion para Empleado<hr>
-<p style="color: orange">useEmpleadoList</p>
+
+**useEmpleadoList**<br> 
 Contiene queries y mutaciones para la interfaz de la Tabla <hr>
 
-<br />
+<br>
 
 ### Shared >>
 
-<br />
+<br>
 
-<p style="color: orange">Botonera</p>
+**Botonera**<br> 
 Despliege de botoneras en tablas. Sostiene la lógica para las renderizar mensajes de alertas y modales.<br>
 Esta compuesta por un render condicional, dependiendo del estado de sus hooks va a renderizar
 modales, confirmaciones o Alertas.<br>Debido a las diferencias es necesario indicar si es una tabla
 de usuarios para que cambie la disposición de los iconos.<hr>
-<p style="color: orange">WithFormProvider</p>
+
+**WithFormProvider**<br> 
 Es un HOC que actúa como *wraper* para proveer las funcionalidades de react hook forms<hr>
-<p style="color: orange">WithModal</p>
+
+**WithModal**<br> 
 Es un HOC que actúa como *wraper* para proveer las funcionalidades de Mui Modal.<hr>
-<p style="color: orange">ConfirmDelete</p>
+
+**ConfirmDelete**<br> 
 Componente para confirmar la acción de delete.<hr>
-<p style="color: orange">AlertSnackBar</p>
+
+**AlertSnackBar**<br> 
 Componente para alertar al usuario de mensajes y errores<hr>
-<p style="color: orange">Input</p>
+
+**Input**<br> 
 Custom input para simplificar la declaración de los formularios, otorgando nombres y reglas según
 las especificaciones de React Hook Form. <hr>
+
+<br>
+
+### Composición >>
+
+<br>
+
+[Uml descriptivo](https://drive.google.com/file/d/1EwkMje0S-pJY2o-yz-tLK-7I4SdfKQt_/view?usp=share_link)
+
+La aplicación consta de cinco rutas las cuales cuatro son hijas de la primera, siendo la app principal.<br>
+Contiene un falso sign in que despliega el componente de la tabla.<hr>
+
+
+
+
 
