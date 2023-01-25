@@ -34,7 +34,7 @@ export const Navbar = () => {
   const [ value, setValue ] = useState( 0 )
   const navigate = useNavigate()
   const [ _, match ] = useMatches()
-  const condition = match.pathname === '/'
+  const condition = match.pathname === '/alta_personal_frt'
 
   return (
     <>
