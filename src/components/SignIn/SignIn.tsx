@@ -8,7 +8,7 @@ export const SignIn = () => {
   return (
     <Box sx={ styles.container }>
       <h1>Sign In</h1>
-      <Button variant="contained" color="success"
+      <Button sx={ styles.container.login } variant="contained" color="success"
         onClick={ () => navigate( '/lista-empleados' ) }>
         Login
       </Button>

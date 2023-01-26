@@ -12,9 +12,9 @@ export const AreaList: FC<Props> = ( { areas } ) => {
     return (
         <>
             <TableContainer component={ Paper } sx={ { width: 550, height: 300 } }>
-                <Table size='small' sx={ { padding: '30px' } }>
-                    <TableHead>
-                        <TableRow>
+                <Table stickyHeader size='small' sx={ { padding: '30px' } }>
+                    <TableHead >
+                        <TableRow >
                             <TableCell><b>ÁREA</b></TableCell>
                             <TableCell />
                         </TableRow>

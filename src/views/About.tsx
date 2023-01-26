@@ -1,21 +1,26 @@
 const styles = {
     container: {
-        fontSize: '15px',
+        fontSize: '18px',
         display: 'flex',
         justifyContent: 'space-evenly',
-        width: '100vw',
-        margin: '10vh auto',
+        marginTop: '20px',
         ul: {
             listStyleType: 'none'
         },
         section: {
             width: '300px',
+            padding: '50px',
+
         },
         title: {
-            color: 'cyan'
+            color: '#a5e4dc',
+            padding: '13px 0',
+            borderBottom: '2px solid grey',
+            marginBottom: '20px',
         },
         link: {
-            textDecoration: 'none'
+            textDecoration: 'none',
+            color: '#64bed9'
         }
     }
 }
@@ -31,7 +36,7 @@ export const About = () => {
                 <hr />
             </div>
             <div style={ styles.container.section }>
-                <h3>Mejoras a realizar:</h3><br />
+                <h3 style={ styles.container.title }>Mejoras a realizar:</h3><br />
                 <ul style={ styles.container.ul }>
                     <li>Login para admin</li><br />
                     <li>Avatares para empleado</li><br />
@@ -39,7 +44,7 @@ export const About = () => {
                 </ul>
             </div>
             <div style={ styles.container.section }>
-                <h3>Repositorios:</h3><br />
+                <h3 style={ styles.container.title }>Repositorios:</h3><br />
                 <ul style={ styles.container.ul }>
                     <li><a style={ styles.container.link } href="https://github.com/GermanMacchia/alta_personal_frt" target="_blank">Front End</a></li><br />
                     <li><a style={ styles.container.link } href="https://github.com/GermanMacchia/alta_personal_bck" target="_blank">Back End</a></li>
