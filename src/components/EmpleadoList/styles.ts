@@ -1,6 +1,7 @@
 export const styles = {
     table: {
         borderRadius: 0,
+        maxHeight: 500,
         inputSearch: {
             width: '60%',
             height: '40px'

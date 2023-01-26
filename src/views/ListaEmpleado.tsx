@@ -4,7 +4,7 @@ import { useEmpleadoList } from '../hooks/useEmpleadoList'
 
 const style = {
     loading: {
-        height: '20px',
+        height: '15px',
         marginTop: '10px'
     }
 }

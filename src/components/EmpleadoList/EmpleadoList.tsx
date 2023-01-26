@@ -30,7 +30,7 @@ export const EmpleadosList: FC<Props> = ( { areas, empleados } ) => {
 
     return (
         <TableContainer sx={ styles.table } component={ Paper }>
-            <Table size='small' padding='none' aria-label="simple table">
+            <Table size='small' stickyHeader padding='none' aria-label="simple table">
                 <TableRows handleFilter={ handleFilter } empleados={ listaEmpleados } areas={ areas } />
             </Table>
         </TableContainer>

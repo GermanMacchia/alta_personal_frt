@@ -1,4 +1,4 @@
-import { FC, SyntheticEvent, useState } from 'react'
+import { FC, SyntheticEvent } from 'react'
 import { styles } from './styles'
 import { InputSearch } from './InputSearch'
 import TableBody from '@mui/material/TableBody'
@@ -9,7 +9,9 @@ import CancelIcon from '@mui/icons-material/Cancel'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { Area, Empleado } from '../../interfaces'
 import { OptionsButtons } from '../../shared'
-import { TablePagination, Box } from '@mui/material'
+import { usePagination } from '../../hooks/usePagination'
+import { Pagination } from '../../shared/Pagination'
+
 
 interface Props {
   handleFilter: ( e: SyntheticEvent ) => void,
@@ -41,23 +43,11 @@ const getAreaName = ( areas: Area[], id: string ) => {
   return areas.find( area => area._id === id )?.nombre
 }
 
-
 export const TableRows: FC<Props> = ( { handleFilter, empleados, areas } ) => {
-  const [ page, setPage ] = useState( 0 )
-  const [ rowsPerPage, setRowsPerPage ] = useState( 5 )
-
-  const handleChangePage = ( event: unknown, newPage: number ) => {
-    setPage( newPage )
-  }
-
-  const handleChangeRowsPerPage = ( event: React.ChangeEvent<HTMLInputElement> ) => {
-    setRowsPerPage( +event.target.value )
-    setPage( 0 )
-  }
+  const { page, handleChangePage, handleChangeRowsPerPage, rowsPerPage } = usePagination()
 
   return (
     <>
-
       <TableHead>
         <TableRow>
           { retonarHeaders() }
@@ -78,7 +68,7 @@ export const TableRows: FC<Props> = ( { handleFilter, empleados, areas } ) => {
               <TableCell align="right" scope='nombre'>{ empleado.nombre.toUpperCase() }</TableCell>
               <TableCell align="right" scope='apellido'>{ empleado.apellido.toUpperCase() }</TableCell>
               <TableCell align="right" scope='fechaNac'>{ new Date( empleado.fechaNac ).toLocaleDateString() }</TableCell>
-              <TableCell align="right" scope='descripcion'>{ empleado.descripcion.toUpperCase() }</TableCell>
+              <TableCell align="right" width="18%" scope='descripcion'>{ empleado.descripcion.toUpperCase() }</TableCell>
               <TableCell align="right" scope='esDesarrollador'>{
                 empleado.esDesarrollador
                   ? <CheckCircleIcon color='success' />
@@ -91,17 +81,13 @@ export const TableRows: FC<Props> = ( { handleFilter, empleados, areas } ) => {
             </TableRow>
           ) ) }
       </TableBody>
-      <Box sx={ styles.table.container }>
-        <TablePagination
-          sx={ styles.table.container.pagination }
-          rowsPerPageOptions={ [ 5, 10, 20 ] }
-          count={ empleados.length }
-          rowsPerPage={ rowsPerPage }
-          page={ page }
-          onPageChange={ handleChangePage }
-          onRowsPerPageChange={ handleChangeRowsPerPage }
-        />
-      </Box>
+      <Pagination
+        page={ page }
+        rowsPerPage={ rowsPerPage }
+        handleChangePage={ handleChangePage }
+        handleChangeRowsPerPage={ handleChangeRowsPerPage }
+        data={ empleados }
+      />
     </>
   )
 }

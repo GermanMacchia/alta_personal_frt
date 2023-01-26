@@ -11,7 +11,7 @@ const style = {
     container: {
         display: 'flex',
         justifyContent: 'space-around',
-        margin: '40px',
+        margin: '40px auto',
         width: '100vw',
     },
     loading: {

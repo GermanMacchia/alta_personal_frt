@@ -2,9 +2,7 @@ import styled from '@emotion/styled'
 
 export const styles = {
   container: {
-    margin: '6vh auto auto auto',
     flexGrow: 1,
-    maxWidth: 'sm',
     title: {
       fontWeight: '600',
       fontSize: '20px'

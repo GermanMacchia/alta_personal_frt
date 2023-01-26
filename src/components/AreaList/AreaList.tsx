@@ -8,10 +8,11 @@ interface Props {
 }
 
 export const AreaList: FC<Props> = ( { areas } ) => {
+
     return (
         <>
-            <TableContainer component={ Paper } sx={ { width: 550 } }>
-                <Table>
+            <TableContainer component={ Paper } sx={ { width: 550, height: 300 } }>
+                <Table size='small' sx={ { padding: '30px' } }>
                     <TableHead>
                         <TableRow>
                             <TableCell><b>ÁREA</b></TableCell>
@@ -19,19 +20,21 @@ export const AreaList: FC<Props> = ( { areas } ) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        { areas.map( ( area ) => (
-                            <TableRow
-                                key={ area._id }
-                                sx={ { '&:last-child td, &:last-child th': { border: 0 } } }
-                            >
-                                <TableCell component="th" scope="row">
-                                    { area.nombre.toUpperCase() }
-                                </TableCell>
-                                <TableCell align="right">
-                                    <OptionsButtons data={ area } />
-                                </TableCell>
-                            </TableRow>
-                        ) ) }
+                        { areas
+                            .sort( ( a, b ) => a.nombre.localeCompare( b.nombre ) )
+                            .map( ( area ) => (
+                                <TableRow
+                                    key={ area._id }
+                                    sx={ { '&:last-child td, &:last-child th': { border: 0 } } }
+                                >
+                                    <TableCell component="th" scope="row">
+                                        { area.nombre.toUpperCase() }
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        <OptionsButtons data={ area } />
+                                    </TableCell>
+                                </TableRow>
+                            ) ) }
                     </TableBody>
                 </Table>
             </TableContainer>
