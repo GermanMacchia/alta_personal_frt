@@ -1,2 +1,2 @@
-export { EmpleadoForm } from "./EmpleadoForm"
-export { BloqueText } from "./BloqueText"
+export { EmpleadoForm } from './EmpleadoForm'
+export { TextInputBlock } from './TextInputBlock'

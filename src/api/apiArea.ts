@@ -3,23 +3,23 @@ import { api } from './api'
 import { Area } from '../interfaces'
 
 export const fetchAreas = async () => {
-    // await sleep( 1 )
-    const { data } = await api.get( '/api/area' )
-    return data
+	// await sleep(1)
+	const { data } = await api.get('/api/area')
+	return data
 }
 
-export const postAreas = async ( nuevaArea: Area ) => {
-    const { nombre } = nuevaArea
-    // await sleep( 1 )
-    return await api.post( '/api/area', { nombre } )
+export const postAreas = async (nuevaArea: Area) => {
+	const { nombre } = nuevaArea
+	// await sleep(1)
+	return await api.post('/api/area', { nombre })
 }
 
-export const deleteArea = async ( id: string ) => {
-    // await sleep( 1 )
-    return await api.delete( `/api/area/${ id }` )
+export const deleteArea = async (id: string) => {
+	// await sleep(1)
+	return await api.delete(`/api/area/${id}`)
 }
 
-export const editArea = async ( data: Area ) => {
-    // await sleep( 1 )
-    return await api.patch( `/api/area/${ data._id }`, data )
+export const editArea = async (data: Area) => {
+	// await sleep(1)
+	return await api.patch(`/api/area/${data._id}`, data)
 }

@@ -1,1 +1,0 @@
-export { ListaArea } from "./ListaArea"

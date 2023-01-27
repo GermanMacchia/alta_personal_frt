@@ -6,21 +6,28 @@ import { Box, Button } from '@mui/material'
 import { useEmpleadoList } from '../../hooks'
 
 interface Props {
-    handleClose: () => void,
-    empleado: any
+	handleClose: () => void
+	empleado: any
 }
 
-export const CardEditForm: FC<Props> = ( { handleClose, empleado } ) => {
-    const { empleadoEdit } = useEmpleadoList()
+export const CardEditForm: FC<Props> = ({ handleClose, empleado }) => {
+	const { empleadoEdit } = useEmpleadoList()
 
-    const card = () => <CardEdit data={ empleado } isLoading={ empleadoEdit.isLoading } />
+	const card = () => (
+		<CardEdit data={empleado} isLoading={empleadoEdit.isLoading} />
+	)
 
-    return (
-        <Box sx={ styles.modal }>
-            <WithFormProvider children={ card() } handleSubmit={ empleadoEdit.mutateAsync } />
-            <Box sx={ styles.modal.cerrar }>
-                <Button variant='outlined' color='success' onClick={ handleClose }>Cerrar</Button>
-            </Box>
-        </Box>
-    )
+	return (
+		<Box sx={styles.modal}>
+			<WithFormProvider
+				children={card()}
+				handleSubmit={empleadoEdit.mutateAsync}
+			/>
+			<Box sx={styles.modal.cerrar}>
+				<Button variant='outlined' color='success' onClick={handleClose}>
+					Cerrar
+				</Button>
+			</Box>
+		</Box>
+	)
 }

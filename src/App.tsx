@@ -1,13 +1,8 @@
-import { Navbar } from './components/Nav'
-import { Outlet } from "react-router-dom"
+import { Navbar } from './components/Navbar'
+import { Outlet } from 'react-router-dom'
 
-function App () {
-  return (
-    <div>
-      <Navbar />
-      <Outlet />
-    </div>
-  )
+function App() {
+	return <Navbar children={<Outlet />} />
 }
 
 export default App

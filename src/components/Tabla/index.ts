@@ -1,1 +1,0 @@
-export { Tabla } from "./Tabla"
