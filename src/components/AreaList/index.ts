@@ -1,1 +1,1 @@
-export { AreaList } from "./AreaList"
+export { AreaList } from './AreaList'

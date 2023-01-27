@@ -1,1 +1,1 @@
-export { EmpleadosList } from "./EmpleadoList"
+export { EmpleadosList } from './EmpleadoList'
