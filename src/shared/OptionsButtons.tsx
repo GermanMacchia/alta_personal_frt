@@ -19,17 +19,17 @@ const styles = {
 		display: 'flex',
 		flexWrap: 'wrap',
 		justifyContent: 'center',
-		width: { xs: '120px', md: '200px' },
+		width: { xs: '130px', md: '200px' },
 		options: {
-			margin: { md: '0.4rem' },
+			margin: { xs: 0, md: '0.4rem' },
 			'&:hover': {
 				color: '#0e6983',
 			},
 		},
-	},
 
-	'&.MuiSvgIcon-fontSizeMedium': {
-		fontSize: { xs: '20px', md: '21px' },
+		'&.MuiSvgIcon-fontSizeMedium': {
+			fontSize: { xs: '20px', md: '21px' },
+		},
 	},
 }
 

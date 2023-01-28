@@ -34,7 +34,7 @@ export const EmpleadoForm: FC<Props> = ({ isLoading }) => {
 			</Box>
 			<Box sx={styles.container.form}>
 				<input {...register('formType')} type='hidden' value='AltaEmpleado' />
-				<Box sx={styles.container.form.__inputData}>
+				<Box sx={styles.container.form.inputData}>
 					<TextInputBlock />
 					<DataInputBlock trigger={trigger} />
 				</Box>

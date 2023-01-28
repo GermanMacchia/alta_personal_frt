@@ -1,8 +1,8 @@
 export const styles = {
 	table: {
 		marginTop: '3vh',
+		maxHeight: '70vh',
 		borderRadius: 0,
-		maxHeight: '65vh',
 		inputSearch: {
 			width: '60%',
 			height: '40px',
@@ -14,6 +14,9 @@ export const styles = {
 		},
 		tableButtons: {
 			paddingLeft: '5rem',
+			'&.MuiTableCell-paddingSmall': {
+				paddingLeft: 0,
+			},
 		},
 		container: {
 			display: 'flex',

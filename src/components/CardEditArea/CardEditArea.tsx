@@ -38,7 +38,7 @@ export const CardEditArea: FC<Props> = ({ area, isLoading }) => {
 						<FormLabel
 							component='legend'
 							sx={styles.modal.container.flex.switch.tag}
-							color='warning'>
+							color='success'>
 							EDITAR
 						</FormLabel>
 						<FormControlLabel

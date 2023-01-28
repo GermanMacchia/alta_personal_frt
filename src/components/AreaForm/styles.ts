@@ -2,8 +2,9 @@ import styled from '@emotion/styled'
 
 export const styles = {
 	container: {
-		marginTop: 10,
-		flexGrow: 1,
+		marginTop: { xs: 0, md: 10 },
+		marginBottom: { xs: 6, md: 0 },
+		width: { xs: '350px', md: '400px' },
 		title: {
 			fontWeight: '600',
 			fontSize: '20px',
@@ -17,6 +18,7 @@ export const styles = {
 			display: 'flex',
 			flexDirection: 'column',
 			gap: '1.4vh',
+			width: '130px',
 			tag: {
 				marginBottom: '10%',
 			},

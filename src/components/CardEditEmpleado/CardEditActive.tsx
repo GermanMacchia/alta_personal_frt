@@ -30,10 +30,14 @@ export const CardEditActive: FC<Props> = ({ isLoading }) => {
 						descripcionActiva={isActive.descripcion}
 					/>
 				</Box>
-				<Box></Box>
-				<Box sx={styles.modal.container.form.__switch}>
+				<Box sx={styles.modal.container.form.switch}>
 					<FormControl component='fieldset' variant='standard'>
-						<FormLabel component='legend'>EDIT</FormLabel>
+						<FormLabel
+							component='legend'
+							color='success'
+							sx={styles.modal.container.form.switch.label}>
+							EDIT
+						</FormLabel>
 						<FormGroup>
 							<FormControlLabel
 								control={

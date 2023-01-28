@@ -1,10 +1,11 @@
 import { WithFormProvider } from '../shared'
 import { AreaForm } from '../components/AreaForm'
 import { useAreaForm } from '../hooks/useAreaForm'
-import { Box, LinearProgress } from '@mui/material'
+import { Box, LinearProgress, useMediaQuery } from '@mui/material'
 import { AlertSnackBar } from '../shared/AlertSnackBar'
 import { AreaList } from '../components/AreaList'
-import { WithAccordion } from '../shared/WithAccordion'
+import { WithModal } from '../shared/WithModal'
+import { useState } from 'react'
 
 const messageSuccess = 'Los datos fueron actualizados'
 const style = {
@@ -24,28 +25,35 @@ const style = {
 
 export const ListaArea = () => {
 	const { altaArea, areas } = useAreaForm()
-	const areaForm = () => <AreaForm isLoading={altaArea.isLoading} />
+	const [isOpen, setIsOpen] = useState(false)
+	const matches = useMediaQuery('(min-width:600px)')
+
+	const areaForm = () => (
+		<WithFormProvider
+			children={<AreaForm isLoading={altaArea.isLoading} />}
+			handleSubmit={altaArea.mutateAsync}
+		/>
+	)
 
 	if (areas.isLoading)
 		return <LinearProgress sx={style.loading} color='success' />
+
 	const tablaVacia = areas?.data.length === 0
 
 	return (
 		<Box sx={style.container}>
-			{altaArea.isSuccess && (
-				<AlertSnackBar severity='success' message={messageSuccess} isOpen={true} />
-			)}
 			{tablaVacia && <h2>Tabla sin datos</h2>}
-			{!tablaVacia && <AreaList areas={areas.data} />}
-
-			<WithAccordion
-				children={
-					<WithFormProvider
-						children={areaForm()}
-						handleSubmit={altaArea.mutateAsync}
-					/>
-				}
-			/>
+			{!tablaVacia && (
+				<AreaList areas={areas.data} handleOpen={() => setIsOpen(!isOpen)} />
+			)}
+			{matches && !isOpen && areaForm()}
+			{isOpen && (
+				<WithModal
+					children={areaForm()}
+					open={isOpen}
+					handleClose={() => setIsOpen(!isOpen)}
+				/>
+			)}
 		</Box>
 	)
 }
