@@ -3,6 +3,7 @@ export const styles = {
 		display: 'flex',
 		justifyContent: 'space-between',
 		alignItems: 'center',
+		zIndex: 1,
 		logout: {
 			color: 'rgba(255, 87, 106, 0.78)',
 			'& .MuiSvgIcon-fontSizeMedium': {

@@ -10,12 +10,17 @@ import {
 } from '@mui/material'
 import { Area } from '../../interfaces'
 import { OptionsButtons } from '../../shared'
+import IconButton from '@mui/material/IconButton/IconButton'
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
+import { useMediaQuery } from '@mui/material'
 
 interface Props {
 	areas: Area[]
+	handleOpen: () => void
 }
 
-export const AreaList: FC<Props> = ({ areas }) => {
+export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
+	const matches = useMediaQuery('(min-width:600px)')
 	return (
 		<>
 			<TableContainer component={Paper} sx={{ width: 550, height: 500 }}>
@@ -25,7 +30,13 @@ export const AreaList: FC<Props> = ({ areas }) => {
 							<TableCell>
 								<b>ÁREA</b>
 							</TableCell>
-							<TableCell />
+							{!matches && (
+								<TableCell align='right'>
+									<IconButton onClick={handleOpen}>
+										<AddCircleOutlineIcon color='success' sx={{ fontSize: '35px' }} />
+									</IconButton>
+								</TableCell>
+							)}
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -35,10 +46,13 @@ export const AreaList: FC<Props> = ({ areas }) => {
 								<TableRow
 									key={area._id}
 									sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-									<TableCell component='th' scope='row'>
-										{area.nombre.toUpperCase()}
-									</TableCell>
-									<TableCell align='right'>
+									<TableCell component='th'>{area.nombre.toUpperCase()}</TableCell>
+									<TableCell
+										sx={{
+											'& .MuiBox-root': {
+												justifyContent: 'flex-end',
+											},
+										}}>
 										<OptionsButtons data={area} />
 									</TableCell>
 								</TableRow>

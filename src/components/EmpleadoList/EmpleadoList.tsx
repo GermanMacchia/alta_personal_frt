@@ -31,7 +31,7 @@ export const EmpleadosList: FC<Props> = ({ areas, empleados }) => {
 
 	return (
 		<TableContainer sx={styles.table} component={Paper}>
-			<Table size='small' stickyHeader padding={matches ? 'none' : 'checkbox'}>
+			<Table size='small' stickyHeader padding={matches ? 'normal' : 'small'}>
 				<TableRows
 					handleFilter={handleFilter}
 					empleados={listaEmpleados}
