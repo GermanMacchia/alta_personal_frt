@@ -15,7 +15,7 @@ import CheckIcon from '@mui/icons-material/Check'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
-
+import userImage from '../../assets/user-circle.png'
 interface Props {
 	empleado: Empleado
 	areas: Area[]
@@ -34,7 +34,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 				<Box sx={styles.container.column}>
 					<CardMedia
 						component='img'
-						image='/src/assets/user-circle.png'
+						image={userImage}
 						alt='user circle'
 						sx={styles.container.image}
 					/>

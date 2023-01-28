@@ -1,3 +1,5 @@
+import banner from '../../assets/banner.jpg'
+
 export const styles = {
 	container: {
 		display: 'flex',
@@ -19,7 +21,7 @@ export const styles = {
 	},
 	banner: {
 		height: { xs: '12vh', md: '15vh' },
-		backgroundImage: `url(${'src/assets/banner.jpg'})`,
+		backgroundImage: `url(${banner})`,
 		backgroundPosition: 'top',
 		backgroundSize: 'cover',
 		position: 'relative',
