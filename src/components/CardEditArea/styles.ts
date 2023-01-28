@@ -3,19 +3,22 @@ export const styles = {
 		display: 'flex',
 		flexDirection: 'column',
 		color: 'whitesmoke',
+		paddingBottom: 7,
 		container: {
 			display: 'flex',
 			flexDirection: 'column',
 			alignItems: 'center',
-			padding: '3rem',
+			padding: { xs: '4rem', md: '3rem' },
 			backgroundColor: '#242424',
 			flex: {
 				display: 'flex',
+				flexWrap: 'wrap',
 				justifyContent: 'space-between',
 				width: '30vw',
+				gap: 4,
 				switch: {
-					borderLeft: '1px solid rgba(184, 166, 175, 0.21)',
-					padding: '10px',
+					borderLeft: { xs: 'none', md: '1px solid rgba(184, 166, 175, 0.21)' },
+					padding: { xs: 0, md: '10px' },
 					tag: {
 						color: 'white',
 						marginBottom: '10px',
@@ -30,9 +33,6 @@ export const styles = {
 				height: '45px',
 				marginTop: '2rem',
 			},
-		},
-		cerrar: {
-			marginTop: '2rem',
 		},
 	},
 }

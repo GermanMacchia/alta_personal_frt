@@ -4,9 +4,8 @@ const ITEM_PADDING_TOP = 20
 
 export const styles = {
 	container: {
-		margin: '15vh auto',
-		flexGrow: 1,
-		width: '50vw',
+		margin: { xs: '10vh 0', md: '15vh auto' },
+		width: '100%',
 		title: {
 			fontWeight: '600',
 			fontSize: '20px',
@@ -20,11 +19,11 @@ export const styles = {
 			display: 'flex',
 			flexDirection: 'column',
 			width: '100%',
-			gap: '1.4vh',
-			__inputData: {
+			gap: { xs: '3vh', md: '1.4vh' },
+			inputData: {
 				display: 'flex',
 				flexDirection: 'row',
-				gap: '4vw',
+				gap: { xs: '3vw', md: '4vw' },
 			},
 			tag: {
 				marginBottom: '2%',

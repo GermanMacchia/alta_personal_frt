@@ -4,8 +4,7 @@ export const styles = {
 	container: {
 		marginTop: { xs: 0, md: 10 },
 		marginBottom: { xs: 6, md: 0 },
-		flexGrow: 1,
-		width: { xs: '250px', md: '400px' },
+		width: { xs: '350px', md: '400px' },
 		title: {
 			fontWeight: '600',
 			fontSize: '20px',
@@ -19,6 +18,7 @@ export const styles = {
 			display: 'flex',
 			flexDirection: 'column',
 			gap: '1.4vh',
+			width: '130px',
 			tag: {
 				marginBottom: '10%',
 			},

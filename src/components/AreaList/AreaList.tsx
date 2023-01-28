@@ -23,8 +23,10 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
 	const matches = useMediaQuery('(min-width:600px)')
 	return (
 		<>
-			<TableContainer component={Paper} sx={{ width: 550, height: 500 }}>
-				<Table stickyHeader size='small' sx={{ padding: '30px' }}>
+			<TableContainer
+				component={Paper}
+				sx={{ width: 550, height: { xs: '70vh', md: 500 } }}>
+				<Table stickyHeader size='small' sx={{ padding: '30px', height: '65vh' }}>
 					<TableHead>
 						<TableRow>
 							<TableCell>

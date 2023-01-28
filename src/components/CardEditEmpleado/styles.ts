@@ -1,23 +1,25 @@
-import { containerClasses } from '@mui/system'
-
 export const styles = {
 	modal: {
 		display: 'flex',
 		flexDirection: 'column',
 		color: 'whitesmoke',
-		cerrar: {
-			marginTop: '1rem',
-		},
 		container: {
 			display: 'flex',
 			flexDirection: 'column',
-			width: '30vw',
+			width: { xs: '45vw', md: '30vw' },
 			form: {
 				display: 'flex',
-				justifyContent: 'space-between',
-				__switch: {
+				width: '100%',
+				overflow: 'scroll',
+				color: 'grey',
+				gap: { xs: 6 },
+				flexDirection: { xs: 'column', md: 'row' },
+				height: '300px',
+				switch: {
 					borderLeft: '1px solid rgba(184, 166, 175, 0.21)',
-					padding: '10px',
+					padding: { xs: 1, md: '10px' },
+					justifyContent: 'space-between',
+					label: { fontSize: '20px', color: 'Black' },
 				},
 			},
 			submit: {
@@ -29,7 +31,7 @@ export const styles = {
 	frame: {
 		display: 'flex',
 		alignItems: 'center',
-		padding: '4rem',
-		backgroundColor: '#242424',
+		padding: { xs: 2, md: '4rem' },
+		backgroundColor: { xs: 'white', md: '#242424' },
 	},
 }
