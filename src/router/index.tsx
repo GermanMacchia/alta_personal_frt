@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
 				errorElement: <NotFound />,
 			},
 			{
-				path: '/*',
+				path: '/alta_personal_frt/*',
 				element: <SignIn />,
 				errorElement: <NotFound />,
 			},
