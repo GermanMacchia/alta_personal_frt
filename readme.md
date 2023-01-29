@@ -3,9 +3,21 @@
 <br>
 
 Deploy:
-[https://germanmacchia.github.io/alta_personal_frt/](https://germanmacchia.github.io/alta_personal_frt/)
 
-<br><br><br>
+[https://germanmacchia.github.io/alta_personal_frt/](https://germanmacchia.github.io/alta_personal_frt/)
+<br>
+
+Repositorio Back End:
+
+[https://github.com/GermanMacchia/alta_personal_bck](https://github.com/GermanMacchia/alta_personal_bck)
+<br>
+
+Actualización del proyecto:
+
+[Alta empleados V3](https://github.com/GermanMacchia/alta-empleados-v3)
+<br>
+
+<br><br>
 
 # Índice
 
