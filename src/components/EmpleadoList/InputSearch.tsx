@@ -19,6 +19,13 @@ export const InputSearch: FC<Props> = ({ handleChange }) => {
 				alignContent: 'center',
 				margin: '10px 0',
 			}}>
+			<IconButton
+				disabled
+				type='button'
+				sx={{ padding: '10px' }}
+				aria-label='search'>
+				<SearchIcon />
+			</IconButton>
 			<Paper sx={styles.table.inputSearch}>
 				<InputBase
 					sx={styles.table.inputSearch}
@@ -26,13 +33,6 @@ export const InputSearch: FC<Props> = ({ handleChange }) => {
 					onChange={handleChange}
 					color='success'
 				/>
-				<IconButton
-					disabled
-					type='button'
-					sx={{ padding: '10px' }}
-					aria-label='search'>
-					<SearchIcon />
-				</IconButton>
 			</Paper>
 		</Box>
 	)

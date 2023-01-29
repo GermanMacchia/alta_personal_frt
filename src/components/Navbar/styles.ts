@@ -40,7 +40,7 @@ export const styles = {
 		borderTop: '5px solid #2c306f',
 		borderBottom: '2px solid #242424',
 		__blur: {
-			filter: 'opacity(0.20)',
+			filter: 'opacity(0.10)',
 		},
 	},
 }

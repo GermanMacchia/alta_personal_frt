@@ -1,21 +1,14 @@
 import { FC } from 'react'
 import { styles } from './styles'
 import { Empleado, Area } from '../../interfaces'
-import {
-	Box,
-	Typography,
-	Button,
-	CardMedia,
-	CardContent,
-	CardActions,
-	Card,
-} from '@mui/material'
+import { Box, Typography, CardMedia, CardContent, Card } from '@mui/material'
 import { capitalize } from '../../helpers'
 import CheckIcon from '@mui/icons-material/Check'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import userImage from '../../assets/user-circle.png'
+
 interface Props {
 	empleado: Empleado
 	areas: Area[]
