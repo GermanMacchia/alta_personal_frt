@@ -19,7 +19,6 @@ export const EmpleadosList: FC<Props> = ({ areas, empleados }) => {
 
 	useEffect(() => {
 		setListaEmpleados(empleados)
-		console.log(empleados)
 	}, [empleados])
 
 	const handleFilter = (event: any) => {

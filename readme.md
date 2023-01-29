@@ -1,12 +1,23 @@
 <h1>Challenge Alta Personal</h1> 
-<h1>Challenge Alta Personal</h1> 
 <img style="height:200px; width: 350px"  src="https://miro.medium.com/max/1024/1*Ukhx76VQ8E6JXEW7xfIzSA.png" alt="imagen" />
 <br>
 
 Deploy:
-[https://germanmacchia.github.io/alta_personal_frt/](https://germanmacchia.github.io/alta_personal_frt/)
 
-<br><br><br>
+[https://germanmacchia.github.io/alta_personal_frt/](https://germanmacchia.github.io/alta_personal_frt/)
+<br>
+
+Repositorio Back End:
+
+[https://github.com/GermanMacchia/alta_personal_bck](https://github.com/GermanMacchia/alta_personal_bck)
+<br>
+
+Actualización del proyecto:
+
+[Alta empleados V3](https://github.com/GermanMacchia/alta-empleados-v3)
+<br>
+
+<br><br>
 
 # Índice
 
@@ -170,7 +181,7 @@ Contiene query de getAreas y mutacion para Empleado<hr>
 
 **useEmpleadoList**<br>
 
-**useEmpleadoList**<br> 
+**useEmpleadoList**<br>
 Contiene queries y mutaciones para la interfaz de la Tabla <hr>
 
 <br>
@@ -213,10 +224,6 @@ las especificaciones de React Hook Form. <hr>
 
 La aplicación consta de cinco rutas las cuales cuatro son hijas de la primera, siendo la app principal.<br>
 Contiene un falso sign in que despliega el componente de la tabla.<hr>
-
-
-
-
 
 <br>
 
