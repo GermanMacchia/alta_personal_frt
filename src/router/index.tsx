@@ -11,37 +11,37 @@ import { SignIn } from '../components/SignIn'
 
 export const router = createHashRouter([
 	{
-		path: '/alta_personal_frt',
+		path: '/',
 		element: <App />,
 		errorElement: <NotFound />,
 		children: [
 			{
-				path: '/alta_personal_frt',
+				path: '/',
 				element: <SignIn />,
 				errorElement: <NotFound />,
 			},
 			{
-				path: '/alta_personal_frt/lista-empleados',
+				path: '/lista-empleados',
 				element: <ListaEmpleado />,
 				errorElement: <NotFound />,
 			},
 			{
-				path: '/alta_personal_frt/lista-areas',
+				path: '/lista-areas',
 				element: <ListaArea />,
 				errorElement: <NotFound />,
 			},
 			{
-				path: '/alta_personal_frt/alta-empleados',
+				path: '/alta-empleados',
 				element: <AltaEmpleado />,
 				errorElement: <NotFound />,
 			},
 			{
-				path: '/alta_personal_frt/about',
+				path: '/about',
 				element: <About />,
 				errorElement: <NotFound />,
 			},
 			{
-				path: '/alta_personal_frt/*',
+				path: '/*',
 				element: <SignIn />,
 				errorElement: <NotFound />,
 			},

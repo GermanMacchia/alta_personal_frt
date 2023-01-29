@@ -7,21 +7,21 @@ export const buttons = [
 	{
 		label: 'Plantilla',
 		icon: <ListIcon />,
-		link: '/alta_personal_frt/lista-empleados',
+		link: '/lista-empleados',
 	},
 	{
 		label: 'Alta Empleados',
 		icon: <GroupAddIcon />,
-		link: '/alta_personal_frt/alta-empleados',
+		link: '/alta-empleados',
 	},
 	{
 		label: 'Areas',
 		icon: <AccountTreeIcon />,
-		link: '/alta_personal_frt/lista-areas',
+		link: '/lista-areas',
 	},
 	{
 		label: 'Acerca',
 		icon: <InfoIcon />,
-		link: '/alta_personal_frt/about',
+		link: '/about',
 	},
 ]

@@ -15,7 +15,7 @@ import { useMediaQuery } from '@mui/material'
 const logout = {
 	label: 'Logout',
 	icon: <LogoutIcon />,
-	link: '/alta_personal_frt',
+	link: '/',
 }
 
 interface Props {

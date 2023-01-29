@@ -12,7 +12,7 @@ export const SignIn = () => {
 				sx={styles.container.login}
 				variant='contained'
 				color='success'
-				onClick={() => navigate('/alta_personal_frt/lista-empleados')}>
+				onClick={() => navigate('/lista-empleados')}>
 				Login
 			</Button>
 		</Box>
