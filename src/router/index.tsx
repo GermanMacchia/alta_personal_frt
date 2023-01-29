@@ -1,5 +1,5 @@
 import App from '../App'
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import {
 	ListaEmpleado,
 	About,
@@ -9,7 +9,7 @@ import {
 } from '../views'
 import { SignIn } from '../components/SignIn'
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
 	{
 		path: '/alta_personal_frt',
 		element: <App />,

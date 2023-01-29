@@ -26,12 +26,12 @@ export const styles = {
 			width: '100%',
 			position: 'fixed',
 			bottom: 0,
-			pagination: {
-				color: 'aliceblue',
-				'& .MuiTablePagination-selectIcon, .MuiSvgIcon-root': {
-					fill: 'aliceblue',
-				},
-			},
+			// pagination: {
+			// 	color: 'aliceblue',
+			// 	'& .MuiTablePagination-selectIcon, .MuiSvgIcon-root': {
+			// 		fill: 'aliceblue',
+			// 	},
+			// },
 		},
 	},
 }

@@ -97,18 +97,19 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
 								</IconButton>
 								<Drawer
 									anchor={'top'}
-									open={true}
-									variant='persistent'
-									onClose={toggleDrawer}
-									ModalProps={{
-										keepMounted: true,
-									}}>
-									<Box sx={{ width: 'auto' }}>
+									open={isOpen}
+									variant='temporary'
+									onClose={toggleDrawer}>
+									<Box
+										sx={{
+											display: 'flex',
+											flexDirection: 'column',
+										}}>
 										<List>
-											<InputSearch handleChange={handleFilter} />
 											<IconButton onClick={toggleDrawer}>
 												<CloseIcon />
 											</IconButton>
+											<InputSearch handleChange={handleFilter} />
 										</List>
 									</Box>
 								</Drawer>
