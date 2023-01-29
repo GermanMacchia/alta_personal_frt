@@ -2,14 +2,14 @@ export const styles = {
 	modal: {
 		display: 'flex',
 		flexDirection: 'column',
-		color: 'whitesmoke',
+		color: { xs: 'black', md: 'whitesmoke' },
 		paddingBottom: 7,
 		container: {
 			display: 'flex',
 			flexDirection: 'column',
 			alignItems: 'center',
-			padding: { xs: '4rem', md: '3rem' },
-			backgroundColor: '#242424',
+			padding: { xs: '2rem', md: '3rem' },
+			backgroundColor: { xs: 'none', md: '#242424' },
 			flex: {
 				display: 'flex',
 				flexWrap: 'wrap',
