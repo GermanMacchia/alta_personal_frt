@@ -6,7 +6,7 @@ export const styles = {
 		container: {
 			display: 'flex',
 			flexDirection: 'column',
-			width: { xs: '45vw', md: '30vw' },
+			width: { xs: '65vw', md: '30vw' },
 			form: {
 				display: 'flex',
 				width: '100%',
@@ -19,7 +19,7 @@ export const styles = {
 					borderLeft: '1px solid rgba(184, 166, 175, 0.21)',
 					padding: { xs: 1, md: '10px' },
 					justifyContent: 'space-between',
-					label: { fontSize: '20px', color: 'Black' },
+					label: { fontSize: '20px', color: '#242424' },
 				},
 			},
 			submit: {

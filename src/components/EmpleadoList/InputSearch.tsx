@@ -12,23 +12,22 @@ interface Props {
 
 export const InputSearch: FC<Props> = ({ handleChange }) => {
 	return (
-		<Box
-			sx={{
-				display: 'flex',
-				justifyContent: 'center',
-				alignContent: 'center',
-				margin: '10px 0',
-			}}>
-			<IconButton
-				disabled
-				type='button'
-				sx={{ padding: '10px' }}
-				aria-label='search'>
-				<SearchIcon />
-			</IconButton>
-			<Paper sx={styles.table.inputSearch}>
+		<Box sx={styles.table.drawer.box.inputContainer}>
+			<Paper>
+				<IconButton
+					disabled
+					type='button'
+					sx={{ padding: '10px' }}
+					aria-label='search'>
+					<SearchIcon />
+				</IconButton>
 				<InputBase
-					sx={styles.table.inputSearch}
+					inputProps={{
+						style: {
+							marginLeft: '10px',
+						},
+					}}
+					sx={styles.table.drawer.box.inputContainer.inputSearch}
 					placeholder='Buscar'
 					onChange={handleChange}
 					color='success'

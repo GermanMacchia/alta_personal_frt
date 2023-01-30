@@ -6,7 +6,6 @@ import Table from '@mui/material/Table'
 import TableContainer from '@mui/material/TableContainer'
 import Paper from '@mui/material/Paper'
 import { TableRows } from './TableRows'
-import { useMediaQuery } from '@mui/material'
 
 interface Props {
 	areas: Area[]
@@ -15,7 +14,6 @@ interface Props {
 
 export const EmpleadosList: FC<Props> = ({ areas, empleados }) => {
 	const [listaEmpleados, setListaEmpleados] = useState(empleados)
-	const matches = useMediaQuery('(min-width:600px)')
 
 	useEffect(() => {
 		setListaEmpleados(empleados)
@@ -31,7 +29,7 @@ export const EmpleadosList: FC<Props> = ({ areas, empleados }) => {
 
 	return (
 		<TableContainer sx={styles.table} component={Paper}>
-			<Table size='small' stickyHeader padding={matches ? 'normal' : 'checkbox'}>
+			<Table size='small' stickyHeader padding='normal'>
 				<TableRows
 					handleFilter={handleFilter}
 					empleados={listaEmpleados}

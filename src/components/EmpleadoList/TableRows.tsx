@@ -100,15 +100,13 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
 									open={isOpen}
 									variant='temporary'
 									onClose={toggleDrawer}>
-									<Box
-										sx={{
-											display: 'flex',
-											flexDirection: 'column',
-										}}>
+									<Box sx={styles.table.drawer}>
 										<List>
-											<IconButton onClick={toggleDrawer}>
-												<CloseIcon />
-											</IconButton>
+											<Box sx={styles.table.drawer.box}>
+												<IconButton sx={{ marginRight: 1 }} onClick={toggleDrawer}>
+													<CloseIcon color='error' />
+												</IconButton>
+											</Box>
 											<InputSearch handleChange={handleFilter} />
 										</List>
 									</Box>
@@ -130,7 +128,7 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
 							{empleado.dni}
 						</TableCell>
 						{!matches && (
-							<TableCell scope='dni'>
+							<TableCell scope='nombre'>
 								{capitalize(empleado.nombre) + ' ' + capitalize(empleado.apellido)}
 							</TableCell>
 						)}

@@ -11,6 +11,13 @@ interface Props {
 	type?: string
 }
 
+const styles = {
+	errors: {
+		position: 'absolute',
+		margin: { xs: '-45px 92px', md: '-30px 20px' },
+	},
+}
+
 export const Input: FC<Props> = ({
 	name,
 	rules,
@@ -32,7 +39,7 @@ export const Input: FC<Props> = ({
 				type={type}
 				InputProps={{
 					style: {
-						color: matches ? 'whitesmoke' : 'black',
+						color: '#242424',
 					},
 				}}
 				disabled={disabled}
@@ -44,7 +51,7 @@ export const Input: FC<Props> = ({
 			{errors[name] && (
 				<Typography
 					variant='caption'
-					sx={{ position: 'absolute', margin: '-20px 0' }}
+					sx={styles.errors}
 					color='#fc746d'
 					className='errorText'>
 					{(errors as any)[name].message}

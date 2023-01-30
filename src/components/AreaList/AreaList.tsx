@@ -13,6 +13,7 @@ import { OptionsButtons } from '../../shared'
 import IconButton from '@mui/material/IconButton/IconButton'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import { useMediaQuery } from '@mui/material'
+import { styles } from './styles'
 
 interface Props {
 	areas: Area[]
@@ -23,10 +24,8 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
 	const matches = useMediaQuery('(min-width:600px)')
 	return (
 		<>
-			<TableContainer
-				component={Paper}
-				sx={{ width: 550, height: { xs: '70vh', md: 500 } }}>
-				<Table stickyHeader size='small' sx={{ padding: '30px', height: '65vh' }}>
+			<TableContainer component={Paper} sx={styles.container}>
+				<Table stickyHeader size='small' sx={styles.container.table}>
 					<TableHead>
 						<TableRow>
 							<TableCell>
