@@ -1,37 +1,35 @@
 export const styles = {
 	table: {
 		marginTop: '3vh',
-		maxHeight: '70vh',
+		maxHeight: { xs: '67vh', md: '60vh' },
 		borderRadius: 0,
-		inputSearch: {
-			width: '60%',
-			height: '40px',
-		},
 		tableItem: {
 			'&:hover': {
 				background: 'rgba(101, 158, 65, 0.08)',
 			},
 		},
 		tableButtons: {
-			paddingLeft: '5rem',
+			paddingLeft: { xs: 0, md: '5rem' },
 			'&.MuiTableCell-paddingSmall': {
 				paddingLeft: 0,
 			},
 		},
-		container: {
+		drawer: {
 			display: 'flex',
-			marging: 0,
-			justifyContent: 'flex-end',
-			background: '#242424',
-			width: '100%',
-			position: 'fixed',
-			bottom: 0,
-			// pagination: {
-			// 	color: 'aliceblue',
-			// 	'& .MuiTablePagination-selectIcon, .MuiSvgIcon-root': {
-			// 		fill: 'aliceblue',
-			// 	},
-			// },
+			flexDirection: 'column',
+			box: {
+				display: 'flex',
+				justifyContent: 'flex-end',
+				inputContainer: {
+					display: 'flex',
+					justifyContent: 'center',
+					margin: '10px 0',
+					inputSearch: {
+						width: '180px',
+						height: '40px',
+					},
+				},
+			},
 		},
 	},
 }

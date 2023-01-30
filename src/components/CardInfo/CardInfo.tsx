@@ -20,7 +20,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 		<>
 			<Box sx={{ display: 'flex', justifyContent: 'end' }}>
 				<IconButton onClick={handleClose}>
-					<CloseIcon color='error' sx={{ fontSize: '35px' }} />
+					<CloseIcon color='error' sx={{ fontSize: '25px' }} />
 				</IconButton>
 			</Box>
 			<Card sx={styles.container}>
@@ -32,19 +32,33 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 						sx={styles.container.image}
 					/>
 					<Box sx={{ margin: '1rem' }}>
-						<Typography sx={{ fontSize: '20px' }} gutterBottom variant='h1'>
+						<Typography
+							sx={{ fontSize: '20px', fontWeight: '700' }}
+							gutterBottom
+							variant='h1'>
 							{capitalize(empleado.nombre) + ' ' + capitalize(empleado.apellido)}
 						</Typography>
-						<Typography gutterBottom variant='body2' sx={styles.container.section}>
-							<Typography variant='body1'>DNI:</Typography>
+						<br />
+						<Typography sx={styles.container.font} variant='body1'>
+							DNI
+						</Typography>
+						<Typography gutterBottom variant='caption' sx={styles.container.section}>
 							{empleado.dni}
 						</Typography>
-						<Typography gutterBottom variant='body2' sx={styles.container.section}>
-							<Typography variant='body1'>FNac:</Typography>
+						<br />
+						<br />
+						<Typography variant='body1' sx={styles.container.font}>
+							FNac
+						</Typography>
+						<Typography gutterBottom variant='caption' sx={styles.container.section}>
 							{new Date(empleado.fechaNac).toLocaleDateString()}
 						</Typography>
-						<Typography gutterBottom variant='body2' sx={styles.container.section}>
-							<Typography variant='body1'>Developer:</Typography>
+						<br />
+						<br />
+						<Typography variant='body1' sx={styles.container.font}>
+							Developer
+						</Typography>
+						<Typography gutterBottom variant='caption' sx={styles.container.section}>
 							{empleado.esDesarrollador ? (
 								<CheckIcon color='success' />
 							) : (
@@ -55,23 +69,33 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 				</Box>
 				<Box sx={{ ...styles.container.column, ...styles.container.right }}>
 					<CardContent>
-						<Typography gutterBottom variant='body2' sx={styles.container.section}>
-							<Typography variant='body1'>Descripción:</Typography>
+						<Typography variant='body1' sx={styles.container.font}>
+							Descripción
+						</Typography>
+						<Typography gutterBottom variant='caption' sx={styles.container.section}>
 							{empleado.descripcion}
 						</Typography>
-						<Typography gutterBottom variant='body2' sx={styles.container.section}>
-							<Typography variant='body1'>Área:</Typography>
+						<br />
+						<br />
+						<Typography variant='body1' sx={styles.container.font}>
+							Área
+						</Typography>
+						<Typography gutterBottom variant='caption' sx={styles.container.section}>
 							{areas
 								.find((area: Area) => area._id === empleado.area)
 								?.nombre.toUpperCase()}
+						</Typography>
+						<br />
+						<br />
+						<Typography variant='body1' sx={styles.container.font}>
+							Otros
 						</Typography>
 						<Typography
 							align='left'
 							gutterBottom
 							maxHeight='10px'
-							variant='body2'
+							variant='caption'
 							sx={styles.container.section}>
-							<Typography variant='body1'>Otros:</Typography>
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error maiores
 							necessitatibus, impedit
 						</Typography>

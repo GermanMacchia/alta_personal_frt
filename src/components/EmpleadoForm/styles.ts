@@ -4,8 +4,15 @@ const ITEM_PADDING_TOP = 20
 
 export const styles = {
 	container: {
-		margin: { xs: '10vh 0', md: '15vh auto' },
-		width: '100%',
+		display: 'flex',
+		justifyContent: 'center',
+		margin: { xs: '10vh 0', md: '5vh auto' },
+		padding: 0,
+		paper: {
+			padding: 2,
+			margin: 1,
+			width: { xs: 'auto', md: '430px' },
+		},
 		title: {
 			fontWeight: '600',
 			fontSize: '20px',
@@ -18,8 +25,7 @@ export const styles = {
 		form: {
 			display: 'flex',
 			flexDirection: 'column',
-			width: '100%',
-			gap: { xs: '3vh', md: '1.4vh' },
+			gap: { xs: '2vh', md: '1.4vh' },
 			inputData: {
 				display: 'flex',
 				flexDirection: 'row',

@@ -24,9 +24,5 @@ export const CardEdit: FC<Props> = ({ data, isLoading }) => {
 		setValue('esDesarrollador', data.esDesarrollador)
 	}, [data])
 
-	return (
-		<Box sx={styles.frame}>
-			<CardEditActive isLoading={isLoading} />
-		</Box>
-	)
+	return <CardEditActive isLoading={isLoading} />
 }

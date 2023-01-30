@@ -1,6 +1,7 @@
 import { Box, Checkbox } from '@mui/material'
 import { ChangeEvent, FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
+import { Typography } from '@mui/material/'
 
 interface Props {
 	trigger: boolean
@@ -19,8 +20,14 @@ export const IsDevCheckbox: FC<Props> = ({ trigger }) => {
 	}, [trigger])
 
 	return (
-		<Box sx={{ display: 'flex', justifyContent: 'space-between', width: '50%' }}>
-			<h4 style={{ color: 'whitesmoke' }}>Es desarrollador?</h4>
+		<Box
+			sx={{
+				display: 'flex',
+				justifyContent: 'space-between',
+				alignItems: 'center',
+				width: '50%',
+			}}>
+			<Typography style={{ color: '#242424' }}>Desarrollador</Typography>
 			<Checkbox
 				{...register('esDesarrollador')}
 				checked={checked}

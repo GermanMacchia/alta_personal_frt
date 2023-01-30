@@ -1,12 +1,23 @@
 <h1>Challenge Alta Personal</h1> 
-<h1>Challenge Alta Personal</h1> 
 <img style="height:200px; width: 350px"  src="https://miro.medium.com/max/1024/1*Ukhx76VQ8E6JXEW7xfIzSA.png" alt="imagen" />
 <br>
 
 Deploy:
-[https://germanmacchia.github.io/alta_personal_frt/](https://germanmacchia.github.io/alta_personal_frt/)
 
-<br><br><br>
+[https://germanmacchia.github.io/alta_personal_frt/](https://germanmacchia.github.io/alta_personal_frt/)
+<br>
+
+Repositorio Back End:
+
+[https://github.com/GermanMacchia/alta_personal_bck](https://github.com/GermanMacchia/alta_personal_bck)
+<br>
+
+Actualización del proyecto:
+
+[Alta empleados V3](https://github.com/GermanMacchia/alta-empleados-v3)
+<br>
+
+<br><br>
 
 # Índice
 
@@ -101,9 +112,10 @@ npm i --save-dev @testing-library/jest-dom
 
 # Documentación del proyecto
 
-Cabe aclarar que el proyecto esta sobre desarrollado (over-engeneered) con el fin de
-exponer la utilidad de ciertas librerías. Además, se establece como un ejercicio
-para pensar sobre un proyecto escalable.
+El proyecto es un CRUD elaborado con Vite+CWS y typescript.<br>
+Contiene una gran variedad de liberias muy útiles para implementar en cualquier proyecto.
+El diseño fue elaborado sobre la marcha.<br>
+Cuenta con responsive design para desktop y movil.
 
 ## Tecnologías
 
@@ -169,7 +181,7 @@ Contiene query de getAreas y mutacion para Empleado<hr>
 
 **useEmpleadoList**<br>
 
-**useEmpleadoList**<br> 
+**useEmpleadoList**<br>
 Contiene queries y mutaciones para la interfaz de la Tabla <hr>
 
 <br>
@@ -179,7 +191,7 @@ Contiene queries y mutaciones para la interfaz de la Tabla <hr>
 
 <br>
 
-**Botonera**<br>
+**OptionsButtons**<br>
 Despliege de botoneras en tablas. Sostiene la lógica para las renderizar mensajes de alertas y modales.<br>
 Esta compuesta por un render condicional, dependiendo del estado de sus hooks va a renderizar
 modales, confirmaciones o Alertas.<br>Debido a las diferencias es necesario indicar si es una tabla
@@ -207,14 +219,11 @@ las especificaciones de React Hook Form. <hr>
 
 <br>
 
-[Uml descriptivo](https://drive.google.com/file/d/1EwkMje0S-pJY2o-yz-tLK-7I4SdfKQt_/view?usp=share_link)
+<img style="height: auto; width: 700px"  src="./src/assets/uml.jpg" alt="imagen" />
+<br>
 
 La aplicación consta de cinco rutas las cuales cuatro son hijas de la primera, siendo la app principal.<br>
 Contiene un falso sign in que despliega el componente de la tabla.<hr>
-
-
-
-
 
 <br>
 
