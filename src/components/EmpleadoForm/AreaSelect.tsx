@@ -49,7 +49,7 @@ export const AreaSelect: FC<Props> = ({ trigger }) => {
 				onChange={handleChange}
 				defaultValue={''}
 				displayEmpty>
-				<MenuItem value='' disabled sx={{ color: 'text.disabled' }}>
+				<MenuItem value='' disabled>
 					Área
 				</MenuItem>
 				{listaAreas &&
@@ -62,7 +62,11 @@ export const AreaSelect: FC<Props> = ({ trigger }) => {
 			{errors.area && (
 				<Typography
 					variant='caption'
-					sx={{ position: 'absolute', margin: '-21px 0', right: 0 }}
+					sx={{
+						position: 'absolute',
+						margin: { xs: '-45px 92px', md: '-21px 0' },
+						right: 0,
+					}}
 					color='#fc746d'
 					className='errorText'>
 					{(errors as any).area.message}

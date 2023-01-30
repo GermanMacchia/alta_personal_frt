@@ -10,6 +10,7 @@ const styles = {
 		},
 		section: {
 			padding: { xs: '20px', md: '10vh' },
+			width: { xs: 'auto', md: '600px' },
 		},
 		title: {
 			color: '#a5e4dc',

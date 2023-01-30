@@ -23,7 +23,7 @@ export const CardEditForm: FC<Props> = ({ handleClose, empleado }) => {
 		<Box sx={styles.modal}>
 			<Box sx={{ display: 'flex', justifyContent: 'end' }}>
 				<IconButton onClick={handleClose}>
-					<CloseIcon color='error' sx={{ fontSize: '35px' }} />
+					<CloseIcon color='error' sx={{ fontSize: '25px' }} />
 				</IconButton>
 			</Box>
 			<WithFormProvider

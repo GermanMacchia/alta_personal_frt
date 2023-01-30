@@ -6,6 +6,7 @@ import { useFormContext } from 'react-hook-form'
 import { TextInputBlock } from './TextInputBlock'
 import { DataInputBlock } from './DataInputBlock'
 import { IsDevCheckbox } from './IsDevCheckbox'
+import Paper from '@mui/material/Paper'
 
 interface Props {
 	isLoading: boolean
@@ -23,32 +24,34 @@ export const EmpleadoForm: FC<Props> = ({ isLoading }) => {
 	}, [isLoading])
 
 	return (
-		<Container sx={styles.container} maxWidth='sm'>
-			<Box display='flex' alignItems='flex-start' justifyContent='space-between'>
-				<Box>
-					<Typography sx={styles.container.title}>Alta Empleado</Typography>
-					<Typography sx={styles.container.subtitle}>
-						Introduzca los datos del empleado
-					</Typography>
+		<Container sx={styles.container}>
+			<Paper elevation={0} sx={styles.container.paper}>
+				<Box display='flex' alignItems='flex-start'>
+					<Box>
+						<Typography sx={styles.container.title}>Alta Empleado</Typography>
+						<Typography sx={styles.container.subtitle}>
+							Introduzca los datos del empleado
+						</Typography>
+					</Box>
 				</Box>
-			</Box>
-			<Box sx={styles.container.form}>
-				<input {...register('formType')} type='hidden' value='AltaEmpleado' />
-				<Box sx={styles.container.form.inputData}>
-					<TextInputBlock />
-					<DataInputBlock trigger={trigger} />
+				<Box sx={styles.container.form}>
+					<input {...register('formType')} type='hidden' value='AltaEmpleado' />
+					<Box sx={styles.container.form.inputData}>
+						<TextInputBlock />
+						<DataInputBlock trigger={trigger} />
+					</Box>
+					<Box display='flex' alignItems='flex-start' justifyContent='space-between'>
+						<IsDevCheckbox trigger={trigger} />
+						<Button
+							variant='contained'
+							type='submit'
+							disableElevation
+							sx={styles.container.form.submit}>
+							{isLoading ? <CircularProgress /> : 'Enviar'}
+						</Button>
+					</Box>
 				</Box>
-				<Box display='flex' alignItems='flex-start' justifyContent='space-between'>
-					<IsDevCheckbox trigger={trigger} />
-					<Button
-						variant='contained'
-						type='submit'
-						disableElevation
-						sx={styles.container.form.submit}>
-						{isLoading ? <CircularProgress /> : 'Enviar'}
-					</Button>
-				</Box>
-			</Box>
+			</Paper>
 		</Container>
 	)
 }
