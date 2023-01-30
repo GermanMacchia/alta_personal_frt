@@ -1,7 +1,7 @@
 export const styles = {
 	table: {
 		marginTop: '3vh',
-		maxHeight: { xs: '67vh', md: '60vh' },
+		maxHeight: { xs: '65vh', md: '60vh' },
 		borderRadius: 0,
 		tableItem: {
 			'&:hover': {

@@ -13,7 +13,7 @@ export const styles = {
 				color: 'grey',
 				gap: { xs: 6 },
 				flexDirection: { xs: 'column', md: 'row' },
-				height: '300px',
+				height: '250px',
 				switch: {
 					borderLeft: '1px solid rgba(184, 166, 175, 0.21)',
 					padding: { xs: 1, md: '10px' },
@@ -22,7 +22,7 @@ export const styles = {
 				},
 			},
 			submit: {
-				marginTop: '1rem',
+				marginBottom: '4rem',
 				height: '45px',
 			},
 		},

@@ -1,34 +1,33 @@
 export const styles = {
 	container: {
-		height: '400px',
-		width: { xs: '260px', md: '400px' },
+		margin: 1,
 		display: 'flex',
+		flexDirection: { xs: 'column', md: 'row' },
+		alignItems: { xs: 'center', md: 'start' },
+		height: { xs: 360, md: 'auto' },
+
+		overflow: 'scroll',
+		gap: 2,
 		'&.MuiPaper-rounded': {
 			boxShadow: 'none',
 		},
-		column: {
-			display: 'flex',
-			flexDirection: 'column',
-		},
 		section: {
-			marginTop: 2,
+			marginBottom: '10px',
+			width: 150,
+			font: {
+				fontSize: '18px',
+				fontWeight: '400',
+			},
 		},
+	},
+	column: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		gap: 2,
 		image: {
-			margin: '0 1rem',
-			height: { xs: '100px', md: '200px' },
-			width: { xs: '100px', md: '200px' },
-			border: '1px solid rgba(184, 166, 175, 0.21)',
-			boxShadow: '6px 8px 6px -6px black',
-		},
-		font: {
-			fontSize: '18px',
-			fontWeight: '400',
-		},
-		right: {
-			justifyContent: 'space-between',
-		},
-		actions: {
-			justifyContent: 'flex-end',
+			height: { xs: '100px', md: '150px' },
+			width: 'auto',
 		},
 	},
 }
