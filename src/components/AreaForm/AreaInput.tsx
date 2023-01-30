@@ -31,7 +31,7 @@ export const AreaInput: FC<Props> = ({ active }) => {
 					name='nombre'
 					disabled={active}
 					rules={{
-						required: 'Nombre es requerido',
+						required: 'requerido',
 						pattern: {
 							value: /\w/g,
 							message: 'Solo se permiten letras',
