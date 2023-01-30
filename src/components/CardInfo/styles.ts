@@ -3,6 +3,9 @@ export const styles = {
 		height: '400px',
 		width: { xs: '260px', md: '400px' },
 		display: 'flex',
+		'&.MuiPaper-rounded': {
+			boxShadow: 'none',
+		},
 		column: {
 			display: 'flex',
 			flexDirection: 'column',

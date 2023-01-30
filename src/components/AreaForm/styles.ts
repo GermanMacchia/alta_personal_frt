@@ -18,7 +18,7 @@ export const styles = {
 			display: 'flex',
 			flexDirection: 'column',
 			gap: '1.4vh',
-			width: '130px',
+			width: '100%',
 			tag: {
 				marginBottom: '10%',
 			},

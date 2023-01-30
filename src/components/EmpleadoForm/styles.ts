@@ -25,7 +25,6 @@ export const styles = {
 		form: {
 			display: 'flex',
 			flexDirection: 'column',
-			width: { xs: '310px', md: '400px' },
 			gap: { xs: '2vh', md: '1.4vh' },
 			inputData: {
 				display: 'flex',

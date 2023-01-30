@@ -9,7 +9,6 @@ export const styles = {
 			width: { xs: '65vw', md: '30vw' },
 			form: {
 				display: 'flex',
-				width: '100%',
 				overflow: 'scroll',
 				color: 'grey',
 				gap: { xs: 6 },
@@ -27,11 +26,5 @@ export const styles = {
 				height: '45px',
 			},
 		},
-	},
-	frame: {
-		display: 'flex',
-		alignItems: 'center',
-		padding: { xs: 2, md: '4rem' },
-		backgroundColor: { xs: 'white', md: '#242424' },
 	},
 }
