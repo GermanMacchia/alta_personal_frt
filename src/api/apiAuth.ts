@@ -1,0 +1,11 @@
+import { api } from './api'
+import { User } from '../interfaces/user.interface'
+
+export const authSignin = async (usuario: User) => {
+	const { data } = await api({
+		method: 'post',
+		url: '/auth/signin',
+		data: usuario,
+	})
+	return data
+}

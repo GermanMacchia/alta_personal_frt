@@ -6,8 +6,8 @@ import {
 	NotFound,
 	ListaArea,
 	AltaEmpleado,
+	Login,
 } from '../views'
-import { SignIn } from '../components/SignIn'
 
 export const router = createHashRouter([
 	{
@@ -17,7 +17,7 @@ export const router = createHashRouter([
 		children: [
 			{
 				path: '/',
-				element: <SignIn />,
+				element: <Login />,
 				errorElement: <NotFound />,
 			},
 			{
@@ -42,7 +42,7 @@ export const router = createHashRouter([
 			},
 			{
 				path: '/*',
-				element: <SignIn />,
+				element: <Login />,
 				errorElement: <NotFound />,
 			},
 		],

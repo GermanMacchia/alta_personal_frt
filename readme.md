@@ -224,14 +224,3 @@ las especificaciones de React Hook Form. <hr>
 
 La aplicación consta de cinco rutas las cuales cuatro son hijas de la primera, siendo la app principal.<br>
 Contiene un falso sign in que despliega el componente de la tabla.<hr>
-
-<br>
-
-### Composición >>
-
-<br>
-
-[Uml descriptivo](https://drive.google.com/file/d/1EwkMje0S-pJY2o-yz-tLK-7I4SdfKQt_/view?usp=share_link)
-
-La aplicación consta de cinco rutas las cuales cuatro son hijas de la primera, siendo la app principal.<br>
-Contiene un falso sign in que despliega el componente de la tabla.<hr>

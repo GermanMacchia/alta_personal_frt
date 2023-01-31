@@ -1,20 +1,80 @@
-import { Button, Box } from '@mui/material'
+import { Button, Box, Typography, CircularProgress } from '@mui/material'
 import { useNavigate } from 'react-router'
-import { styles } from './styles'
+import { Label, styles } from './styles'
+import { Input } from '../../shared'
+import Link from '@mui/material/Link'
+import { useFormContext } from 'react-hook-form'
 
-export const SignIn = () => {
-	const navigate = useNavigate()
+interface Props {
+	isLoading: boolean
+}
+export const SignIn = ({ isLoading }: Props) => {
+	const {
+		formState: { isSubmitted },
+		reset,
+	} = useFormContext()
 
 	return (
 		<Box sx={styles.container}>
-			<h1>Sign In</h1>
-			<Button
-				sx={styles.container.login}
-				variant='contained'
-				color='success'
-				onClick={() => navigate('/lista-empleados')}>
-				Login
-			</Button>
+			<Typography variant='h4' color='aliceblue'>
+				Sign In
+			</Typography>
+			<Box sx={styles.container.form}>
+				<Label>
+					<Box sx={styles.container.form.tag}>
+						<Typography fontWeight={400} display={'inline-block'}>
+							Email &nbsp;
+						</Typography>
+						<Typography
+							fontWeight={400}
+							color={'primary.main'}
+							display={'inline-block'}>
+							*
+						</Typography>
+					</Box>
+					<Input
+						name={'email'}
+						type='email'
+						rules={{
+							required: 'Requerido',
+							pattern: {
+								value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+								message: 'Requerido',
+							},
+						}}
+						placeholder={'email@usuario.com'}
+					/>
+				</Label>
+				<Label>
+					<Box sx={styles.container.form.tag}>
+						<Typography fontWeight={400} display={'inline-block'}>
+							Password &nbsp;
+						</Typography>
+						<Typography
+							fontWeight={400}
+							color={'primary.main'}
+							display={'inline-block'}>
+							*
+						</Typography>
+					</Box>
+					<Input
+						name={'password'}
+						type='password'
+						rules={{
+							required: 'Requerido',
+						}}
+						placeholder={'password'}
+					/>
+				</Label>
+				<Button
+					variant='contained'
+					type='submit'
+					disableElevation
+					sx={styles.container.form.submit}>
+					{isLoading ? <CircularProgress size='2rem' /> : 'Signin'}
+				</Button>
+				<Link sx={styles.container.form.registro}>Registrate</Link>
+			</Box>
 		</Box>
 	)
 }

@@ -1,11 +1,7 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
-import {
-	deleteEmpleado,
-	editEmpleado,
-	fetchAreas,
-	fetchEmpleados,
-} from '../api'
+import { deleteEmpleado, editEmpleado, fetchAreas } from '../api'
+import { fetchEmpleados } from '../api/apiEmpleado'
 
 export const useEmpleadoList = () => {
 	const [isActive, setIsActive] = useState({

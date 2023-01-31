@@ -11,9 +11,10 @@ import { buttons } from './buttons'
 import LogoutIcon from '@mui/icons-material/Logout'
 import IconButton from '@mui/material/IconButton'
 import { useMediaQuery } from '@mui/material'
+import { useAuthForm } from '../../hooks/useAuthForm'
 
-const logout = {
-	label: 'Logout',
+const signout = {
+	label: 'SignOut',
 	icon: <LogoutIcon />,
 	link: '/',
 }
@@ -28,6 +29,7 @@ export const Navbar: FC<Props> = ({ children }) => {
 	const [_, match] = useMatches()
 	const condition = match.pathname === '/'
 	const matchMedia = useMediaQuery('(min-width:600px)')
+	const { signOut } = useAuthForm()
 
 	return (
 		<>
@@ -37,11 +39,11 @@ export const Navbar: FC<Props> = ({ children }) => {
 				</Typography>
 				<Box>
 					<IconButton
-						aria-label='delete'
-						sx={styles.container.logout}
+						aria-label='signOut'
+						sx={styles.container.signout}
 						disabled={condition}
-						onClick={() => navigate(logout.link)}>
-						{logout.icon}
+						onClick={signOut}>
+						{signout.icon}
 					</IconButton>
 				</Box>
 			</Box>
@@ -71,7 +73,6 @@ export const Navbar: FC<Props> = ({ children }) => {
 					/>
 				))}
 			</BottomNavigation>
-			<div id='pagination' />
 		</>
 	)
 }
