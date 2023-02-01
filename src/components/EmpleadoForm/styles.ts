@@ -9,6 +9,7 @@ export const styles = {
 		margin: { xs: '10vh 0', md: '5vh auto' },
 		padding: 0,
 		paper: {
+			borderRadius: 0,
 			padding: 2,
 			margin: 1,
 			width: { xs: 'auto', md: '430px' },

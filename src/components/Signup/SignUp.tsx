@@ -6,13 +6,13 @@ import { Input } from '../../shared'
 interface Props {
 	isLoading: boolean
 }
-export const SignIn = ({ isLoading }: Props) => {
+export const SignUp = ({ isLoading }: Props) => {
 	const navigate = useNavigate()
 
 	return (
 		<Box sx={styles.container}>
 			<Typography variant='h4' color='aliceblue'>
-				Sign In
+				Sign Up
 			</Typography>
 			<Box sx={styles.container.form}>
 				<Label>
@@ -37,7 +37,7 @@ export const SignIn = ({ isLoading }: Props) => {
 								message: 'Requerido',
 							},
 						}}
-						placeholder={'email@usuario.com'}
+						placeholder={'Registrate con un mail'}
 					/>
 				</Label>
 				<Label>
@@ -58,7 +58,7 @@ export const SignIn = ({ isLoading }: Props) => {
 						rules={{
 							required: 'Requerido',
 						}}
-						placeholder={'password'}
+						placeholder={'Elige una contraseña'}
 					/>
 				</Label>
 				<Button
@@ -66,9 +66,9 @@ export const SignIn = ({ isLoading }: Props) => {
 					type='submit'
 					disableElevation
 					sx={styles.container.form.submit}>
-					{isLoading ? <CircularProgress size='2rem' /> : 'Signin'}
+					{isLoading ? <CircularProgress size='2rem' /> : 'SignUp'}
 				</Button>
-				<Button onClick={() => navigate('/registro')}>Registrate</Button>
+				<Button onClick={() => navigate('/')}>Inicia tu Sesión</Button>
 			</Box>
 		</Box>
 	)

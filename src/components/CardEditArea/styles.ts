@@ -30,6 +30,7 @@ export const styles = {
 			submit: {
 				height: '45px',
 				marginTop: '2rem',
+				width: '100%',
 			},
 		},
 	},

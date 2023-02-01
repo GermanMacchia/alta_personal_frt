@@ -2,9 +2,12 @@ import styled from '@emotion/styled'
 
 export const styles = {
 	container: {
-		marginTop: { xs: 0, md: 10 },
 		marginBottom: { xs: 6, md: 0 },
 		width: { xs: '290px', md: '400px' },
+		height: '350px',
+		background: { xs: 'none', md: 'white' },
+		padding: '10%',
+		color: '#242424',
 		title: {
 			fontWeight: '600',
 			fontSize: '20px',

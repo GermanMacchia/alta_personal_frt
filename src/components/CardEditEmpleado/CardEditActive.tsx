@@ -23,7 +23,7 @@ export const CardEditActive: FC<Props> = ({ isLoading }) => {
 	return (
 		<Box sx={styles.modal.container}>
 			<Box sx={styles.modal.container.form}>
-				<Box>
+				<Box sx={{ width: { xs: 200, md: 300 } }}>
 					<TextInputBlock
 						nombreActivo={isActive.nombre}
 						apellidoActivo={isActive.apellido}

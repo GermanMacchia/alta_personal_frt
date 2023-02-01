@@ -12,10 +12,9 @@ const style = {
 	container: {
 		display: 'flex',
 		flexWrap: 'wrap',
-		justifyContent: 'space-around',
+		justifyContent: 'center',
 		margin: '5vh auto',
-		width: '100vw',
-		gap: '20px',
+		gap: 10,
 	},
 	loading: {
 		height: '10px',

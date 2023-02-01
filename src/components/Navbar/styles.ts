@@ -6,7 +6,7 @@ export const styles = {
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		zIndex: 1,
-		logout: {
+		signout: {
 			color: 'rgba(255, 87, 106, 0.78)',
 			'& .MuiSvgIcon-fontSizeMedium': {
 				fontSize: '2rem',

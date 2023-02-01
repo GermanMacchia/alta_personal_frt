@@ -1,16 +1,14 @@
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 const styles = {
 	container: {
-		fontSize: '18px',
 		display: 'flex',
-		flexWrap: 'wrap',
-		marginTop: 2,
+		flexDirection: 'column',
 		ul: {
 			listStyleType: 'none',
 		},
 		section: {
-			padding: { xs: '20px', md: '10vh' },
-			width: { xs: 'auto', md: '400px' },
+			padding: '10px',
+			lineHeight: 3,
 		},
 		title: {
 			color: '#a5e4dc',
@@ -29,32 +27,35 @@ export const About = () => {
 		<Box sx={styles.container}>
 			<Box sx={styles.container.section}>
 				<hr />
-				<h1 style={styles.container.title}>Alta Empleados</h1>
+				<Typography variant='h4' style={styles.container.title}>
+					Alta Empleados
+				</Typography>
 				<hr />
-				<br />
-				<p>
-					Aplicación CRUD realizado para el challenge Gotam-Upe por{' '}
-					<a
-						style={styles.container.link}
-						href='https://www.linkedin.com/in/germanmacchia'
-						target='_blank'>
-						Germán O. Macchia
-					</a>
-				</p>
+				<ul>
+					<li>
+						Aplicación CRUD realizado para el challenge Gotam-Upe por{' '}
+						<a
+							style={styles.container.link}
+							href='https://www.linkedin.com/in/germanmacchia'
+							target='_blank'>
+							Germán O. Macchia
+						</a>
+					</li>
+				</ul>
 				<hr />
 			</Box>
 			<Box sx={styles.container.section}>
-				<h3 style={styles.container.title}>Mejoras a realizar:</h3>
-				<br />
+				<Typography variant='h4' style={styles.container.title}>
+					Mejoras a futuro
+				</Typography>
 				<ul style={styles.container.ul}>
-					<li>Login para admin</li>
-					<br />
-					<li>Avatares para empleado</li>
+					<li>Avatares para empleados</li>
 				</ul>
 			</Box>
 			<Box sx={styles.container.section}>
-				<h3 style={styles.container.title}>Repositorios:</h3>
-				<br />
+				<Typography variant='h4' style={styles.container.title}>
+					Repositorios
+				</Typography>
 				<ul style={styles.container.ul}>
 					<li>
 						<a
@@ -64,7 +65,6 @@ export const About = () => {
 							Front End
 						</a>
 					</li>
-					<br />
 					<li>
 						<a
 							style={styles.container.link}

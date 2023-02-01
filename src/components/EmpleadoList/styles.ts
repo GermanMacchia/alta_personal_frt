@@ -1,8 +1,11 @@
 export const styles = {
 	table: {
-		marginTop: '3vh',
-		maxHeight: { xs: '67vh', md: '60vh' },
+		maxHeight: { xs: '65vh', md: '60vh' },
 		borderRadius: 0,
+		margin: '3vh auto',
+		'&.MuiPaper-root': {
+			width: '98%',
+		},
 		tableItem: {
 			'&:hover': {
 				background: 'rgba(101, 158, 65, 0.08)',

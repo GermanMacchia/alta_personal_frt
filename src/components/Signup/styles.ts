@@ -3,7 +3,7 @@ export const styles = {
 	container: {
 		width: { xs: 300, md: 320 },
 		border: '1px solid #9ce4d9',
-		background: '#2d306d',
+		background: '#80364f',
 		display: 'flex',
 		flexDirection: 'column',
 		gap: 2,
