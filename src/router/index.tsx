@@ -7,6 +7,7 @@ import {
 	ListaArea,
 	AltaEmpleado,
 	Login,
+	Registro,
 } from '../views'
 
 export const router = createHashRouter([
@@ -18,6 +19,11 @@ export const router = createHashRouter([
 			{
 				path: '/',
 				element: <Login />,
+				errorElement: <NotFound />,
+			},
+			{
+				path: '/registro',
+				element: <Registro />,
 				errorElement: <NotFound />,
 			},
 			{

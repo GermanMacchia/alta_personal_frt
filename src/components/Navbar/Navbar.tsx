@@ -27,7 +27,7 @@ export const Navbar: FC<Props> = ({ children }) => {
 	const [value, setValue] = useState(0)
 	const navigate = useNavigate()
 	const [_, match] = useMatches()
-	const condition = match.pathname === '/'
+	const condition = match.pathname === '/' || match.pathname === '/registro'
 	const matchMedia = useMediaQuery('(min-width:600px)')
 	const { signOut } = useAuthForm()
 

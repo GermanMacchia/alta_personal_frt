@@ -8,11 +8,8 @@ const api = async ({ ...options }) => {
 	base.defaults.headers.common.Authorization = JSON.parse(
 		localStorage.getItem('user')!
 	)
-	const onSuccess = (response: any) => response
-	const onError = (error: any) => {
-		return error
-	}
-	return await base(options).then(onSuccess).catch(onError)
+
+	return await base(options)
 }
 
 export { api }

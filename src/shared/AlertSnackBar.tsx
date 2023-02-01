@@ -22,7 +22,7 @@ export const AlertSnackBar: FC<Props> = ({ isOpen, severity, message }) => {
 			<Snackbar
 				open={open}
 				onClick={handleClose}
-				autoHideDuration={1500}
+				autoHideDuration={1000}
 				anchorOrigin={{
 					vertical: 'bottom',
 					horizontal: 'right',

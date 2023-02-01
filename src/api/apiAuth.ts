@@ -9,3 +9,12 @@ export const authSignin = async (usuario: User) => {
 	})
 	return data
 }
+
+export const authSignup = async (usuario: User) => {
+	const { data } = await api({
+		method: 'post',
+		url: '/auth/signup',
+		data: usuario,
+	})
+	return data
+}

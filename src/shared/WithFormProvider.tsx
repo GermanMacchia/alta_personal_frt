@@ -24,7 +24,9 @@ export const WithFormProvider: FC<Props> = ({
 		setIsError(false)
 		setIsSuccess(false)
 		try {
-			await handleSubmit(data).then(() => setIsSuccess(true))
+			await handleSubmit(data).then(() => {
+				setIsSuccess(true)
+			})
 		} catch (error: any) {
 			setErrorMessage(error.response.data)
 			setIsError(true)

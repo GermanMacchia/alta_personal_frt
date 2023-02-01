@@ -68,6 +68,7 @@ export const OptionsButtons: FC<Props> = ({ isUser = false, data }) => {
 					message={empleadoDeleteSuccessMsg}
 				/>
 			)}
+
 			{areaDelete.isError && (
 				<AlertSnackBar
 					isOpen={true}

@@ -43,7 +43,7 @@ export const AreaSelect: FC<Props> = ({ trigger }) => {
 			<Select
 				MenuProps={styles.container.form.select.__menuprops}
 				{...register('area', { required: 'requerido' })}
-				sx={{ color: area ? 'whitesmoke' : 'grey' }}
+				sx={{ color: area ? '#242424' : 'grey' }}
 				variant='standard'
 				color='success'
 				onChange={handleChange}

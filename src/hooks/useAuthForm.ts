@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query'
-import { authSignin } from '../api/apiAuth'
+import { authSignin, authSignup } from '../api/apiAuth'
 import { User } from '../interfaces/user.interface'
 import { useNavigate } from 'react-router'
 import { useState, useEffect } from 'react'
@@ -12,18 +12,15 @@ export const useAuthForm = () => {
 		localStorage.setItem('user', JSON.stringify(data))
 	}
 
-	const getLocalStorageToken = () => {
-		JSON.parse(localStorage.getItem('user')!)
-	}
-
 	const signIn = useMutation((usuario: User) =>
 		authSignin(usuario).then(data => setToken(data))
 	)
 
+	const signUp = useMutation((usuario: User) => authSignup(usuario))
+
 	useEffect(() => {
 		if (token) {
 			setLocalStorageToken(token)
-
 			navigate('/lista-empleados')
 		}
 	}, [token])
@@ -36,5 +33,6 @@ export const useAuthForm = () => {
 	return {
 		signIn,
 		signOut,
+		signUp,
 	}
 }
