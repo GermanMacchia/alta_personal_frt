@@ -1,20 +1,15 @@
 import { WithFormProvider } from '../shared'
 import { AreaForm } from '../components/AreaForm'
 import { useAreaForm } from '../hooks/useAreaForm'
-import { Box, LinearProgress, useMediaQuery } from '@mui/material'
-import { AlertSnackBar } from '../shared/AlertSnackBar'
+import { LinearProgress, useMediaQuery, Box } from '@mui/material'
 import { AreaList } from '../components/AreaList'
 import { WithModal } from '../shared/WithModal'
 import { useState } from 'react'
 
-const messageSuccess = 'Los datos fueron actualizados'
-const style = {
+const styles = {
 	container: {
 		display: 'flex',
-		flexWrap: 'wrap',
 		justifyContent: 'center',
-		margin: '5vh auto',
-		gap: 10,
 	},
 	loading: {
 		height: '10px',
@@ -35,18 +30,16 @@ export const ListaArea = () => {
 	)
 
 	if (areas.isLoading)
-		return <LinearProgress sx={style.loading} color='success' />
+		return <LinearProgress sx={styles.loading} color='success' />
 
-	const tablaVacia = areas?.data.length === 0
+	if (areas.data.length === 0) return <h2>Tabla sin datos</h2>
+	if (areas.error) return <h4>Error de conexión</h4>
 
 	return (
-		<Box sx={style.container}>
-			{tablaVacia && <h2>Tabla sin datos</h2>}
-			{!tablaVacia && (
-				<AreaList areas={areas.data} handleOpen={() => setIsOpen(!isOpen)} />
-			)}
-			{matches && !isOpen && areaForm()}
-			{isOpen && (
+		<Box sx={styles.container}>
+			<AreaList areas={areas.data} handleOpen={() => setIsOpen(!isOpen)} />
+			{matches && areaForm()}
+			{!matches && isOpen && (
 				<WithModal
 					children={areaForm()}
 					open={isOpen}

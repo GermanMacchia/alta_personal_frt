@@ -25,7 +25,6 @@ export const IsDevCheckbox: FC<Props> = ({ trigger }) => {
 				display: 'flex',
 				justifyContent: 'space-between',
 				alignItems: 'center',
-				width: '50%',
 			}}>
 			<Typography style={{ color: '#242424' }}>Desarrollador</Typography>
 			<Checkbox

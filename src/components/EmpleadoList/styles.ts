@@ -2,19 +2,11 @@ export const styles = {
 	table: {
 		maxHeight: { xs: '65vh', md: '60vh' },
 		borderRadius: 0,
-		margin: '3vh auto',
-		'&.MuiPaper-root': {
-			width: '98%',
-		},
+		padding: '0 10px',
+		margin: '3vh 3px',
 		tableItem: {
 			'&:hover': {
 				background: 'rgba(101, 158, 65, 0.08)',
-			},
-		},
-		tableButtons: {
-			paddingLeft: { xs: 0, md: '5rem' },
-			'&.MuiTableCell-paddingSmall': {
-				paddingLeft: 0,
 			},
 		},
 		drawer: {

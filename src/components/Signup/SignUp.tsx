@@ -66,7 +66,11 @@ export const SignUp = ({ isLoading }: Props) => {
 					type='submit'
 					disableElevation
 					sx={styles.container.form.submit}>
-					{isLoading ? <CircularProgress size='2rem' /> : 'SignUp'}
+					{isLoading ? (
+						<CircularProgress sx={{ color: 'aliceblue' }} size='2rem' />
+					) : (
+						'Sign Up'
+					)}
 				</Button>
 				<Button onClick={() => navigate('/')}>Inicia tu Sesión</Button>
 			</Box>

@@ -19,9 +19,6 @@ export const ListaEmpleado = () => {
 	if (areas.isLoading || isLoading)
 		return <LinearProgress sx={style.loading} color='success' />
 	if (data.length === 0) return <h2>Tabla sin datos</h2>
-	return (
-		<div>
-			<EmpleadosList areas={areas.data} empleados={data} />
-		</div>
-	)
+
+	return <EmpleadosList areas={areas.data} empleados={data} />
 }

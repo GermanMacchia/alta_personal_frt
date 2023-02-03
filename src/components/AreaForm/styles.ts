@@ -4,10 +4,11 @@ export const styles = {
 	container: {
 		marginBottom: { xs: 6, md: 0 },
 		width: { xs: '290px', md: '400px' },
-		height: '350px',
+		height: '300px',
 		background: { xs: 'none', md: 'white' },
-		padding: '10%',
+		padding: 1,
 		color: '#242424',
+		margin: '3vh 3px',
 		title: {
 			fontWeight: '600',
 			fontSize: '20px',

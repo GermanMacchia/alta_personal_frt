@@ -23,20 +23,13 @@ export const CardEditActive: FC<Props> = ({ isLoading }) => {
 	return (
 		<Box sx={styles.modal.container}>
 			<Box sx={styles.modal.container.form}>
-				<Box sx={{ width: { xs: 200, md: 300 } }}>
-					<TextInputBlock
-						nombreActivo={isActive.nombre}
-						apellidoActivo={isActive.apellido}
-						descripcionActiva={isActive.descripcion}
-					/>
-				</Box>
 				<Box sx={styles.modal.container.form.switch}>
 					<FormControl component='fieldset' variant='standard'>
 						<FormLabel
 							component='legend'
 							color='success'
 							sx={styles.modal.container.form.switch.label}>
-							EDIT
+							EDITAR
 						</FormLabel>
 						<FormGroup>
 							<FormControlLabel
@@ -71,6 +64,13 @@ export const CardEditActive: FC<Props> = ({ isLoading }) => {
 							/>
 						</FormGroup>
 					</FormControl>
+				</Box>
+				<Box sx={styles.modal.container.inputs}>
+					<TextInputBlock
+						nombreActivo={isActive.nombre}
+						apellidoActivo={isActive.apellido}
+						descripcionActiva={isActive.descripcion}
+					/>
 				</Box>
 			</Box>
 			<Button sx={styles.modal.container.submit} variant='contained' type='submit'>

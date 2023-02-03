@@ -30,14 +30,11 @@ export const CardEditArea: FC<Props> = ({ area, isLoading }) => {
 	return (
 		<Box sx={styles.modal.container}>
 			<Box sx={styles.modal.container.flex}>
-				<Box>
-					<AreaInput active={isActive} />
-				</Box>
 				<Box sx={styles.modal.container.flex.switch}>
 					<FormControl component='fieldset' variant='standard'>
 						<FormLabel
 							component='legend'
-							sx={styles.modal.container.flex.switch.tag}
+							sx={styles.modal.container.flex.switch.label}
 							color='success'>
 							EDITAR
 						</FormLabel>
@@ -52,6 +49,9 @@ export const CardEditArea: FC<Props> = ({ area, isLoading }) => {
 							label='Nombre'
 						/>
 					</FormControl>
+				</Box>
+				<Box>
+					<AreaInput active={isActive} />
 				</Box>
 			</Box>
 			<Button sx={styles.modal.container.submit} variant='contained' type='submit'>

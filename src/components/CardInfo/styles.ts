@@ -5,7 +5,6 @@ export const styles = {
 		flexDirection: { xs: 'column', md: 'row' },
 		alignItems: { xs: 'center', md: 'start' },
 		height: { xs: 360, md: 'auto' },
-
 		overflow: 'scroll',
 		gap: 2,
 		'&.MuiPaper-rounded': {

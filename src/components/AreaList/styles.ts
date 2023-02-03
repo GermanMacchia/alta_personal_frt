@@ -1,13 +1,13 @@
 export const styles = {
 	container: {
-		height: { xs: '350px', md: 350 },
+		maxHeight: { xs: '65vh', md: '60vh' },
 		borderRadius: 0,
-		margin: '30 auto',
+		margin: '3vh 3px',
 		'&.MuiPaper-root': {
-			width: { xs: '98%', md: '30%' },
+			width: { xs: '100%', md: '30%' },
 		},
 		table: {
-			padding: '10%',
+			padding: '0 10px',
 		},
 	},
 }
