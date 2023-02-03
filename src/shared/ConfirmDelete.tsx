@@ -27,42 +27,40 @@ export const ConfirmDelete: FC<Props> = ({
 	}
 
 	return (
-		<div>
-			<Dialog
-				open={isOpen}
-				onClose={handleOpen}
-				aria-labelledby='alert-dialog-title'
-				aria-describedby='alert-dialog-description'>
-				<DialogTitle id='alert-dialog-title'>{'Borrar datos'}</DialogTitle>
-				<DialogContent sx={{ margin: '0 auto' }}>
-					{deleteHandler.isLoading ? (
-						<CircularProgress />
-					) : (
-						<DialogContentText id='alert-dialog-description'>
-							Seguro deseas borrar {data.nombre.toUpperCase()}{' '}
-							{data.apellido?.toUpperCase()}
-						</DialogContentText>
-					)}
-				</DialogContent>
-				<DialogActions
-					sx={{ display: 'flex', justifyContent: 'center', padding: 2.5 }}>
-					<Button
-						variant='contained'
-						color='error'
-						disabled={deleteHandler.isLoading}
-						onClick={handleOpen}>
-						Cancelar
-					</Button>
-					<Button
-						variant='contained'
-						color='success'
-						disabled={deleteHandler.isLoading}
-						onClick={handleConfirm}
-						autoFocus>
-						Confirmar
-					</Button>
-				</DialogActions>
-			</Dialog>
-		</div>
+		<Dialog
+			open={isOpen}
+			onClose={handleOpen}
+			aria-labelledby='alert-dialog-title'
+			aria-describedby='alert-dialog-description'>
+			<DialogTitle id='alert-dialog-title'>{'Borrar datos'}</DialogTitle>
+			<DialogContent sx={{ margin: '0 auto' }}>
+				{deleteHandler.isLoading ? (
+					<CircularProgress />
+				) : (
+					<DialogContentText id='alert-dialog-description'>
+						Seguro deseas borrar {data.nombre.toUpperCase()}{' '}
+						{data.apellido?.toUpperCase()}
+					</DialogContentText>
+				)}
+			</DialogContent>
+			<DialogActions
+				sx={{ display: 'flex', justifyContent: 'center', padding: 2.5 }}>
+				<Button
+					variant='contained'
+					color='error'
+					disabled={deleteHandler.isLoading}
+					onClick={handleOpen}>
+					Cancelar
+				</Button>
+				<Button
+					variant='contained'
+					color='success'
+					disabled={deleteHandler.isLoading}
+					onClick={handleConfirm}
+					autoFocus>
+					Confirmar
+				</Button>
+			</DialogActions>
+		</Dialog>
 	)
 }
