@@ -40,7 +40,7 @@ export const EmpleadoForm: FC<Props> = ({ isLoading }) => {
 						<TextInputBlock />
 						<DataInputBlock trigger={trigger} />
 					</Box>
-					<Box display='flex' alignItems='flex-start' justifyContent='space-between'>
+					<Box display='flex' justifyContent='space-between'>
 						<IsDevCheckbox trigger={trigger} />
 						<Button
 							variant='contained'

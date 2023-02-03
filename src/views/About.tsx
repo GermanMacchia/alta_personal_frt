@@ -3,6 +3,7 @@ const styles = {
 	container: {
 		display: 'flex',
 		flexDirection: 'column',
+		fontSize: '0.75rem',
 		ul: {
 			listStyleType: 'none',
 		},

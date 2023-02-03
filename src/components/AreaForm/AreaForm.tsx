@@ -26,7 +26,7 @@ export const AreaForm: FC<Props> = ({ isLoading }) => {
 			<Box>
 				<Typography sx={styles.container.title}>Alta Área</Typography>
 				<Typography sx={styles.container.subtitle}>
-					Define el nombre de una nueva área en que pueda desempeñarse un empleado
+					Defina una nueva área
 				</Typography>
 			</Box>
 			<AreaInput />

@@ -158,7 +158,7 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
 								</TableCell>
 							</>
 						)}
-						<TableCell sx={styles.table.tableButtons}>
+						<TableCell>
 							<OptionsButtons data={empleado} isUser={true} />
 						</TableCell>
 					</TableRow>

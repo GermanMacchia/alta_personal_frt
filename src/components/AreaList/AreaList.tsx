@@ -44,14 +44,14 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
 						{areas
 							.sort((a, b) => a.nombre.localeCompare(b.nombre))
 							.map(area => (
-								<TableRow
-									key={area._id}
-									sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+								<TableRow key={area._id}>
 									<TableCell component='th'>{area.nombre.toUpperCase()}</TableCell>
 									<TableCell
 										sx={{
 											'& .MuiBox-root': {
+												display: 'flex',
 												justifyContent: 'flex-end',
+												width: '100%',
 											},
 										}}>
 										<OptionsButtons data={area} />

@@ -9,9 +9,6 @@ import {
 } from '@mui/material'
 import { FC } from 'react'
 
-
-
-
 interface Props {
 	handleOpen: () => void
 	isOpen: boolean
@@ -50,14 +47,14 @@ export const ConfirmDelete: FC<Props> = ({
 				<DialogActions
 					sx={{ display: 'flex', justifyContent: 'center', padding: 2.5 }}>
 					<Button
-						variant='outlined'
+						variant='contained'
 						color='error'
 						disabled={deleteHandler.isLoading}
 						onClick={handleOpen}>
 						Cancelar
 					</Button>
 					<Button
-						variant='outlined'
+						variant='contained'
 						color='success'
 						disabled={deleteHandler.isLoading}
 						onClick={handleConfirm}

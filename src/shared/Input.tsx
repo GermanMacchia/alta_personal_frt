@@ -14,7 +14,7 @@ interface Props {
 const styles = {
 	errors: {
 		position: 'absolute',
-		margin: { xs: '-45px 92px', md: '-30px 20px' },
+		margin: { xs: '-6vh 27vw', md: '-7vh 8vw' },
 	},
 }
 

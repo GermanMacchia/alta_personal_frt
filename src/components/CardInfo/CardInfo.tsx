@@ -42,7 +42,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 					sx={{
 						...styles.container,
 						borderTop: { xs: '3px double #00c5ca', md: 'none' },
-						padding: 3,
+						width: { xs: '70vw', md: '30vw' },
 					}}>
 					<Box>
 						<Box sx={styles.container.section}>
@@ -55,7 +55,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 						</Box>
 						<Box sx={styles.container.section}>
 							<Typography variant='body1' sx={styles.container.section.font}>
-								FNac
+								F. Nacimiento
 							</Typography>
 
 							<Typography gutterBottom variant='caption' sx={styles.container.section}>
@@ -85,7 +85,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 							</Typography>
 						</Box>
 					</Box>
-					<Box>
+					<Box sx={{ margin: { xs: '-25px 0', md: 0 } }}>
 						<Box sx={styles.container.section}>
 							<Typography variant='body1' sx={styles.container.section.font}>
 								Descripción

@@ -6,13 +6,13 @@ export const styles = {
 	container: {
 		display: 'flex',
 		justifyContent: 'center',
-		margin: { xs: '10vh 0', md: '5vh auto' },
+		margin: { xs: '3vh auto', md: '3vh auto' },
 		padding: 0,
 		paper: {
 			borderRadius: 0,
-			padding: 2,
-			margin: 1,
-			width: { xs: 'auto', md: '430px' },
+			padding: '20px 20px 10px',
+			margin: '0 3px',
+			width: { xs: '100%', md: '430px' },
 		},
 		title: {
 			fontWeight: '600',
@@ -26,7 +26,7 @@ export const styles = {
 		form: {
 			display: 'flex',
 			flexDirection: 'column',
-			gap: { xs: '2vh', md: '1.4vh' },
+			gap: { xs: '5vh', md: '2vh' },
 			inputData: {
 				display: 'flex',
 				flexDirection: 'row',
@@ -37,7 +37,6 @@ export const styles = {
 			},
 			submit: {
 				color: '#fff',
-				width: '25%',
 				textTransform: 'none',
 				height: '45px',
 				borderRadius: '8px',

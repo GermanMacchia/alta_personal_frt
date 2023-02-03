@@ -1,11 +1,13 @@
 import styled from '@emotion/styled'
 export const styles = {
 	container: {
-		width: { xs: 300, md: 320 },
+		width: { xs: 330, md: 320 },
 		border: '1px solid #9ce4d9',
 		background: '#2d306d',
 		display: 'flex',
 		flexDirection: 'column',
+		position: 'relative',
+		zIndex: 1,
 		gap: 2,
 		alignItems: 'center',
 		justyfyContent: 'space-between',

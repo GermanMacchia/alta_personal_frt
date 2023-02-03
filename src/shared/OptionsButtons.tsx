@@ -161,7 +161,7 @@ export const OptionsButtons: FC<Props> = ({ isUser = false, data }) => {
 					{isUser ? (
 						<PersonRemoveIcon sx={styles.container.options} />
 					) : (
-						<DeleteIcon sx={styles} />
+						<DeleteIcon sx={styles.container.options} />
 					)}
 				</IconButton>
 			</Box>
