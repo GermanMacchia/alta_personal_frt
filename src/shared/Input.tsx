@@ -30,8 +30,6 @@ export const Input: FC<Props> = ({
 		formState: { errors },
 	} = useFormContext()
 
-	const matches = useMediaQuery('(min-width:600px)')
-
 	return (
 		<Box sx={{ display: 'flex', justifyContent: 'end', marginBottom: '5px' }}>
 			<TextField

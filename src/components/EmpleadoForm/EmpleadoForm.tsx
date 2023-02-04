@@ -7,6 +7,7 @@ import { TextInputBlock } from './TextInputBlock'
 import { DataInputBlock } from './DataInputBlock'
 import { IsDevCheckbox } from './IsDevCheckbox'
 import Paper from '@mui/material/Paper'
+import { SelectImage } from './SelectImage'
 
 interface Props {
 	isLoading: boolean
@@ -42,14 +43,15 @@ export const EmpleadoForm: FC<Props> = ({ isLoading }) => {
 					</Box>
 					<Box display='flex' justifyContent='space-between'>
 						<IsDevCheckbox trigger={trigger} />
-						<Button
-							variant='contained'
-							type='submit'
-							disableElevation
-							sx={styles.container.form.submit}>
-							{isLoading ? <CircularProgress /> : 'Enviar'}
-						</Button>
+						<SelectImage trigger={trigger} />
 					</Box>
+					<Button
+						variant='contained'
+						type='submit'
+						disableElevation
+						sx={styles.container.form.submit}>
+						{isLoading ? <CircularProgress /> : 'Enviar'}
+					</Button>
 				</Box>
 			</Paper>
 		</Container>

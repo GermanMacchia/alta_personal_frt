@@ -2,19 +2,27 @@
 <img style="height:200px; width: 350px"  src="https://miro.medium.com/max/1024/1*Ukhx76VQ8E6JXEW7xfIzSA.png" alt="imagen" />
 <br>
 
-Deploy:
+DEPLOY:
 
 [https://germanmacchia.github.io/alta_personal_frt/](https://germanmacchia.github.io/alta_personal_frt/)
 <br>
 
+Acceso
+
+```
+email: 'admin@mail.com'
+password: 'admin'
+```
+
+<br>
+NUEVA VERSIÓN:
+
+[Alta empleados V3](https://github.com/GermanMacchia/alta-empleados-v3)
+
+<br>
 Repositorio Back End:
 
 [https://github.com/GermanMacchia/alta_personal_bck](https://github.com/GermanMacchia/alta_personal_bck)
-<br>
-
-Actualización del proyecto:
-
-[Alta empleados V3](https://github.com/GermanMacchia/alta-empleados-v3)
 <br>
 
 <br><br>
@@ -114,8 +122,8 @@ npm i --save-dev @testing-library/jest-dom
 
 El proyecto es un CRUD elaborado con Vite+CWS y typescript.<br>
 Contiene una gran variedad de liberias muy útiles para implementar en cualquier proyecto.
-El diseño fue elaborado sobre la marcha.<br>
-Cuenta con responsive design para desktop y movil.
+El diseño fue elaborado a partir del desarrollo (sin maquetado previo).<br>
+Cuenta con responsive design para desktop y movil.<br>
 
 ## Tecnologías
 
