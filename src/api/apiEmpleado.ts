@@ -1,7 +1,7 @@
 // import { sleep } from '../helpers'
-
 import { Empleado } from '../interfaces'
 import { api } from './api'
+import { postAvatar } from './apiAvatar'
 
 export const fetchEmpleados = async () => {
 	// await sleep(1)
@@ -25,5 +25,10 @@ export const editEmpleado = async (data: Empleado) => {
 
 export const postEmpleado = async (nuevoEmpleado: Empleado) => {
 	// await sleep(1)
-	return await api({ method: 'post', url: '/api/empleado', data: nuevoEmpleado })
+	const { data } = await api({
+		method: 'post',
+		url: '/api/empleado',
+		data: nuevoEmpleado,
+	})
+	if (nuevoEmpleado.avatar) await postAvatar(data, nuevoEmpleado.avatar)
 }

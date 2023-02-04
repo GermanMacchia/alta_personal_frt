@@ -3,7 +3,6 @@ const styles = {
 	container: {
 		display: 'flex',
 		flexDirection: 'column',
-		fontSize: '0.75rem',
 		ul: {
 			listStyleType: 'none',
 		},
@@ -44,14 +43,6 @@ export const About = () => {
 					</li>
 				</ul>
 				<hr />
-			</Box>
-			<Box sx={styles.container.section}>
-				<Typography variant='h4' style={styles.container.title}>
-					Mejoras a futuro
-				</Typography>
-				<ul style={styles.container.ul}>
-					<li>Avatares para empleados</li>
-				</ul>
 			</Box>
 			<Box sx={styles.container.section}>
 				<Typography variant='h4' style={styles.container.title}>

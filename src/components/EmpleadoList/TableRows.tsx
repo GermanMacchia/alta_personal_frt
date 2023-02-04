@@ -19,6 +19,7 @@ import { Box } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
+import { useAvatar } from '../../hooks/useAvatar'
 
 interface Props {
 	handleFilter: (e: SyntheticEvent) => void

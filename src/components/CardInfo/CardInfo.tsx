@@ -1,13 +1,21 @@
 import { FC } from 'react'
 import { styles } from './styles'
 import { Empleado, Area } from '../../interfaces'
-import { Box, Typography, CardMedia, CardContent, Card } from '@mui/material'
+import {
+	Box,
+	Typography,
+	CardMedia,
+	CardContent,
+	Card,
+	CircularProgress,
+} from '@mui/material'
 import { capitalize } from '../../helpers'
 import CheckIcon from '@mui/icons-material/Check'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import userImage from '../../assets/user-circle.png'
+import { useAvatar } from '../../hooks/useAvatar'
 
 interface Props {
 	empleado: Empleado
@@ -16,6 +24,8 @@ interface Props {
 }
 
 export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
+	const { avatar, isLoading } = useAvatar(empleado._id as string)
+
 	return (
 		<>
 			<Box sx={{ display: 'flex', justifyContent: 'end' }}>
@@ -25,12 +35,23 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 			</Box>
 			<Card sx={styles.container}>
 				<Box sx={styles.column}>
-					<CardMedia
-						component='img'
-						image={userImage}
-						alt='user circle'
-						sx={styles.column.image}
-					/>
+					{isLoading && <CircularProgress size={60} thickness={7} color='success' />}
+					{!avatar && !isLoading && (
+						<CardMedia
+							component='img'
+							image={userImage}
+							alt='user circle'
+							sx={styles.column.image}
+						/>
+					)}
+					{avatar && (
+						<CardMedia
+							component='img'
+							image={avatar!.url}
+							alt='user circle'
+							sx={styles.column.image}
+						/>
+					)}
 					<Typography
 						sx={{ fontSize: '20px', fontWeight: '700' }}
 						gutterBottom
