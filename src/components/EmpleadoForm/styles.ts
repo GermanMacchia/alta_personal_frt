@@ -21,12 +21,12 @@ export const styles = {
 		subtitle: {
 			opacity: '0.7',
 			marginTop: '1vh',
-			marginBottom: '3vh',
+			marginBottom: '2.5vh',
 		},
 		form: {
 			display: 'flex',
 			flexDirection: 'column',
-			gap: { xs: '5vh', md: '2vh' },
+			gap: { xs: '3.5vh', md: '2vh' },
 			inputData: {
 				display: 'flex',
 				flexDirection: 'row',
