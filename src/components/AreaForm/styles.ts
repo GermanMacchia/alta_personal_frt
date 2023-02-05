@@ -32,7 +32,6 @@ export const styles = {
 			width: '100%',
 			textTransform: 'none',
 			height: '45px',
-			borderRadius: '8px',
 			marginTop: '4vh',
 		},
 	},

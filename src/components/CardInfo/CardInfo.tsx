@@ -14,8 +14,9 @@ import CheckIcon from '@mui/icons-material/Check'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
-import userImage from '../../assets/user-circle-min.png'
 import { useAvatar } from '../../hooks/useAvatar'
+import Avatar from '@mui/material/Avatar'
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 
 interface Props {
 	empleado: Empleado
@@ -37,22 +38,20 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 				<Box sx={styles.column}>
 					<Box sx={styles.column.imageContainer}>
 						{isLoading && (
-							<CircularProgress size={60} thickness={4} color='success' />
+							<Avatar variant='circular' sx={styles.column.imageContainer.avatar}>
+								<CircularProgress size={60} thickness={4} color='success' />
+							</Avatar>
 						)}
 						{!avatar && !isLoading && (
-							<CardMedia
-								component='img'
-								image={userImage}
-								alt='user circle'
-								sx={styles.column.imageContainer.image}
-							/>
+							<Avatar variant='circular' sx={styles.column.imageContainer.avatar}>
+								<PersonOutlineIcon sx={{ fontSize: '100px' }} />
+							</Avatar>
 						)}
 						{avatar && (
-							<CardMedia
-								component='img'
-								image={avatar!.url}
+							<Avatar
+								sx={styles.column.imageContainer.avatar}
+								src={avatar!.url}
 								alt='user circle'
-								sx={styles.column.imageContainer.image}
 							/>
 						)}
 					</Box>

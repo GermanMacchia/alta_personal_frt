@@ -5,7 +5,7 @@ export const styles = {
 		flexDirection: { xs: 'column', md: 'row' },
 		width: { xs: '70vw', md: '570px' },
 		alignItems: { xs: 'center', md: 'start' },
-		height: { xs: 360, md: 'auto' },
+		height: { xs: 500, md: 'auto' },
 		overflow: 'scroll',
 		gap: 2,
 		'&.MuiPaper-rounded': {
@@ -27,16 +27,14 @@ export const styles = {
 		justifyContent: 'center',
 		gap: 2,
 		imageContainer: {
-			height: { xs: 100, md: 180 },
 			width: { xs: 100, md: 180 },
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center',
-			image: {
-				margin: { xs: 0, md: '20px 20px' },
-				height: { xs: '100px', md: '150px' },
-				width: 'auto',
-				borderRadius: '50%',
+			avatar: {
+				margin: '0 auto',
+				height: '10rem',
+				width: '10rem',
 			},
 		},
 	},

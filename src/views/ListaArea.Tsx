@@ -10,7 +10,7 @@ const styles = {
 	container: {
 		display: 'flex',
 		justifyContent: 'center',
-		gap: 5,
+		gap: { xs: 0, md: 5 },
 	},
 	loading: {
 		height: '10px',

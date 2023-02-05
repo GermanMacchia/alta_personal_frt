@@ -6,7 +6,7 @@ import { TextField } from '@mui/material'
 import { FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
 
-export const SelectImage: FC<{ trigger: boolean }> = ({ trigger }) => {
+export const SelectImage: FC<{ trigger?: boolean }> = ({ trigger }) => {
 	const [fileName, setFileName] = useState('')
 	const { setValue } = useFormContext()
 
