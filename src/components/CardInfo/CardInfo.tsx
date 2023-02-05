@@ -1,13 +1,22 @@
 import { FC } from 'react'
 import { styles } from './styles'
 import { Empleado, Area } from '../../interfaces'
-import { Box, Typography, CardMedia, CardContent, Card } from '@mui/material'
+import {
+	Box,
+	Typography,
+	CardMedia,
+	CardContent,
+	Card,
+	CircularProgress,
+} from '@mui/material'
 import { capitalize } from '../../helpers'
 import CheckIcon from '@mui/icons-material/Check'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
-import userImage from '../../assets/user-circle.png'
+import { useAvatar } from '../../hooks/useAvatar'
+import Avatar from '@mui/material/Avatar'
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 
 interface Props {
 	empleado: Empleado
@@ -16,8 +25,10 @@ interface Props {
 }
 
 export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
+	const { avatar, isLoading } = useAvatar(empleado._id as string)
+
 	return (
-		<>
+		<Box>
 			<Box sx={{ display: 'flex', justifyContent: 'end' }}>
 				<IconButton onClick={handleClose}>
 					<CloseIcon color='error' sx={{ fontSize: '25px' }} />
@@ -25,12 +36,25 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 			</Box>
 			<Card sx={styles.container}>
 				<Box sx={styles.column}>
-					<CardMedia
-						component='img'
-						image={userImage}
-						alt='user circle'
-						sx={styles.column.image}
-					/>
+					<Box sx={styles.column.imageContainer}>
+						{isLoading && (
+							<Avatar variant='circular' sx={styles.column.imageContainer.avatar}>
+								<CircularProgress size={60} thickness={4} color='success' />
+							</Avatar>
+						)}
+						{!avatar && !isLoading && (
+							<Avatar variant='circular' sx={styles.column.imageContainer.avatar}>
+								<PersonOutlineIcon sx={{ fontSize: '100px' }} />
+							</Avatar>
+						)}
+						{avatar && (
+							<Avatar
+								sx={styles.column.imageContainer.avatar}
+								src={avatar!.url}
+								alt='user circle'
+							/>
+						)}
+					</Box>
 					<Typography
 						sx={{ fontSize: '20px', fontWeight: '700' }}
 						gutterBottom
@@ -111,6 +135,6 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 					</Box>
 				</CardContent>
 			</Card>
-		</>
+		</Box>
 	)
 }

@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 export const styles = {
 	container: {
 		width: { xs: 330, md: 320 },
-		border: '1px solid #9ce4d9',
+		border: '10px inset #9ce4d9',
 		background: '#80364f',
 		display: 'flex',
 		flexDirection: 'column',

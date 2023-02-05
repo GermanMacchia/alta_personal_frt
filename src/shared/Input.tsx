@@ -14,7 +14,7 @@ interface Props {
 const styles = {
 	errors: {
 		position: 'absolute',
-		margin: { xs: '-6vh 27vw', md: '-7vh 8vw' },
+		margin: { xs: '-3.5vh 0vw', md: '-4.5vh 0vw' },
 	},
 }
 
@@ -29,8 +29,6 @@ export const Input: FC<Props> = ({
 		register,
 		formState: { errors },
 	} = useFormContext()
-
-	const matches = useMediaQuery('(min-width:600px)')
 
 	return (
 		<Box sx={{ display: 'flex', justifyContent: 'end', marginBottom: '5px' }}>
