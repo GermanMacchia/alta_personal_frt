@@ -14,7 +14,7 @@ import CheckIcon from '@mui/icons-material/Check'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
-import userImage from '../../assets/user-circle.png'
+import userImage from '../../assets/user-circle-min.png'
 import { useAvatar } from '../../hooks/useAvatar'
 
 interface Props {
