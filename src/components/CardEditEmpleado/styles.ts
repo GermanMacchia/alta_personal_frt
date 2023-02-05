@@ -6,7 +6,7 @@ export const styles = {
 		container: {
 			display: 'flex',
 			flexDirection: 'column',
-			width: { xs: '70vw', md: '40vw' },
+			width: { xs: '70vw', md: '450px' },
 			form: {
 				display: 'flex',
 				overflow: 'scroll',
@@ -26,7 +26,7 @@ export const styles = {
 				padding: '5%',
 			},
 			submit: {
-				marginBottom: '4rem',
+				marginBottom: { xs: '4rem', md: 1 },
 				height: '45px',
 			},
 		},

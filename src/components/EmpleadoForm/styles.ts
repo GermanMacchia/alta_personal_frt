@@ -9,7 +9,6 @@ export const styles = {
 		margin: { xs: '3vh auto', md: '3vh auto' },
 		padding: 0,
 		paper: {
-			borderRadius: 0,
 			padding: '20px 20px 10px',
 			margin: '0 3px',
 			width: { xs: '100%', md: '430px' },
@@ -26,7 +25,7 @@ export const styles = {
 		form: {
 			display: 'flex',
 			flexDirection: 'column',
-			gap: { xs: '3.5vh', md: '2vh' },
+			gap: { xs: '3.5vh', md: '0.2vh' },
 			inputData: {
 				display: 'flex',
 				flexDirection: 'row',
@@ -39,7 +38,7 @@ export const styles = {
 				color: '#fff',
 				textTransform: 'none',
 				height: '45px',
-				borderRadius: '8px',
+				marginBottom: '10px',
 			},
 			select: {
 				__menuprops: {

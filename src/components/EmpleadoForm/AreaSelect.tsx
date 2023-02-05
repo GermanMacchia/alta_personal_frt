@@ -64,7 +64,7 @@ export const AreaSelect: FC<Props> = ({ trigger }) => {
 					variant='caption'
 					sx={{
 						position: 'absolute',
-						margin: { xs: '-6vh 28vw', md: '-7vh 8vw' },
+						margin: { xs: '-3.5vh 0vw', md: '-4.5vh 0vw' },
 						right: 0,
 					}}
 					color='#fc746d'

@@ -27,7 +27,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 	const { avatar, isLoading } = useAvatar(empleado._id as string)
 
 	return (
-		<>
+		<Box>
 			<Box sx={{ display: 'flex', justifyContent: 'end' }}>
 				<IconButton onClick={handleClose}>
 					<CloseIcon color='error' sx={{ fontSize: '25px' }} />
@@ -136,6 +136,6 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 					</Box>
 				</CardContent>
 			</Card>
-		</>
+		</Box>
 	)
 }
