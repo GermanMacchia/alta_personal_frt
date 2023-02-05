@@ -27,7 +27,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 	const { avatar, isLoading } = useAvatar(empleado._id as string)
 
 	return (
-		<>
+		<Box>
 			<Box sx={{ display: 'flex', justifyContent: 'end' }}>
 				<IconButton onClick={handleClose}>
 					<CloseIcon color='error' sx={{ fontSize: '25px' }} />
@@ -35,23 +35,27 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 			</Box>
 			<Card sx={styles.container}>
 				<Box sx={styles.column}>
-					{isLoading && <CircularProgress size={60} thickness={7} color='success' />}
-					{!avatar && !isLoading && (
-						<CardMedia
-							component='img'
-							image={userImage}
-							alt='user circle'
-							sx={styles.column.image}
-						/>
-					)}
-					{avatar && (
-						<CardMedia
-							component='img'
-							image={avatar!.url}
-							alt='user circle'
-							sx={styles.column.image}
-						/>
-					)}
+					<Box sx={styles.column.imageContainer}>
+						{isLoading && (
+							<CircularProgress size={60} thickness={4} color='success' />
+						)}
+						{!avatar && !isLoading && (
+							<CardMedia
+								component='img'
+								image={userImage}
+								alt='user circle'
+								sx={styles.column.imageContainer.image}
+							/>
+						)}
+						{avatar && (
+							<CardMedia
+								component='img'
+								image={avatar!.url}
+								alt='user circle'
+								sx={styles.column.imageContainer.image}
+							/>
+						)}
+					</Box>
 					<Typography
 						sx={{ fontSize: '20px', fontWeight: '700' }}
 						gutterBottom
@@ -132,6 +136,6 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
 					</Box>
 				</CardContent>
 			</Card>
-		</>
+		</Box>
 	)
 }

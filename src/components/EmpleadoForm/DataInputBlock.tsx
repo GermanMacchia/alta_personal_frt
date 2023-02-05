@@ -39,7 +39,7 @@ export const DataInputBlock: FC<Props> = ({ trigger }) => {
 			<Label>
 				<Box sx={styles.container.form.tag}>
 					<Typography fontWeight={400} display={'inline-block'}>
-						Fecha Nacimiento &nbsp;
+						F. de Nac. &nbsp;
 					</Typography>
 					<Typography
 						fontWeight={400}

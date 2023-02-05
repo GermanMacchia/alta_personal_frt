@@ -2,7 +2,6 @@ export const styles = {
 	table: {
 		maxHeight: { xs: '65vh', md: '60vh' },
 		borderRadius: 0,
-		padding: '0 10px',
 		margin: '3vh 0',
 		tableItem: {
 			'&:hover': {
@@ -18,7 +17,7 @@ export const styles = {
 				inputContainer: {
 					display: 'flex',
 					justifyContent: 'center',
-					margin: '4vh 0',
+					margin: '10px 0',
 					'& .MuiPaper-elevation': {
 						borderRadius: '20px',
 						border: '1px solid grey',

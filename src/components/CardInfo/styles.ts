@@ -24,12 +24,20 @@ export const styles = {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
+		justifyContent: 'center',
 		gap: 2,
-		image: {
-			margin: { xs: 0, md: '20px 20px' },
-			height: { xs: '100px', md: '150px' },
-			width: 'auto',
-			borderRadius: '50%',
+		imageContainer: {
+			height: { xs: 100, md: 180 },
+			width: { xs: 100, md: 180 },
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+			image: {
+				margin: { xs: 0, md: '20px 20px' },
+				height: { xs: '100px', md: '150px' },
+				width: 'auto',
+				borderRadius: '50%',
+			},
 		},
 	},
 }
