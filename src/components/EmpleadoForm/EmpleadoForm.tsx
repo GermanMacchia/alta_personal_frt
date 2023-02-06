@@ -10,50 +10,50 @@ import Paper from '@mui/material/Paper'
 import { SelectImage } from './SelectImage'
 
 interface Props {
-	isLoading: boolean
+  isLoading: boolean
 }
 
 export const EmpleadoForm: FC<Props> = ({ isLoading }) => {
-	const { register, reset } = useFormContext()
-	const [trigger, setTrigger] = useState(false)
+  const { register, reset } = useFormContext()
+  const [trigger, setTrigger] = useState(false)
 
-	useEffect(() => {
-		if (!isLoading) {
-			setTrigger(!trigger)
-			reset()
-		}
-	}, [isLoading])
+  useEffect(() => {
+    if (!isLoading) {
+      setTrigger(!trigger)
+      reset()
+    }
+  }, [isLoading])
 
-	return (
-		<Container sx={styles.container}>
-			<Paper elevation={0} sx={styles.container.paper}>
-				<Box display='flex' alignItems='flex-start'>
-					<Box>
-						<Typography sx={styles.container.title}>Alta Empleado</Typography>
-						<Typography sx={styles.container.subtitle}>
-							Introduzca los datos del empleado
-						</Typography>
-					</Box>
-				</Box>
-				<Box sx={styles.container.form}>
-					<input {...register('formType')} type='hidden' value='AltaEmpleado' />
-					<Box sx={styles.container.form.inputData}>
-						<TextInputBlock />
-						<DataInputBlock trigger={trigger} />
-					</Box>
-					<Box display='flex' justifyContent='space-between'>
-						<IsDevCheckbox trigger={trigger} />
-						<SelectImage trigger={trigger} />
-					</Box>
-					<Button
-						variant='contained'
-						type='submit'
-						disableElevation
-						sx={styles.container.form.submit}>
-						{isLoading ? <CircularProgress /> : 'Enviar'}
-					</Button>
-				</Box>
-			</Paper>
-		</Container>
-	)
+  return (
+    <Container sx={styles.container}>
+      <Paper elevation={0} sx={styles.container.paper}>
+        <Box display='flex' alignItems='flex-start'>
+          <Box>
+            <Typography sx={styles.container.title}>Alta Empleado</Typography>
+            <Typography sx={styles.container.subtitle}>
+              Introduzca los datos del empleado
+            </Typography>
+          </Box>
+        </Box>
+        <Box sx={styles.container.form}>
+          <input {...register('formType')} type='hidden' value='AltaEmpleado' />
+          <Box sx={styles.container.form.inputData}>
+            <TextInputBlock />
+            <DataInputBlock trigger={trigger} />
+          </Box>
+          <Box display='flex' justifyContent='space-between'>
+            <IsDevCheckbox trigger={trigger} />
+            <SelectImage trigger={trigger} />
+          </Box>
+          <Button
+            variant='contained'
+            type='submit'
+            disableElevation
+            sx={styles.container.form.submit}>
+            {isLoading ? <CircularProgress /> : 'Enviar'}
+          </Button>
+        </Box>
+      </Paper>
+    </Container>
+  )
 }
