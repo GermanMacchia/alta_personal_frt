@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box'
 import Fab from '@mui/material/Fab'
 import CheckIcon from '@mui/icons-material/Check'
-import SaveIcon from '@mui/icons-material/Save'
 import { TextField } from '@mui/material'
 import { FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 
 export const SelectImage: FC<{ trigger?: boolean }> = ({ trigger }) => {
   const [fileName, setFileName] = useState('')
@@ -58,7 +58,11 @@ const ImageSelect: FC<Props> = ({ handleFile, deleteImage, name }) => {
           color={name ? 'success' : 'primary'}
           component='label'>
           <input hidden accept='image/*' type='file' onChange={handleFile} />
-          {name ? <CheckIcon /> : <SaveIcon sx={{ color: 'white' }} />}
+          {name ? (
+            <CheckIcon />
+          ) : (
+            <PhotoCameraIcon sx={{ color: 'white', fontSize: '20px' }} />
+          )}
         </Fab>
       </Box>
       <TextField

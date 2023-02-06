@@ -31,10 +31,24 @@ export const styles = {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      avatarChange: {
+        position: 'absolute',
+        top: 50,
+        left: 20,
+        '& :hover': {
+          color: 'green',
+        },
+      },
       avatar: {
         margin: '0 auto',
         height: '10rem',
         width: '10rem',
+        _addPicture: {
+          '&:hover': {
+            cursor: 'pointer',
+            background: 'green',
+          },
+        },
       },
     },
   },

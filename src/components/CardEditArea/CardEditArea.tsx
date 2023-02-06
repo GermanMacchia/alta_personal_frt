@@ -55,6 +55,7 @@ export const CardEditArea: FC<Props> = ({ area, isLoading }) => {
         </Box>
       </Box>
       <Button
+        disabled={isActive}
         sx={styles.modal.container.submit}
         variant='contained'
         type='submit'>

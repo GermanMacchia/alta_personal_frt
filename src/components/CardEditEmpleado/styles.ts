@@ -13,7 +13,7 @@ export const styles = {
         color: 'grey',
         gap: { xs: 3 },
         flexDirection: { xs: 'column', md: 'row' },
-        height: { xs: '30vh', md: '40vh' },
+        height: { xs: '30vh', md: '240px' },
         marginBottom: { xs: '4vh', md: '4vh' },
         switch: {
           padding: { xs: 1, md: '10px' },

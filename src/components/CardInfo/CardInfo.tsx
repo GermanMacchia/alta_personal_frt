@@ -15,8 +15,8 @@ import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { useAvatar } from '../../hooks/useAvatar'
 import Avatar from '@mui/material/Avatar'
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
-
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
+import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
 interface Props {
   empleado: Empleado
   areas: Area[]
@@ -44,18 +44,36 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
               </Avatar>
             )}
             {!avatar && !isLoading && (
-              <Avatar
-                variant='circular'
-                sx={styles.column.imageContainer.avatar}>
-                <PersonOutlineIcon sx={{ fontSize: '100px' }} />
-              </Avatar>
+              <IconButton
+                aria-label='upload picture'
+                component='label'
+                sx={{ color: 'white' }}>
+                <Avatar
+                  variant='circular'
+                  sx={{
+                    ...styles.column.imageContainer.avatar,
+                    ...styles.column.imageContainer.avatar._addPicture,
+                  }}>
+                  <input hidden accept='image/*' type='file' />
+                  <AddAPhotoIcon sx={{ fontSize: '50px' }} />
+                </Avatar>
+              </IconButton>
             )}
             {avatar && (
-              <Avatar
-                sx={styles.column.imageContainer.avatar}
-                src={avatar!.url}
-                alt='user circle'
-              />
+              <>
+                <IconButton
+                  aria-label='upload picture'
+                  component='label'
+                  sx={styles.column.imageContainer.avatarChange}>
+                  <input hidden accept='image/*' type='file' />
+                  <ChangeCircleIcon />
+                </IconButton>
+                <Avatar
+                  sx={styles.column.imageContainer.avatar}
+                  src={avatar!.url}
+                  alt='user circle'
+                />
+              </>
             )}
           </Box>
           <Typography

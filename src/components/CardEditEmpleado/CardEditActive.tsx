@@ -19,6 +19,7 @@ interface Props {
 
 export const CardEditActive: FC<Props> = ({ isLoading }) => {
   const { isActive, handleActiveCheck } = useEmpleadoList()
+  const isAnySecureOpen = Object.values(isActive).some(e => !e)
 
   return (
     <Box sx={styles.modal.container}>
@@ -76,6 +77,7 @@ export const CardEditActive: FC<Props> = ({ isLoading }) => {
       <Button
         sx={styles.modal.container.submit}
         variant='contained'
+        disabled={!isAnySecureOpen}
         type='submit'>
         {isLoading ? <CircularProgress /> : 'Enviar'}
       </Button>
