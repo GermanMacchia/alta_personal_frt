@@ -7,66 +7,66 @@ import { FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
 
 export const SelectImage: FC<{ trigger?: boolean }> = ({ trigger }) => {
-	const [fileName, setFileName] = useState('')
-	const { setValue } = useFormContext()
+  const [fileName, setFileName] = useState('')
+  const { setValue } = useFormContext()
 
-	const addImage = (event: any) => {
-		if (event.target.files[0]) {
-			setValue('avatar', event.target.files[0])
-			setFileName(event.target.files[0].name)
-		}
-	}
+  const addImage = (event: any) => {
+    if (event.target.files[0]) {
+      setValue('avatar', event.target.files[0])
+      setFileName(event.target.files[0].name)
+    }
+  }
 
-	const deleteImage = () => {
-		setFileName('')
-		setValue('avatar', '')
-	}
+  const deleteImage = () => {
+    setFileName('')
+    setValue('avatar', '')
+  }
 
-	useEffect(() => {
-		deleteImage()
-	}, [trigger])
+  useEffect(() => {
+    deleteImage()
+  }, [trigger])
 
-	return (
-		<ImageSelect
-			name={fileName}
-			handleFile={(e: any) => addImage(e)}
-			deleteImage={() => deleteImage()}
-		/>
-	)
+  return (
+    <ImageSelect
+      name={fileName}
+      handleFile={(e: any) => addImage(e)}
+      deleteImage={() => deleteImage()}
+    />
+  )
 }
 
 interface Props {
-	handleFile: (e: any) => void
-	deleteImage: () => void
-	name: string
+  handleFile: (e: any) => void
+  deleteImage: () => void
+  name: string
 }
 
 const ImageSelect: FC<Props> = ({ handleFile, deleteImage, name }) => {
-	return (
-		<Box
-			onClick={deleteImage}
-			sx={{
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-				width: '10.5rem',
-			}}>
-			<Box mr={1}>
-				<Fab
-					size='small'
-					variant='circular'
-					color={name ? 'success' : 'primary'}
-					component='label'>
-					<input hidden accept='image/*' type='file' onChange={handleFile} />
-					{name ? <CheckIcon /> : <SaveIcon sx={{ color: 'white' }} />}
-				</Fab>
-			</Box>
-			<TextField
-				fullWidth
-				disabled
-				placeholder={name ? name : 'Subir Imagen'}
-				variant='standard'
-			/>
-		</Box>
-	)
+  return (
+    <Box
+      onClick={deleteImage}
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '10.5rem',
+      }}>
+      <Box mr={1}>
+        <Fab
+          size='small'
+          variant='circular'
+          color={name ? 'success' : 'primary'}
+          component='label'>
+          <input hidden accept='image/*' type='file' onChange={handleFile} />
+          {name ? <CheckIcon /> : <SaveIcon sx={{ color: 'white' }} />}
+        </Fab>
+      </Box>
+      <TextField
+        fullWidth
+        disabled
+        placeholder={name ? name : 'Subir Imagen'}
+        variant='standard'
+      />
+    </Box>
+  )
 }

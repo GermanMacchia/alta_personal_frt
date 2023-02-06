@@ -3,13 +3,13 @@ import { WithFormProvider } from '../shared/WithFormProvider'
 import { useAuthForm } from '../hooks/useAuthForm'
 
 export const Login = () => {
-	const { signIn } = useAuthForm()
+  const { signIn } = useAuthForm()
 
-	return (
-		<WithFormProvider
-			children={<SignIn isLoading={signIn.isLoading} />}
-			handleSubmit={signIn.mutateAsync}
-			signIn={true}
-		/>
-	)
+  return (
+    <WithFormProvider
+      children={<SignIn isLoading={signIn.isLoading} />}
+      handleSubmit={signIn.mutateAsync}
+      signIn={true}
+    />
+  )
 }
