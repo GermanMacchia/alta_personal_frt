@@ -4,52 +4,52 @@ import { deleteEmpleado, editEmpleado, fetchAreas } from '../api'
 import { fetchEmpleados } from '../api/apiEmpleado'
 
 export const useEmpleadoList = () => {
-	const [isActive, setIsActive] = useState({
-		nombre: true,
-		apellido: true,
-		dni: true,
-		esDesarrollador: true,
-		descripcion: true,
-		area: true,
-		fechaNac: true,
-	})
+  const [isActive, setIsActive] = useState({
+    nombre: true,
+    apellido: true,
+    dni: true,
+    esDesarrollador: true,
+    descripcion: true,
+    area: true,
+    fechaNac: true,
+  })
 
-	const handleActiveCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setIsActive({
-			...isActive,
-			[event.target.name]: event.target.checked,
-		})
-	}
+  const handleActiveCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsActive({
+      ...isActive,
+      [event.target.name]: event.target.checked,
+    })
+  }
 
-	const areaQuery = useQuery(['areas'], fetchAreas, {
-		refetchOnMount: false,
-		refetchOnWindowFocus: false,
-	})
+  const areaQuery = useQuery(['areas'], fetchAreas, {
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+  })
 
-	const empleadosQuery = useQuery(['empleados'], fetchEmpleados, {
-		enabled: areaQuery.data ? true : false,
-		refetchOnMount: true,
-		refetchOnWindowFocus: false,
-	})
+  const empleadosQuery = useQuery(['empleados'], fetchEmpleados, {
+    enabled: areaQuery.data ? true : false,
+    refetchOnMount: true,
+    refetchOnWindowFocus: false,
+  })
 
-	const empleadoDelete = useMutation((id: string) => deleteEmpleado(id), {
-		onSuccess: () => {
-			empleadosQuery.refetch()
-		},
-	})
+  const empleadoDelete = useMutation((id: string) => deleteEmpleado(id), {
+    onSuccess: () => {
+      empleadosQuery.refetch()
+    },
+  })
 
-	const empleadoEdit = useMutation((data: any) => editEmpleado(data), {
-		onSuccess: () => {
-			empleadosQuery.refetch()
-		},
-	})
+  const empleadoEdit = useMutation((data: any) => editEmpleado(data), {
+    onSuccess: () => {
+      empleadosQuery.refetch()
+    },
+  })
 
-	return {
-		empleados: empleadosQuery,
-		areas: areaQuery,
-		empleadoDelete: empleadoDelete,
-		empleadoEdit: empleadoEdit,
-		isActive,
-		handleActiveCheck,
-	}
+  return {
+    empleados: empleadosQuery,
+    areas: areaQuery,
+    empleadoDelete: empleadoDelete,
+    empleadoEdit: empleadoEdit,
+    isActive,
+    handleActiveCheck,
+  }
 }

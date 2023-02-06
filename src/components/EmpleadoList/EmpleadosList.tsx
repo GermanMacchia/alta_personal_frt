@@ -8,34 +8,34 @@ import Paper from '@mui/material/Paper'
 import { TableRows } from './TableRows'
 
 interface Props {
-	areas: Area[]
-	empleados: Empleado[]
+  areas: Area[]
+  empleados: Empleado[]
 }
 
 export const EmpleadosList: FC<Props> = ({ areas, empleados }) => {
-	const [listaEmpleados, setListaEmpleados] = useState(empleados)
+  const [listaEmpleados, setListaEmpleados] = useState(empleados)
 
-	useEffect(() => {
-		setListaEmpleados(empleados)
-	}, [empleados])
+  useEffect(() => {
+    setListaEmpleados(empleados)
+  }, [empleados])
 
-	const handleFilter = (event: any) => {
-		const entrada = event.target.value
-		const auxArray = filter(empleados, entrada)
+  const handleFilter = (event: any) => {
+    const entrada = event.target.value
+    const auxArray = filter(empleados, entrada)
 
-		if (!entrada) setListaEmpleados(empleados)
-		else debounce(setListaEmpleados(auxArray as SetStateAction<Empleado[]>))
-	}
+    if (!entrada) setListaEmpleados(empleados)
+    else debounce(setListaEmpleados(auxArray as SetStateAction<Empleado[]>))
+  }
 
-	return (
-		<TableContainer sx={styles.table} component={Paper}>
-			<Table size='small' stickyHeader padding='normal'>
-				<TableRows
-					handleFilter={handleFilter}
-					empleados={listaEmpleados}
-					areas={areas}
-				/>
-			</Table>
-		</TableContainer>
-	)
+  return (
+    <TableContainer sx={styles.table} component={Paper}>
+      <Table size='small' stickyHeader padding='normal'>
+        <TableRows
+          handleFilter={handleFilter}
+          empleados={listaEmpleados}
+          areas={areas}
+        />
+      </Table>
+    </TableContainer>
+  )
 }
