@@ -7,6 +7,10 @@ export const styles = {
     alignItems: { xs: 'center', md: 'start' },
     height: { xs: 500, md: 'auto' },
     overflow: 'scroll',
+    cardContent: {
+      borderTop: { xs: '3px double #00c5ca', md: 'none' },
+      width: { xs: '70vw', md: '30vw' },
+    },
     gap: 2,
     '&.MuiPaper-rounded': {
       boxShadow: 'none',
@@ -33,21 +37,28 @@ export const styles = {
       alignItems: 'center',
       avatarChange: {
         position: 'absolute',
-        top: 50,
+        top: 20,
         left: 20,
-        '& :hover': {
-          color: 'green',
-        },
       },
       avatar: {
         margin: '0 auto',
         height: '10rem',
         width: '10rem',
-        _addPicture: {
-          '&:hover': {
-            cursor: 'pointer',
-            background: 'green',
-          },
+      },
+      _addPicture: {
+        '&:hover': {
+          cursor: 'pointer',
+        },
+        '&:active': {
+          color: 'green',
+        },
+      },
+      _deletePicture: {
+        '&:hover': {
+          cursor: 'pointer',
+        },
+        '&:active': {
+          color: 'red',
         },
       },
     },

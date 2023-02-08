@@ -21,3 +21,10 @@ export const getAvatarByID = async (id: string) => {
     url: `api/avatar/${id}`,
   })
 }
+
+export const deleteAvatarByID = async (id: string) => {
+  await api({
+    method: 'delete',
+    url: `api/avatar/${id}`,
+  })
+}
