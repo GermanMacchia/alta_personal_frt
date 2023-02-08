@@ -8,6 +8,9 @@ export const styles = {
     justifyContent: 'center',
     margin: { xs: '3vh auto', md: '3vh auto' },
     padding: 0,
+    '& .MuiPaper-rounded': {
+      borderRadius: 0,
+    },
     paper: {
       padding: '20px 20px 10px',
       margin: '0 3px',
