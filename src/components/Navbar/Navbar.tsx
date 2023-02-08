@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useEffect, useState } from 'react'
 import { useNavigate, useMatches } from 'react-router-dom'
 import { styles } from './styles'
 import {
@@ -30,6 +30,13 @@ export const Navbar: FC<Props> = ({ children }) => {
   const condition = match.pathname === '/' || match.pathname === '/registro'
   const matchMedia = useMediaQuery('(min-width:600px)')
   const { signOut } = useAuthForm()
+
+  useEffect(() => {
+    const token = localStorage.getItem('user')
+    if (!condition && !token) {
+      navigate('/')
+    }
+  })
 
   return (
     <>

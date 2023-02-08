@@ -1,22 +1,14 @@
 import { FC } from 'react'
 import { styles } from './styles'
 import { Empleado, Area } from '../../interfaces'
-import {
-  Box,
-  Typography,
-  CardContent,
-  Card,
-  CircularProgress,
-} from '@mui/material'
+import { Box, Typography, CardContent, Card } from '@mui/material'
 import { capitalize } from '../../helpers'
 import CheckIcon from '@mui/icons-material/Check'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
-import { useAvatar } from '../../hooks/useAvatar'
-import Avatar from '@mui/material/Avatar'
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
-import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
+import { AvatarContainer } from './AvatarContainer'
+
 interface Props {
   empleado: Empleado
   areas: Area[]
@@ -24,8 +16,6 @@ interface Props {
 }
 
 export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
-  const { avatar, isLoading } = useAvatar(empleado._id as string)
-
   return (
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'end' }}>
@@ -36,45 +26,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
       <Card sx={styles.container}>
         <Box sx={styles.column}>
           <Box sx={styles.column.imageContainer}>
-            {isLoading && (
-              <Avatar
-                variant='circular'
-                sx={styles.column.imageContainer.avatar}>
-                <CircularProgress size={60} thickness={4} color='success' />
-              </Avatar>
-            )}
-            {!avatar && !isLoading && (
-              <IconButton
-                aria-label='upload picture'
-                component='label'
-                sx={{ color: 'white' }}>
-                <Avatar
-                  variant='circular'
-                  sx={{
-                    ...styles.column.imageContainer.avatar,
-                    ...styles.column.imageContainer.avatar._addPicture,
-                  }}>
-                  <input hidden accept='image/*' type='file' />
-                  <AddAPhotoIcon sx={{ fontSize: '50px' }} />
-                </Avatar>
-              </IconButton>
-            )}
-            {avatar && (
-              <>
-                <IconButton
-                  aria-label='upload picture'
-                  component='label'
-                  sx={styles.column.imageContainer.avatarChange}>
-                  <input hidden accept='image/*' type='file' />
-                  <ChangeCircleIcon />
-                </IconButton>
-                <Avatar
-                  sx={styles.column.imageContainer.avatar}
-                  src={avatar!.url}
-                  alt='user circle'
-                />
-              </>
-            )}
+            <AvatarContainer empleado={empleado} />
           </Box>
           <Typography
             sx={{ fontSize: '20px', fontWeight: '700' }}
@@ -86,8 +38,7 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
         <CardContent
           sx={{
             ...styles.container,
-            borderTop: { xs: '3px double #00c5ca', md: 'none' },
-            width: { xs: '70vw', md: '30vw' },
+            ...styles.container.cardContent,
           }}>
           <Box>
             <Box sx={styles.container.section}>
@@ -102,7 +53,6 @@ export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
               <Typography variant='body1' sx={styles.container.section.font}>
                 F. Nacimiento
               </Typography>
-
               <Typography
                 gutterBottom
                 variant='caption'
