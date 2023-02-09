@@ -9,6 +9,8 @@ export const styles = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    border: '5px inset #51716d',
+    background: 'green',
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 2,
@@ -24,22 +26,20 @@ interface Props {
 
 export const WithModal: FC<Props> = ({ open, children, handleClose }) => {
   return (
-    <div>
-      <Modal
-        open={open}
-        aria-labelledby='modal-modal-title'
-        aria-describedby='modal-modal-description'>
-        <Box sx={styles.container}>
-          {handleClose && (
-            <Box sx={{ display: 'flex', justifyContent: 'end' }}>
-              <IconButton onClick={handleClose}>
-                <CloseIcon color='error' sx={{ fontSize: '35px' }} />
-              </IconButton>
-            </Box>
-          )}
-          {children}
-        </Box>
-      </Modal>
-    </div>
+    <Modal
+      open={open}
+      aria-labelledby='modal-modal-title'
+      aria-describedby='modal-modal-description'>
+      <Box sx={styles.container}>
+        {handleClose && (
+          <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+            <IconButton onClick={handleClose}>
+              <CloseIcon color='error' sx={{ fontSize: '35px' }} />
+            </IconButton>
+          </Box>
+        )}
+        {children}
+      </Box>
+    </Modal>
   )
 }

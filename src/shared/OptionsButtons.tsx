@@ -13,6 +13,7 @@ import { CardInfo } from '../components/CardInfo'
 import { CardEditForm } from '../components/CardEditEmpleado'
 import { CardEditAreaForm } from '../components/CardEditArea/CardEditAreaForm'
 import { Box } from '@mui/material'
+import { OnMousePopover } from './OnMousePopover'
 
 const styles = {
   container: {
@@ -140,34 +141,49 @@ export const OptionsButtons: FC<Props> = ({ isUser = false, data }) => {
       {/*ACCIONES*/}
       <Box sx={styles.container}>
         {isUser && (
-          <IconButton
-            aria-label='file'
-            onClick={() => setIsInfoOpen(!isInfoOpen)}>
-            <BadgeIcon sx={styles.container.options} />
-          </IconButton>
+          <OnMousePopover
+            info='Info'
+            children={
+              <IconButton
+                aria-label='file'
+                onClick={() => setIsInfoOpen(!isInfoOpen)}>
+                <BadgeIcon sx={styles.container.options} />
+              </IconButton>
+            }
+          />
         )}
-        <IconButton
-          aria-label='edit'
-          onClick={
-            isUser
-              ? () => setIsEditOpen(!isEditOpen)
-              : () => setIsEditAreaOpen(!isEditAreaOpen)
-          }>
-          <BorderColorIcon sx={styles.container.options} />
-        </IconButton>
-        <IconButton
-          aria-label='remove'
-          onClick={
-            isUser
-              ? () => setIsConfirmDeleteOpen(!isConfirmDeleteOpen)
-              : () => setIsConfirmDeleteAreaOpen(!isConfirmDeleteAreaOpen)
-          }>
-          {isUser ? (
-            <PersonRemoveIcon sx={styles.container.options} />
-          ) : (
-            <DeleteIcon sx={styles.container.options} />
-          )}
-        </IconButton>
+        <OnMousePopover
+          info='Edit'
+          children={
+            <IconButton
+              aria-label='edit'
+              onClick={
+                isUser
+                  ? () => setIsEditOpen(!isEditOpen)
+                  : () => setIsEditAreaOpen(!isEditAreaOpen)
+              }>
+              <BorderColorIcon sx={styles.container.options} />
+            </IconButton>
+          }
+        />
+        <OnMousePopover
+          info='Delete'
+          children={
+            <IconButton
+              aria-label='remove'
+              onClick={
+                isUser
+                  ? () => setIsConfirmDeleteOpen(!isConfirmDeleteOpen)
+                  : () => setIsConfirmDeleteAreaOpen(!isConfirmDeleteAreaOpen)
+              }>
+              {isUser ? (
+                <PersonRemoveIcon sx={styles.container.options} />
+              ) : (
+                <DeleteIcon sx={styles.container.options} />
+              )}
+            </IconButton>
+          }
+        />
       </Box>
     </>
   )
