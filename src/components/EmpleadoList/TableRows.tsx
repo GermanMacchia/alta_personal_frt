@@ -8,8 +8,6 @@ import {
   TableRow,
   useMediaQuery,
 } from '@mui/material'
-import CancelIcon from '@mui/icons-material/Cancel'
-import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { Area, Empleado } from '../../interfaces'
 import { OptionsButtons } from '../../shared'
 import { capitalize } from '../../helpers/capitalize'
@@ -19,7 +17,8 @@ import { Box } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
-import { useAvatar } from '../../hooks/useAvatar'
+import DoneIcon from '@mui/icons-material/Done'
+import ClearIcon from '@mui/icons-material/Clear'
 
 interface Props {
   handleFilter: (e: SyntheticEvent) => void
@@ -33,7 +32,7 @@ const ordenHileras = [
   { llave: 'apellido', etiqueta: 'APELLIDO' },
   { llave: 'fechaNac', etiqueta: 'FECHA NACIMIENTO' },
   { llave: 'descripcion', etiqueta: 'DESCRIPCIÓN' },
-  { llave: 'esDesarrollador', etiqueta: 'ES DESARROLLADOR' },
+  { llave: 'esDesarrollador', etiqueta: 'DESARROLLADOR' },
   { llave: 'area', etiqueta: 'ÁREA' },
   { llave: 'nombre y apellido', etiqueta: 'EMPLEADO' },
 ]
@@ -153,9 +152,9 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
                 </TableCell>
                 <TableCell align='right' scope='esDesarrollador'>
                   {empleado.esDesarrollador ? (
-                    <CheckCircleIcon color='success' />
+                    <DoneIcon color='success' />
                   ) : (
-                    <CancelIcon color='warning' />
+                    <ClearIcon color='error' />
                   )}
                 </TableCell>
                 <TableCell align='right'>
