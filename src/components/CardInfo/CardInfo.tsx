@@ -18,7 +18,11 @@ interface Props {
 export const CardInfo: FC<Props> = ({ empleado, handleClose, areas }) => {
   return (
     <Box>
-      <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'end',
+        }}>
         <IconButton onClick={handleClose}>
           <CloseIcon color='error' sx={{ fontSize: '25px' }} />
         </IconButton>

@@ -8,6 +8,9 @@ interface Props {
 }
 export const SignIn = ({ isLoading }: Props) => {
   const navigate = useNavigate()
+  const token = localStorage.getItem('user')
+
+  if (token) return <></>
 
   return (
     <Box sx={styles.container}>

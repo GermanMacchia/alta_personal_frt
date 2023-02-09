@@ -12,6 +12,7 @@ import LogoutIcon from '@mui/icons-material/Logout'
 import IconButton from '@mui/material/IconButton'
 import { useMediaQuery } from '@mui/material'
 import { useAuthForm } from '../../hooks/useAuthForm'
+import { OnMousePopover } from '../../shared/OnMousePopover'
 
 const signout = {
   label: 'SignOut',
@@ -36,6 +37,9 @@ export const Navbar: FC<Props> = ({ children }) => {
     if (!condition && !token) {
       navigate('/')
     }
+    if (condition && token) {
+      navigate('/lista-empleados')
+    }
   })
 
   return (
@@ -45,13 +49,19 @@ export const Navbar: FC<Props> = ({ children }) => {
           Alta Empleados
         </Typography>
         <Box>
-          <IconButton
-            aria-label='signOut'
-            sx={styles.container.signout}
-            disabled={condition}
-            onClick={signOut}>
-            {signout.icon}
-          </IconButton>
+          <OnMousePopover
+            info='Log out'
+            logout={true}
+            children={
+              <IconButton
+                aria-label='signOut'
+                sx={styles.container.signout}
+                disabled={condition}
+                onClick={signOut}>
+                {signout.icon}
+              </IconButton>
+            }
+          />
         </Box>
       </Box>
       <Box sx={styles.banner}>

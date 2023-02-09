@@ -6,9 +6,9 @@ export const styles = {
     width: { xs: '70vw', md: '570px' },
     alignItems: { xs: 'center', md: 'start' },
     height: { xs: 500, md: 'auto' },
-    overflow: 'scroll',
+    overflowY: 'scroll',
     cardContent: {
-      borderTop: { xs: '3px double #00c5ca', md: 'none' },
+      borderTop: { xs: '3px inset #00c5ca', md: 'none' },
       width: { xs: '70vw', md: '30vw' },
     },
     gap: 2,
