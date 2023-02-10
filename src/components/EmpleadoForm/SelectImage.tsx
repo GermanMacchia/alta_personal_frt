@@ -49,13 +49,20 @@ const ImageSelect: FC<Props> = ({ handleFile, deleteImage, name }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '10.5rem',
+        width: '50%',
       }}>
+      <TextField
+        fullWidth
+        disabled
+        placeholder={name ? name : 'Subir Imagen'}
+        variant='standard'
+      />
       <Box mr={1}>
         <Fab
           size='small'
           variant='circular'
           color={name ? 'success' : 'primary'}
+          sx={{ marginLeft: 2 }}
           component='label'>
           <input hidden accept='image/*' type='file' onChange={handleFile} />
           {name ? (
@@ -65,12 +72,6 @@ const ImageSelect: FC<Props> = ({ handleFile, deleteImage, name }) => {
           )}
         </Fab>
       </Box>
-      <TextField
-        fullWidth
-        disabled
-        placeholder={name ? name : 'Subir Imagen'}
-        variant='standard'
-      />
     </Box>
   )
 }

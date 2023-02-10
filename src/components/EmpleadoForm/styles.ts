@@ -20,15 +20,11 @@ export const styles = {
       fontWeight: '600',
       fontSize: '20px',
     },
-    subtitle: {
-      opacity: '0.7',
-      marginTop: '1vh',
-      marginBottom: '2.5vh',
-    },
     form: {
       display: 'flex',
+      marginTop: 0.5,
       flexDirection: 'column',
-      gap: { xs: '3.5vh', md: '0.2vh' },
+      gap: { xs: '3.5vh', md: '1vh' },
       inputData: {
         display: 'flex',
         flexDirection: 'row',

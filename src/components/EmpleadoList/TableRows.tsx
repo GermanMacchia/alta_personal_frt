@@ -1,4 +1,4 @@
-import { useState, FC, SyntheticEvent } from 'react'
+import { useState, FC, SyntheticEvent, useEffect } from 'react'
 import { styles } from './styles'
 import { InputSearch } from './InputSearch'
 import {
@@ -37,7 +37,7 @@ const ordenHileras = [
   { llave: 'nombre y apellido', etiqueta: 'EMPLEADO' },
 ]
 
-const retonarHeaders = (matches: boolean) => {
+const retonarHeaders = (isDesktop: boolean) => {
   return ordenHileras.map(hilera => {
     switch (hilera.llave) {
       case 'dni':
@@ -48,7 +48,7 @@ const retonarHeaders = (matches: boolean) => {
         )
       case 'nombre y apellido':
         return (
-          !matches && (
+          !isDesktop && (
             <TableCell key={hilera.llave}>
               <b>{hilera.etiqueta}</b>
             </TableCell>
@@ -56,7 +56,7 @@ const retonarHeaders = (matches: boolean) => {
         )
       default:
         return (
-          matches && (
+          isDesktop && (
             <TableCell align='right' key={hilera.llave}>
               <b>{hilera.etiqueta}</b>
             </TableCell>
@@ -71,7 +71,7 @@ const getAreaName = (areas: Area[], id: string) => {
 }
 
 export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
-  const matches = useMediaQuery('(min-width:600px)')
+  const isDesktop = useMediaQuery('(min-width:600px)')
   const [isOpen, setIsOpen] = useState(false)
   const toggleDrawer = () => setIsOpen(!isOpen)
 
@@ -79,9 +79,9 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
     <>
       <TableHead>
         <TableRow>
-          {retonarHeaders(matches)}
+          {retonarHeaders(isDesktop)}
           <TableCell align='right'>
-            {matches ? (
+            {isDesktop ? (
               <InputSearch handleChange={handleFilter} />
             ) : (
               <>
@@ -99,6 +99,12 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
                   anchor={'top'}
                   open={isOpen}
                   variant='temporary'
+                  PaperProps={{
+                    style: {
+                      borderBottom: '5px solid #496662',
+                      height: 125,
+                    },
+                  }}
                   onClose={toggleDrawer}>
                   <Box sx={styles.table.drawer}>
                     <List>
@@ -129,14 +135,14 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
             <TableCell align='left' scope='dni'>
               {empleado.dni}
             </TableCell>
-            {!matches && (
+            {!isDesktop && (
               <TableCell scope='nombre'>
                 {capitalize(empleado.nombre) +
                   ' ' +
                   capitalize(empleado.apellido)}
               </TableCell>
             )}
-            {matches && (
+            {isDesktop && (
               <>
                 <TableCell align='right' scope='nombre'>
                   {empleado.nombre.toUpperCase()}

@@ -2,7 +2,7 @@ import * as React from 'react'
 import Popover from '@mui/material/Popover'
 import Typography from '@mui/material/Typography'
 import { useState, FC, ReactNode } from 'react'
-import { Box } from '@mui/material'
+import { Box, useMediaQuery } from '@mui/material'
 
 interface Props {
   children: ReactNode
@@ -12,6 +12,7 @@ interface Props {
 
 export const OnMousePopover: FC<Props> = ({ children, info, logout }) => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
+  const desktop = useMediaQuery('(min-width:600px)')
 
   const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
@@ -22,6 +23,8 @@ export const OnMousePopover: FC<Props> = ({ children, info, logout }) => {
   }
 
   const open = Boolean(anchorEl)
+
+  if (!desktop) return <>{children}</>
 
   return (
     <div>

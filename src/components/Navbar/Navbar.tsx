@@ -29,7 +29,7 @@ export const Navbar: FC<Props> = ({ children }) => {
   const navigate = useNavigate()
   const [_, match] = useMatches()
   const condition = match.pathname === '/' || match.pathname === '/registro'
-  const matchMedia = useMediaQuery('(min-width:600px)')
+  const isDesktop = useMediaQuery('(min-width:600px)')
   const { signOut } = useAuthForm()
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export const Navbar: FC<Props> = ({ children }) => {
             disabled={condition}
             onClick={() => navigate(btn.link)}
             key={btn.label}
-            label={matchMedia && btn.label}
+            label={isDesktop && btn.label}
             icon={btn.icon}
           />
         ))}
