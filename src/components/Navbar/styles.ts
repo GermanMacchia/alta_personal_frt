@@ -26,7 +26,7 @@ export const styles = {
     backgroundSize: 'cover',
     position: 'relative',
     subtitle: {
-      fontSize: '2rem',
+      fontSize: '2.1rem',
       color: '#2c306f',
       position: 'absolute',
       margin: { xs: '15px', md: '40px' },

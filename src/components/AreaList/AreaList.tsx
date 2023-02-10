@@ -11,17 +11,16 @@ import {
 import { Area } from '../../interfaces'
 import { OptionsButtons } from '../../shared'
 import IconButton from '@mui/material/IconButton/IconButton'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import { useMediaQuery } from '@mui/material'
 import { styles } from './styles'
-
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
 interface Props {
   areas: Area[]
   handleOpen: () => void
 }
 
 export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
-  const matches = useMediaQuery('(min-width:600px)')
+  const desktop = useMediaQuery('(min-width:600px)')
   return (
     <>
       <TableContainer component={Paper} sx={styles.container}>
@@ -31,10 +30,10 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
               <TableCell>
                 <b>ÁREA</b>
               </TableCell>
-              {!matches && (
+              {!desktop && (
                 <TableCell align='right'>
                   <IconButton onClick={handleOpen}>
-                    <AddCircleOutlineIcon
+                    <PlaylistAddIcon
                       color='success'
                       sx={{ fontSize: '35px' }}
                     />

@@ -30,7 +30,7 @@ export const EmpleadoForm: FC<Props> = ({ isLoading }) => {
         <Box display='flex' alignItems='flex-start'>
           <Box>
             <Typography sx={styles.container.title}>Alta Empleado</Typography>
-            <Typography sx={styles.container.subtitle}>
+            <Typography variant='caption' color='GrayText'>
               Introduzca los datos del empleado
             </Typography>
           </Box>
@@ -41,7 +41,11 @@ export const EmpleadoForm: FC<Props> = ({ isLoading }) => {
             <TextInputBlock />
             <DataInputBlock trigger={trigger} />
           </Box>
-          <Box display='flex' justifyContent='space-between'>
+          <Box
+            display='flex'
+            justifyContent='space-between'
+            width='100%'
+            gap={{ xs: 1, md: 6 }}>
             <IsDevCheckbox trigger={trigger} />
             <SelectImage trigger={trigger} />
           </Box>

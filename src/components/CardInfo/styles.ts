@@ -7,8 +7,9 @@ export const styles = {
     alignItems: { xs: 'center', md: 'start' },
     height: { xs: 500, md: 'auto' },
     overflowY: 'scroll',
+    scrollbarColor: '#00c5ca #00c5ca',
     cardContent: {
-      borderTop: { xs: '3px inset #00c5ca', md: 'none' },
+      borderTop: { xs: '3px solid #00c5ca', md: 'none' },
       width: { xs: '70vw', md: '30vw' },
     },
     gap: 2,
@@ -37,7 +38,7 @@ export const styles = {
       alignItems: 'center',
       avatarChange: {
         position: 'absolute',
-        top: 20,
+        top: 15,
         left: 20,
       },
       avatar: {

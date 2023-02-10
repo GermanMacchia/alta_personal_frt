@@ -25,13 +25,14 @@ export const IsDevCheckbox: FC<Props> = ({ trigger }) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        width: '50%',
       }}>
-      <Typography style={{ color: '#242424' }}>Desarrollador</Typography>
+      <Typography>Desarrollador</Typography>
       <Checkbox
         {...register('esDesarrollador')}
+        sx={{ margin: 0, padding: 0 }}
         checked={checked}
         onChange={handleChange}
-        sx={{ margin: '0 1rem 0.2rem', color: 'grey' }}
         color='success'
       />
     </Box>

@@ -14,7 +14,11 @@ export const InputSearch: FC<Props> = ({ handleChange }) => {
   return (
     <Box sx={styles.table.drawer.box.inputContainer}>
       <Paper>
-        <IconButton disabled type='button' aria-label='search'>
+        <IconButton
+          disabled
+          type='button'
+          aria-label='search'
+          sx={{ paddingBottom: 1.5 }}>
           <SearchIcon />
         </IconButton>
         <InputBase
@@ -23,7 +27,6 @@ export const InputSearch: FC<Props> = ({ handleChange }) => {
               marginLeft: '10px',
             },
           }}
-          sx={styles.table.drawer.box.inputContainer.inputSearch}
           placeholder='Buscar'
           onChange={handleChange}
           color='success'
