@@ -2,12 +2,14 @@ import { Button, Box, Typography, CircularProgress } from '@mui/material'
 import { useNavigate } from 'react-router'
 import { Label, styles } from './styles'
 import { Input } from '../../shared'
-
+import { useAuthForm } from '../../hooks/useAuthForm'
+import googleIcon from '../../assets/googlelogo_icon.svg'
 interface Props {
   isLoading: boolean
 }
 export const SignIn = ({ isLoading }: Props) => {
   const navigate = useNavigate()
+  const { loginWithGoogle } = useAuthForm()
   const token = localStorage.getItem('user')
 
   if (token) return <></>
@@ -64,18 +66,28 @@ export const SignIn = ({ isLoading }: Props) => {
             placeholder={'password'}
           />
         </Label>
-        <Button
-          variant='contained'
-          type='submit'
-          disableElevation
-          sx={styles.container.form.submit}>
-          {isLoading ? (
-            <CircularProgress sx={{ color: 'aliceblue' }} size='2rem' />
-          ) : (
-            'Sign In'
-          )}
-        </Button>
-        <Button onClick={() => navigate('/registro')}>Registrate</Button>
+        <Box display='flex' flexDirection='column' gap={1}>
+          <Button
+            variant='contained'
+            type='submit'
+            disableElevation
+            sx={styles.container.form.submit}>
+            {isLoading ? (
+              <CircularProgress sx={{ color: 'aliceblue' }} size='2rem' />
+            ) : (
+              'Sign In'
+            )}
+          </Button>
+          <Button onClick={() => navigate('/registro')}>Registrate</Button>
+          <Button onClick={loginWithGoogle}>
+            Login with google{' '}
+            <img
+              src={googleIcon}
+              alt='google icon'
+              style={{ margin: '0 10px' }}
+            />
+          </Button>
+        </Box>
       </Box>
     </Box>
   )

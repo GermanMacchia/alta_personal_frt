@@ -19,7 +19,7 @@ export const styles = {
       padding: 3,
       display: 'flex',
       flexDirection: 'column',
-      gap: 3,
+      gap: { xs: 2, md: 1, xl: 3 },
       tag: {
         color: '#242424',
         margin: '5px 0',

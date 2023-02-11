@@ -24,6 +24,9 @@ interface Props {
 
 export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
   const desktop = useMediaQuery('(min-width:600px)')
+  const sortedAreasByName = areas.sort((a: Area, b: Area) =>
+    a.nombre.localeCompare(b.nombre)
+  )
   const {
     pageNumber,
     cantPages,
@@ -31,7 +34,7 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
     handleChangeRowsNumber,
     rowsPerPage,
     actualPage,
-  } = usePagination(areas)
+  } = usePagination(sortedAreasByName)
 
   return (
     <Box
@@ -67,26 +70,24 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
           </TableHead>
           <TableBody>
             {actualPage &&
-              actualPage
-                .sort((a: Area, b: Area) => a.nombre.localeCompare(b.nombre))
-                .map((area: Area) => (
-                  <TableRow key={area._id}>
-                    <TableCell component='th'>
-                      {area.nombre.toUpperCase()}
-                    </TableCell>
-                    <TableCell />
-                    <TableCell
-                      sx={{
-                        '& .MuiBox-root': {
-                          display: 'flex',
-                          justifyContent: 'flex-end',
-                          width: '100%',
-                        },
-                      }}>
-                      <OptionsButtons data={area} />
-                    </TableCell>
-                  </TableRow>
-                ))}
+              actualPage.map((area: Area) => (
+                <TableRow key={area._id}>
+                  <TableCell component='th'>
+                    {area.nombre.toUpperCase()}
+                  </TableCell>
+                  <TableCell />
+                  <TableCell
+                    sx={{
+                      '& .MuiBox-root': {
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        width: '100%',
+                      },
+                    }}>
+                    <OptionsButtons data={area} />
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>

@@ -3,6 +3,8 @@ import { authSignin, authSignup } from '../api/apiAuth'
 import { User } from '../interfaces/user.interface'
 import { useNavigate } from 'react-router'
 import { useState, useEffect } from 'react'
+import { signInWithPopup } from 'firebase/auth'
+import { auth, googleProvider } from '../firebase.config'
 
 export const useAuthForm = () => {
   const navigate = useNavigate()
@@ -16,6 +18,28 @@ export const useAuthForm = () => {
     authSignin(usuario).then(data => setToken(data))
   )
 
+  const loginWithGoogle = async () => {
+    const { user } = await signInWithPopup(auth, googleProvider)
+    await signIn
+      .mutateAsync({
+        email: user.email!,
+        password: user?.uid,
+      })
+      .catch(async () => {
+        await signUp
+          .mutateAsync({
+            email: user.email!,
+            password: user?.uid,
+          })
+          .then(() => {
+            signIn.mutateAsync({
+              email: user.email!,
+              password: user?.uid,
+            })
+          })
+      })
+  }
+
   const signUp = useMutation((usuario: User) => authSignup(usuario))
 
   useEffect(() => {
@@ -25,7 +49,8 @@ export const useAuthForm = () => {
     }
   }, [token])
 
-  const signOut = () => {
+  const signOut = async () => {
+    await auth.signOut()
     localStorage.removeItem('user')
     navigate('/')
   }
@@ -34,5 +59,6 @@ export const useAuthForm = () => {
     signIn,
     signOut,
     signUp,
+    loginWithGoogle,
   }
 }
