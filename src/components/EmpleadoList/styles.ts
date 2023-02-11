@@ -1,6 +1,6 @@
 export const styles = {
   table: {
-    maxHeight: { xs: '65vh', md: '60vh' },
+    maxHeight: { xs: '65vh', md: '55vh', xl: '65vh' },
     borderRadius: 0,
     margin: 0,
     tableItem: {

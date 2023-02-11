@@ -24,11 +24,14 @@ interface Props {
 
 export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
   const desktop = useMediaQuery('(min-width:600px)')
-  const { pageNumber, cantPages, handleChangePage, actualPage } = usePagination(
-    areas,
-    7,
-    7
-  )
+  const {
+    pageNumber,
+    cantPages,
+    handleChangePage,
+    handleChangeRowsNumber,
+    rowsPerPage,
+    actualPage,
+  } = usePagination(areas)
 
   return (
     <Box
@@ -36,6 +39,8 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
       flexDirection='column'
       width={{ xs: '100%', md: '30%' }}>
       <TablePagination
+        handleRowsNumber={handleChangeRowsNumber}
+        rowsPerPage={rowsPerPage}
         page={pageNumber}
         handleChangePage={handleChangePage}
         cantPages={cantPages}
@@ -47,6 +52,7 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
               <TableCell>
                 <b>ÁREA</b>
               </TableCell>
+              <TableCell />
               {!desktop && (
                 <TableCell align='right'>
                   <IconButton onClick={handleOpen}>
@@ -68,6 +74,7 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
                     <TableCell component='th'>
                       {area.nombre.toUpperCase()}
                     </TableCell>
+                    <TableCell />
                     <TableCell
                       sx={{
                         '& .MuiBox-root': {

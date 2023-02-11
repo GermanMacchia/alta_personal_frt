@@ -15,8 +15,15 @@ interface Props {
 }
 
 export const EmpleadosList: FC<Props> = ({ areas, empleados }) => {
-  const { pageNumber, cantPages, handleChangePage, actualPage, handleFilter } =
-    usePagination(empleados, 4, 8, areas)
+  const {
+    pageNumber,
+    cantPages,
+    handleChangePage,
+    actualPage,
+    handleFilter,
+    rowsPerPage,
+    handleChangeRowsNumber,
+  } = usePagination(empleados, areas)
 
   if (!actualPage) return <></>
 
@@ -24,6 +31,8 @@ export const EmpleadosList: FC<Props> = ({ areas, empleados }) => {
     <>
       <TablePagination
         page={pageNumber}
+        rowsPerPage={rowsPerPage}
+        handleRowsNumber={handleChangeRowsNumber}
         handleChangePage={handleChangePage}
         cantPages={cantPages}
       />
