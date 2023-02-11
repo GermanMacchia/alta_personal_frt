@@ -8,7 +8,7 @@ export const styles = {
     background: { xs: 'none', md: 'white' },
     padding: 1,
     color: '#242424',
-    margin: '3vh 3px',
+    margin: '70px 3px',
     title: {
       fontWeight: '600',
       fontSize: '20px',

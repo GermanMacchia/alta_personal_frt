@@ -13,7 +13,7 @@ const styles = {
     gap: { xs: 0, md: 5 },
   },
   loading: {
-    height: '10px',
+    height: '6px',
     marginTop: '5px',
   },
 }

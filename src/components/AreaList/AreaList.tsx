@@ -11,9 +11,12 @@ import {
 import { Area } from '../../interfaces'
 import { OptionsButtons } from '../../shared'
 import IconButton from '@mui/material/IconButton/IconButton'
-import { useMediaQuery } from '@mui/material'
+import { useMediaQuery, Box } from '@mui/material'
 import { styles } from './styles'
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
+import { usePagination } from '../../hooks/usePagination'
+import { TablePagination } from '../../shared/TablePagination'
+
 interface Props {
   areas: Area[]
   handleOpen: () => void
@@ -21,8 +24,22 @@ interface Props {
 
 export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
   const desktop = useMediaQuery('(min-width:600px)')
+  const { pageNumber, cantPages, handleChangePage, actualPage } = usePagination(
+    areas,
+    7,
+    7
+  )
+
   return (
-    <>
+    <Box
+      display='flex'
+      flexDirection='column'
+      width={{ xs: '100%', md: '30%' }}>
+      <TablePagination
+        page={pageNumber}
+        handleChangePage={handleChangePage}
+        cantPages={cantPages}
+      />
       <TableContainer component={Paper} sx={styles.container}>
         <Table stickyHeader size='small' sx={styles.container.table}>
           <TableHead>
@@ -43,28 +60,29 @@ export const AreaList: FC<Props> = ({ areas, handleOpen }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {areas
-              .sort((a, b) => a.nombre.localeCompare(b.nombre))
-              .map(area => (
-                <TableRow key={area._id}>
-                  <TableCell component='th'>
-                    {area.nombre.toUpperCase()}
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      '& .MuiBox-root': {
-                        display: 'flex',
-                        justifyContent: 'flex-end',
-                        width: '100%',
-                      },
-                    }}>
-                    <OptionsButtons data={area} />
-                  </TableCell>
-                </TableRow>
-              ))}
+            {actualPage &&
+              actualPage
+                .sort((a: Area, b: Area) => a.nombre.localeCompare(b.nombre))
+                .map((area: Area) => (
+                  <TableRow key={area._id}>
+                    <TableCell component='th'>
+                      {area.nombre.toUpperCase()}
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        '& .MuiBox-root': {
+                          display: 'flex',
+                          justifyContent: 'flex-end',
+                          width: '100%',
+                        },
+                      }}>
+                      <OptionsButtons data={area} />
+                    </TableCell>
+                  </TableRow>
+                ))}
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </Box>
   )
 }

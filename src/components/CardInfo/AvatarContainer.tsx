@@ -8,6 +8,7 @@ import Avatar from '@mui/material/Avatar'
 import { CircularProgress, Box } from '@mui/material'
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
+import { OnMousePopover } from '../../shared/OnMousePopover'
 
 interface Actions {
   handler: (event: any) => void
@@ -17,23 +18,33 @@ interface Actions {
 const OptionButtons: FC<Actions> = ({ handler, deleter }) => {
   return (
     <Box display='flex' sx={styles.column.imageContainer.avatarChange}>
-      <IconButton
-        onClick={deleter}
-        sx={{
-          ...styles.column.imageContainer._deletePicture,
-        }}
-        aria-label='delete picture'>
-        <HighlightOffIcon />
-      </IconButton>
-      <IconButton
-        aria-label='upload picture'
-        component='label'
-        sx={{
-          ...styles.column.imageContainer._addPicture,
-        }}>
-        <input hidden accept='image/*' type='file' onChange={handler} />
-        <ChangeCircleIcon />
-      </IconButton>
+      <OnMousePopover
+        info='Delete'
+        children={
+          <IconButton
+            onClick={deleter}
+            sx={{
+              ...styles.column.imageContainer._deletePicture,
+            }}
+            aria-label='delete picture'>
+            <HighlightOffIcon />
+          </IconButton>
+        }
+      />
+      <OnMousePopover
+        info='change'
+        children={
+          <IconButton
+            aria-label='upload picture'
+            component='label'
+            sx={{
+              ...styles.column.imageContainer._addPicture,
+            }}>
+            <input hidden accept='image/*' type='file' onChange={handler} />
+            <ChangeCircleIcon />
+          </IconButton>
+        }
+      />
     </Box>
   )
 }
@@ -45,7 +56,9 @@ const AddAvatar: FC<Actions> = ({ handler }) => {
       component='label'
       sx={{ color: 'white' }}>
       <input hidden accept='image/*' type='file' onChange={handler} />
-      <AddAPhotoIcon sx={{ fontSize: '50px' }} />
+      <AddAPhotoIcon
+        sx={{ fontSize: '50px', ...styles.column.imageContainer._addPicture }}
+      />
     </IconButton>
   )
 }
@@ -90,10 +103,7 @@ export const AvatarContainer: FC<Props> = ({ empleado }) => {
             />
           )}
           <Avatar
-            sx={{
-              ...styles.column.imageContainer.avatar,
-              ...styles.column.imageContainer._addPicture,
-            }}
+            sx={styles.column.imageContainer.avatar}
             src={preview}
             alt='user circle'>
             <AddAvatar handler={handleChangeAvatar} />

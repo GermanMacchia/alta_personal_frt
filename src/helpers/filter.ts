@@ -1,6 +1,11 @@
 import { Empleado } from '../interfaces/'
+import { Area } from '../interfaces/area.interface'
 
-export const filter = (array: Empleado[], entrada: string) => {
+export const filter = (
+  array: Empleado[],
+  entrada: string,
+  area: Area[] | undefined
+) => {
   const regex = new RegExp(entrada.toLowerCase(), 'gi')
 
   const filtrarNumeros = () => {
@@ -9,6 +14,9 @@ export const filter = (array: Empleado[], entrada: string) => {
     )
     return aux
   }
+  const handleAreaName = (employeeArea: string) => {
+    return area?.find(area => area._id === employeeArea)?.nombre ?? ''
+  }
 
   const filtrarLetras = () => {
     const aux = array.filter(
@@ -16,7 +24,7 @@ export const filter = (array: Empleado[], entrada: string) => {
         regex.test(empl.descripcion) ||
         regex.test(empl.nombre) ||
         regex.test(empl.apellido) ||
-        regex.test(empl.area)
+        regex.test(handleAreaName(empl.area))
     )
     return aux
   }

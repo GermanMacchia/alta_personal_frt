@@ -1,4 +1,4 @@
-import { useState, FC, SyntheticEvent, useEffect } from 'react'
+import { useState, FC, SyntheticEvent } from 'react'
 import { styles } from './styles'
 import { InputSearch } from './InputSearch'
 import {
@@ -168,7 +168,7 @@ export const TableRows: FC<Props> = ({ handleFilter, empleados, areas }) => {
                 </TableCell>
               </>
             )}
-            <TableCell>
+            <TableCell sx={{ display: 'flex', justifyContent: 'center' }}>
               <OptionsButtons data={empleado} isUser={true} />
             </TableCell>
           </TableRow>

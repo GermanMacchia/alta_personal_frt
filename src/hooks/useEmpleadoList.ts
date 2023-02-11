@@ -28,7 +28,7 @@ export const useEmpleadoList = () => {
 
   const empleadosQuery = useQuery(['empleados'], fetchEmpleados, {
     enabled: areaQuery.data ? true : false,
-    refetchOnMount: true,
+    refetchOnMount: false,
     refetchOnWindowFocus: false,
   })
 

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Pagination from '@mui/material/Pagination'
 import Stack from '@mui/material/Stack'
 import { FC } from 'react'
@@ -15,14 +14,14 @@ const styles = {
 
 interface Props {
   page: number
-  count: number
+  cantPages: number
   handleChangePage: (event: unknown, newPage: number) => any
 }
 
 export const TablePagination: FC<Props> = ({
   handleChangePage,
   page,
-  count,
+  cantPages,
 }) => {
   return (
     <Stack spacing={2} sx={styles.container}>
@@ -30,7 +29,7 @@ export const TablePagination: FC<Props> = ({
         sx={styles.container.pagination}
         variant='outlined'
         color='primary'
-        count={count}
+        count={cantPages}
         defaultPage={1}
         page={page}
         onChange={handleChangePage}
