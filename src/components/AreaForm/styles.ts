@@ -4,19 +4,13 @@ export const styles = {
   container: {
     marginBottom: { xs: 6, md: 0 },
     width: { xs: '290px', md: '400px' },
-    height: '300px',
     background: { xs: 'none', md: 'white' },
-    padding: 1,
+    padding: { xs: '20px 10px', md: 5 },
     color: '#242424',
-    margin: '70px 3px',
+    margin: { xs: 0, md: '70px 3px' },
     title: {
       fontWeight: '600',
       fontSize: '20px',
-    },
-    subtitle: {
-      opacity: '0.7',
-      marginTop: '1vh',
-      marginBottom: '3vh',
     },
     form: {
       display: 'flex',
@@ -24,7 +18,7 @@ export const styles = {
       gap: '1.4vh',
       width: '100%',
       tag: {
-        marginBottom: '10%',
+        margin: '5% 0',
       },
     },
     submit: {

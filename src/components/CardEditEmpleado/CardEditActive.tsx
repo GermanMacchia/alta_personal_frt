@@ -9,9 +9,9 @@ import {
   CircularProgress,
 } from '@mui/material'
 import { FormControl } from '@mui/material'
-import { TextInputBlock } from '../EmpleadoForm'
 import { useEmpleadoList } from '../../hooks'
 import { FC } from 'react'
+import { CardEditInputs } from './CardEditInputs'
 
 interface Props {
   isLoading: boolean
@@ -33,6 +33,16 @@ export const CardEditActive: FC<Props> = ({ isLoading }) => {
               EDITAR
             </FormLabel>
             <FormGroup>
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={isActive.dni}
+                    onChange={handleActiveCheck}
+                    name='dni'
+                  />
+                }
+                label='Dni'
+              />
               <FormControlLabel
                 control={
                   <Switch
@@ -63,16 +73,40 @@ export const CardEditActive: FC<Props> = ({ isLoading }) => {
                 }
                 label='Descripción'
               />
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={isActive.fechaNac}
+                    onChange={handleActiveCheck}
+                    name='fechaNac'
+                  />
+                }
+                label='F. Nac'
+              />
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={isActive.area}
+                    onChange={handleActiveCheck}
+                    name='area'
+                  />
+                }
+                label='Área'
+              />
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={isActive.esDesarrollador}
+                    onChange={handleActiveCheck}
+                    name='esDesarrollador'
+                  />
+                }
+                label='Developer'
+              />
             </FormGroup>
           </FormControl>
         </Box>
-        <Box sx={styles.modal.container.inputs}>
-          <TextInputBlock
-            nombreActivo={isActive.nombre}
-            apellidoActivo={isActive.apellido}
-            descripcionActiva={isActive.descripcion}
-          />
-        </Box>
+        <CardEditInputs isActive={isActive} />
       </Box>
       <Button
         sx={styles.modal.container.submit}

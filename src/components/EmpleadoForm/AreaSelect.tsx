@@ -12,12 +12,18 @@ import {
 } from '@mui/material'
 
 interface Props {
-  trigger: boolean
+  trigger?: boolean
+  isDisabled?: boolean
+  initialValue?: string
 }
 
-export const AreaSelect: FC<Props> = ({ trigger }) => {
+export const AreaSelect: FC<Props> = ({
+  trigger,
+  isDisabled,
+  initialValue = '',
+}) => {
   const { areas: listaAreas } = useEmpleadoForm()
-  const [area, setArea] = useState('')
+  const [area, setArea] = useState(initialValue)
   const {
     register,
     setError,
@@ -29,8 +35,9 @@ export const AreaSelect: FC<Props> = ({ trigger }) => {
   }
 
   useEffect(() => {
-    if (isSubmitted && area === '')
+    if (isSubmitted && area === '') {
       setError('area', { type: 'custom', message: 'requerido' })
+    }
     setArea('')
   }, [trigger])
 
@@ -41,6 +48,7 @@ export const AreaSelect: FC<Props> = ({ trigger }) => {
       sx={{ minWidth: 120 }}
       size='medium'>
       <Select
+        disabled={isDisabled}
         MenuProps={styles.container.form.select.__menuprops}
         {...register('area', { required: 'requerido' })}
         sx={{ color: area ? '#242424' : 'grey' }}
@@ -48,9 +56,14 @@ export const AreaSelect: FC<Props> = ({ trigger }) => {
         color='success'
         onChange={handleChange}
         defaultValue={''}
+        value={initialValue}
         displayEmpty>
         <MenuItem value='' disabled>
-          Área
+          {initialValue
+            ? listaAreas
+                .find((area: any) => area._id === initialValue)
+                ?.nombre.toUpperCase()
+            : 'Área'}
         </MenuItem>
         {listaAreas &&
           listaAreas.map((area: Area) => (

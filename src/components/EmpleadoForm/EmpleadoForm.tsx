@@ -41,13 +41,13 @@ export const EmpleadoForm: FC<Props> = ({ isLoading }) => {
             <TextInputBlock />
             <DataInputBlock trigger={trigger} />
           </Box>
-          <Box
-            display='flex'
-            justifyContent='space-between'
-            width='100%'
-            gap={{ xs: 1, md: 6 }}>
-            <IsDevCheckbox trigger={trigger} />
-            <SelectImage trigger={trigger} />
+          <Box display='flex' alignItems='center' gap={{ xs: 1, md: 6 }}>
+            <Box width='50%'>
+              <IsDevCheckbox trigger={trigger} />
+            </Box>
+            <Box width='50%'>
+              <SelectImage trigger={trigger} />
+            </Box>
           </Box>
           <Button
             variant='contained'

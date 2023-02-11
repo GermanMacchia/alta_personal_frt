@@ -1,3 +1,4 @@
+import styled from '@emotion/styled'
 export const styles = {
   modal: {
     display: 'flex',
@@ -24,6 +25,9 @@ export const styles = {
       inputs: {
         width: { xs: 200, md: 300 },
         padding: '5%',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: { xs: 3, md: 1, xl: 3 },
       },
       submit: {
         marginBottom: { xs: '4rem', md: 1 },
@@ -32,3 +36,20 @@ export const styles = {
     },
   },
 }
+
+export const Label = styled.label`
+  flex-direction: column;
+  align-items: center;
+  display: block;
+  & > div {
+    width: 100%;
+    align-self: center;
+  }
+  & > div div {
+    width: 100%;
+    border-radius: 10px;
+    @media (max-width: 600px) {
+      border-radius: 5px;
+    }
+  }
+`

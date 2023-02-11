@@ -6,14 +6,13 @@ export const styles = {
   container: {
     display: 'flex',
     justifyContent: 'center',
-    margin: { xs: '3vh auto', md: '3vh auto' },
+    margin: '10px auto',
     padding: 0,
     '& .MuiPaper-rounded': {
       borderRadius: 0,
     },
     paper: {
       padding: '20px 20px 10px',
-      margin: '0 3px',
       width: { xs: '100%', md: '430px' },
     },
     title: {
@@ -24,7 +23,7 @@ export const styles = {
       display: 'flex',
       marginTop: 0.5,
       flexDirection: 'column',
-      gap: { xs: '3.5vh', md: '1vh' },
+      gap: { xs: 3, md: 1, xl: 3 },
       inputData: {
         display: 'flex',
         flexDirection: 'row',

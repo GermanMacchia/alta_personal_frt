@@ -25,9 +25,7 @@ export const AreaForm: FC<Props> = ({ isLoading }) => {
     <Container sx={styles.container} maxWidth='sm'>
       <Box>
         <Typography sx={styles.container.title}>Alta Área</Typography>
-        <Typography sx={styles.container.subtitle}>
-          Defina una nueva área
-        </Typography>
+        <Typography variant='caption'>Defina una nueva área</Typography>
       </Box>
       <AreaInput />
       <Button

@@ -4,10 +4,16 @@ import { useFormContext } from 'react-hook-form'
 import { Typography } from '@mui/material/'
 
 interface Props {
-  trigger: boolean
+  trigger?: boolean
+  isDisabled?: boolean
+  isChecked?: boolean
 }
 
-export const IsDevCheckbox: FC<Props> = ({ trigger }) => {
+export const IsDevCheckbox: FC<Props> = ({
+  trigger,
+  isDisabled,
+  isChecked = false,
+}) => {
   const [checked, setChecked] = useState(false)
   const { register } = useFormContext()
 
@@ -16,19 +22,14 @@ export const IsDevCheckbox: FC<Props> = ({ trigger }) => {
   }
 
   useEffect(() => {
-    setChecked(false)
-  }, [trigger])
+    setChecked(isChecked)
+  }, [trigger, isChecked])
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        width: '50%',
-      }}>
+    <Box width='100%' display='flex' justifyContent='space-between'>
       <Typography>Desarrollador</Typography>
       <Checkbox
+        disabled={isDisabled}
         {...register('esDesarrollador')}
         sx={{ margin: 0, padding: 0 }}
         checked={checked}

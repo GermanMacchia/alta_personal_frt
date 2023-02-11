@@ -5,7 +5,7 @@ import { TextField } from '@mui/material'
 import { FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
-
+import React from 'react'
 export const SelectImage: FC<{ trigger?: boolean }> = ({ trigger }) => {
   const [fileName, setFileName] = useState('')
   const { setValue } = useFormContext()
@@ -43,14 +43,7 @@ interface Props {
 
 const ImageSelect: FC<Props> = ({ handleFile, deleteImage, name }) => {
   return (
-    <Box
-      onClick={deleteImage}
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '50%',
-      }}>
+    <Box display='inline-flex' onClick={deleteImage}>
       <TextField
         fullWidth
         disabled
