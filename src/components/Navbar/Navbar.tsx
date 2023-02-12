@@ -5,14 +5,14 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Box,
+  useMediaQuery,
   Typography,
 } from '@mui/material'
 import { buttons } from './buttons'
 import LogoutIcon from '@mui/icons-material/Logout'
 import IconButton from '@mui/material/IconButton'
-import { useMediaQuery } from '@mui/material'
-import { useAuthForm } from '../../hooks/useAuthForm'
-import { OnMousePopover } from '../../shared/OnMousePopover'
+import { useAuthForm } from '../../hooks'
+import { OnMousePopover } from '../../shared'
 
 const signout = {
   label: 'SignOut',

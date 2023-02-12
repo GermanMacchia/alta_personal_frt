@@ -1,11 +1,10 @@
-import { Box, Typography } from '@mui/material'
-import { TextInputBlock } from '../EmpleadoForm/TextInputBlock'
+import { Box, Typography, Input } from '@mui/material'
+import { TextInputBlock } from '../EmpleadoForm'
 import { FC } from 'react'
 import { Label, styles } from './styles'
-import { AreaSelect } from '../EmpleadoForm/AreaSelect'
+import { AreaSelect } from '../EmpleadoForm'
 import { useFormContext } from 'react-hook-form'
-import { IsDevCheckbox } from '../EmpleadoForm/IsDevCheckbox'
-import Input from '@mui/material/Input'
+import { IsDevCheckbox } from '../EmpleadoForm'
 
 interface Props {
   isActive: any

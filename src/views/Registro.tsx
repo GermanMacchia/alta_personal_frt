@@ -1,6 +1,6 @@
-import { WithFormProvider } from '../shared/WithFormProvider'
-import { useAuthForm } from '../hooks/useAuthForm'
-import { SignUp } from '../components/Signup/SignUp'
+import { WithFormProvider } from '../shared'
+import { useAuthForm } from '../hooks'
+import { SignUp } from '../components/Signup'
 import { AlertSnackBar } from '../shared'
 
 export const Registro = () => {

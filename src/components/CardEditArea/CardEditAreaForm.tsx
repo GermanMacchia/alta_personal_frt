@@ -1,10 +1,9 @@
 import { FC } from 'react'
 import { styles } from './styles'
-import { WithFormProvider } from '../../shared/WithFormProvider'
-import { Box, Button } from '@mui/material'
+import { WithFormProvider } from '../../shared'
+import { Box, IconButton } from '@mui/material'
 import { CardEditArea } from './CardEditArea'
-import { useAreaForm } from '../../hooks/useAreaForm'
-import IconButton from '@mui/material/IconButton/IconButton'
+import { useAreaForm } from '../../hooks'
 import CloseIcon from '@mui/icons-material/Close'
 
 interface Props {

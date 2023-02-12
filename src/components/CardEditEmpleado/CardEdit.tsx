@@ -1,7 +1,5 @@
 import { FC, useEffect } from 'react'
-import { styles } from './styles'
 import { CardEditActive } from './CardEditActive'
-import { Box } from '@mui/material'
 import { useFormContext } from 'react-hook-form'
 import { capitalize } from '../../helpers'
 

@@ -1,7 +1,5 @@
 import { FC } from 'react'
-import Paper from '@mui/material/Paper'
-import InputBase from '@mui/material/InputBase'
-import IconButton from '@mui/material/IconButton'
+import { InputBase, IconButton, Paper } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import { styles } from './styles'
 import { Box } from '@mui/material'

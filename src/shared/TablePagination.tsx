@@ -1,9 +1,13 @@
-import { Select, FormControl, Box } from '@mui/material'
-import MenuItem from '@mui/material/MenuItem/MenuItem'
-import Pagination from '@mui/material/Pagination'
-import { SelectChangeEvent } from '@mui/material/Select'
-import Stack from '@mui/material/Stack'
 import { FC } from 'react'
+import {
+  SelectChangeEvent,
+  Stack,
+  Pagination,
+  Select,
+  FormControl,
+  Box,
+  MenuItem,
+} from '@mui/material'
 
 const styles = {
   container: {

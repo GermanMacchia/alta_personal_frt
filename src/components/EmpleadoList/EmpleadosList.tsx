@@ -1,13 +1,10 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { styles } from './styles'
-import { filter, debounce } from '../../helpers'
 import { Area, Empleado } from '../../interfaces'
-import Table from '@mui/material/Table'
-import TableContainer from '@mui/material/TableContainer'
-import Paper from '@mui/material/Paper'
+import { Table, TableContainer, Paper } from '@mui/material'
 import { TableRows } from './TableRows'
-import { TablePagination } from '../../shared/TablePagination'
-import { usePagination } from '../../hooks/usePagination'
+import { TablePagination } from '../../shared'
+import { usePagination } from '../../hooks'
 
 interface Props {
   areas: Area[]

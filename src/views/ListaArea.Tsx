@@ -1,9 +1,9 @@
 import { WithFormProvider } from '../shared'
 import { AreaForm } from '../components/AreaForm'
-import { useAreaForm } from '../hooks/useAreaForm'
+import { useAreaForm } from '../hooks'
 import { LinearProgress, useMediaQuery, Box } from '@mui/material'
 import { AreaList } from '../components/AreaList'
-import { WithModal } from '../shared/WithModal'
+import { WithModal } from '../shared'
 import { useState } from 'react'
 
 const styles = {

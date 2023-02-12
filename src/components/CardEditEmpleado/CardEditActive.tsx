@@ -101,7 +101,7 @@ export const CardEditActive: FC<Props> = ({ isLoading }) => {
                     name='esDesarrollador'
                   />
                 }
-                label='Developer'
+                label='Desarrollador'
               />
             </FormGroup>
           </FormControl>

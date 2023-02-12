@@ -12,7 +12,7 @@ export const styles = {
         display: 'flex',
         overflow: 'scroll',
         color: 'grey',
-        gap: { xs: 3 },
+        gap: 1,
         flexDirection: { xs: 'column', md: 'row' },
         height: { xs: '30vh', md: '240px' },
         marginBottom: { xs: '4vh', md: '4vh' },

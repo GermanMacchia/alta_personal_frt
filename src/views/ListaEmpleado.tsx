@@ -1,7 +1,7 @@
 import { LinearProgress } from '@mui/material'
 import { EmpleadosList } from '../components/EmpleadoList'
-import { useEmpleadoList } from '../hooks/useEmpleadoList'
-import { Empleado } from '../interfaces/empleado.interface'
+import { useEmpleadoList } from '../hooks'
+import { Empleado } from '../interfaces'
 
 const style = {
   loading: {

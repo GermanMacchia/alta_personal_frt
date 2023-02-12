@@ -1,7 +1,6 @@
-import { Box, Checkbox } from '@mui/material'
+import { Box, Checkbox, Typography } from '@mui/material'
 import { ChangeEvent, FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { Typography } from '@mui/material/'
 
 interface Props {
   trigger?: boolean

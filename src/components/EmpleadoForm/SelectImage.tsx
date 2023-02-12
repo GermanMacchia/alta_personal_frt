@@ -1,11 +1,9 @@
-import Box from '@mui/material/Box'
-import Fab from '@mui/material/Fab'
+import { Box, Fab, TextField } from '@mui/material'
 import CheckIcon from '@mui/icons-material/Check'
-import { TextField } from '@mui/material'
 import { FC, useState, useEffect } from 'react'
 import { useFormContext } from 'react-hook-form'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
-import React from 'react'
+
 export const SelectImage: FC<{ trigger?: boolean }> = ({ trigger }) => {
   const [fileName, setFileName] = useState('')
   const { setValue } = useFormContext()

@@ -1,6 +1,5 @@
 import { FC, ReactNode } from 'react'
-import { Modal, Box } from '@mui/material'
-import IconButton from '@mui/material/IconButton'
+import { Modal, Box, IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 
 export const styles = {

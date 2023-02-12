@@ -1,6 +1,6 @@
 import { SignIn } from '../components/SignIn'
-import { WithFormProvider } from '../shared/WithFormProvider'
-import { useAuthForm } from '../hooks/useAuthForm'
+import { WithFormProvider } from '../shared'
+import { useAuthForm } from '../hooks'
 
 export const Login = () => {
   const { signIn } = useAuthForm()

@@ -9,6 +9,7 @@ import { auth, googleProvider } from '../firebase.config'
 export const useAuthForm = () => {
   const navigate = useNavigate()
   const [token, setToken] = useState('')
+  const [isLoadingGoogle, setIsLoadingGoogle] = useState(false)
 
   const setLocalStorageToken = (data: string) => {
     localStorage.setItem('user', JSON.stringify(data))
@@ -19,7 +20,11 @@ export const useAuthForm = () => {
   )
 
   const loginWithGoogle = async () => {
-    const { user } = await signInWithPopup(auth, googleProvider)
+    setIsLoadingGoogle(true)
+    const { user } = await signInWithPopup(auth, googleProvider).finally(() =>
+      setIsLoadingGoogle(false)
+    )
+
     await signIn
       .mutateAsync({
         email: user.email!,
@@ -60,5 +65,6 @@ export const useAuthForm = () => {
     signOut,
     signUp,
     loginWithGoogle,
+    isLoadingGoogle,
   }
 }

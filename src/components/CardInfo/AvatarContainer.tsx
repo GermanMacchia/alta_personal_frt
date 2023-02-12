@@ -1,14 +1,13 @@
 import IconButton from '@mui/material/IconButton/IconButton'
-import { styles } from './styles'
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
-import { Empleado } from '../../interfaces/empleado.interface'
-import { useAvatar } from '../../hooks/useAvatar'
-import { FC, useState } from 'react'
-import Avatar from '@mui/material/Avatar'
-import { CircularProgress, Box } from '@mui/material'
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
-import { OnMousePopover } from '../../shared/OnMousePopover'
+import { styles } from './styles'
+import { Empleado } from '../../interfaces'
+import { useAvatar } from '../../hooks'
+import { FC, useState } from 'react'
+import { CircularProgress, Box, Avatar } from '@mui/material'
+import { OnMousePopover } from '../../shared'
 
 interface Actions {
   handler: (event: any) => void

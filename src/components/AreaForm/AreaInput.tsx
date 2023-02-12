@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import { Label, styles } from './styles'
-import { Input } from '../../shared/Input'
-import { Typography } from '@mui/material/'
-import { Box } from '@mui/material'
+import { Input } from '../../shared'
+import { Typography, Box } from '@mui/material/'
 import { useFormContext } from 'react-hook-form'
 
 interface Props {

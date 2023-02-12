@@ -1,5 +1,5 @@
-import { EmpleadoForm } from '../components/EmpleadoForm/EmpleadoForm'
-import { useEmpleadoForm } from '../hooks/useEmpleadoForm'
+import { EmpleadoForm } from '../components/EmpleadoForm'
+import { useEmpleadoForm } from '../hooks'
 import { WithFormProvider } from '../shared'
 
 export const AltaEmpleado = () => {

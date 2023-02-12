@@ -1,12 +1,11 @@
 import { FC, useEffect, useState } from 'react'
-import { Typography, Box, CircularProgress, Button } from '@mui/material'
+import { Typography, Box, CircularProgress, Button, Paper } from '@mui/material'
 import { Container } from '@mui/system'
 import { styles } from './styles'
 import { useFormContext } from 'react-hook-form'
 import { TextInputBlock } from './TextInputBlock'
 import { DataInputBlock } from './DataInputBlock'
 import { IsDevCheckbox } from './IsDevCheckbox'
-import Paper from '@mui/material/Paper'
 import { SelectImage } from './SelectImage'
 
 interface Props {

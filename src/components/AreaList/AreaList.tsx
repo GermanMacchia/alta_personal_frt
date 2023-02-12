@@ -7,15 +7,16 @@ import {
   TableHead,
   TableRow,
   Paper,
+  useMediaQuery,
+  Box,
+  IconButton,
 } from '@mui/material'
 import { Area } from '../../interfaces'
 import { OptionsButtons } from '../../shared'
-import IconButton from '@mui/material/IconButton/IconButton'
-import { useMediaQuery, Box } from '@mui/material'
 import { styles } from './styles'
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
-import { usePagination } from '../../hooks/usePagination'
-import { TablePagination } from '../../shared/TablePagination'
+import { usePagination } from '../../hooks'
+import { TablePagination } from '../../shared'
 
 interface Props {
   areas: Area[]

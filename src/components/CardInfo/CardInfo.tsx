@@ -1,11 +1,10 @@
 import { FC } from 'react'
 import { styles } from './styles'
 import { Empleado, Area } from '../../interfaces'
-import { Box, Typography, CardContent, Card } from '@mui/material'
+import { Box, Typography, CardContent, Card, IconButton } from '@mui/material'
 import { capitalize } from '../../helpers'
 import CheckIcon from '@mui/icons-material/Check'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
-import IconButton from '@mui/material/IconButton/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { AvatarContainer } from './AvatarContainer'
 

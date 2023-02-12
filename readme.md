@@ -14,6 +14,8 @@ email: 'admin@mail.com'
 password: 'admin'
 ```
 
+o a través de cuenta Google
+
 <br>
 NUEVA VERSIÓN:
 
@@ -39,7 +41,7 @@ D. [Documentación del proyecto](#documentación-del-proyecto)
 
 - [Técnologias](#tecnologías)
 
-- [Funcionalidades](#functionalidades)
+- [Funcionalidades](#funcionalidades)
 
   - [Helpers](#helpers)
 
@@ -63,6 +65,10 @@ Material UI
 
 React Hook Forms
 
+Axios
+
+Firabase
+
 <br><br><br>
 
 # Inicialización
@@ -75,7 +81,13 @@ React Hook Forms
 npm install
 ```
 
-3. Iniciar el proyecto
+3. Establecer Variables de entornod
+
+   a. URL API
+
+   b. Variables de cuenta Firebase
+
+4. Iniciar el proyecto
 
 ```
 npm run dev
@@ -100,6 +112,7 @@ npm i @tanstack/react-query-devtools
 npm i react-router-dom
 npm i react-hook-form
 npm i axios
+npm i firebase
 npm i --save-dev @mui/types
 npm i --save-dev @types/react-router
 npm i --save-dev @types/react-router-dom
@@ -108,15 +121,33 @@ npm i --save-dev @testing-library/react
 npm i --save-dev @testing-library/jest-dom
 ```
 
+3. Opcional
+
+   a. Configuracion eslint
+
+   b. Configuracion prettier
+
+   c. Configuracion para deploy
+
+<br><br><br>
+
 # Documentación relevante
 
 [React hook forms](https://react-hook-form.com/)
 
 [React Router](https://reactrouter.com/en/main)
 
-[React Query](https://tanstack.com/query/latest)
+[TanStack React Query](https://tanstack.com/query/latest)
 
 [Material UI](https://mui.com/)
+
+[Firebase](https://firebase.google.com/docs?hl=es-419)
+
+[Eslint](https://eslint.org/)
+
+[Prettier](https://prettier.io/)
+
+<br><br><br>
 
 # Documentación del proyecto
 
@@ -134,10 +165,10 @@ Además nos otorga hooks para evaluar errores, establecer requerimientos, saber 
 escrito el input ets.
 
 **React Router**<br>
-Esta libreria nos permite generar un ruteado. Aunque el desarrollado en esta ocación es
-el básico, React Router nos ofrece una variedad de utilidades.
+Esta libreria nos permite generar rutas en nuestro proyecto.<br>
+Aunque el desarrollado en esta ocación se trata de una implementación básica, React Router nos ofrece una variedad de utilidades.
 
-**React Query**<br>
+**TanStack React Query**<br>
 Esta libreria nos permite generar peticiones y mutaciones a una api determinada. <br>
 Una de las mayores utilidades que presenta esta librería es que guarda los datos en caché. Esto
 presenta un cambio rotundo en la forma que desarrollabamos ya que (dependiendo las necesidad)
@@ -153,9 +184,13 @@ Material UI es una conocida libreria de bootstraps que nos proporciona component
 para poder desplegar en nuestra aplicacion o página web. Aunque este proyecto no lo presenta,
 se pueden configurar tematicas centralizadas para llevar una linea en el diseño de nuestra apliación.
 
-## Functionalidades
+## Funcionalidades
 
 <br />
+
+La aplicación nos permite generar una lista de empleados con la ayuda de una API que sostiene la lógica necesaria
+para articular las peticiónes y la capa de persistencia.
+Podremos establecer nuevas entradas con un formulario, subir una imagen del empleado, asignarlo a un área determinada, y modificar dichas entradas de ser necesario.
 
 ### Helpers >>
 
@@ -187,10 +222,17 @@ Contiene queries y mutaciones para la interfaz Area <hr>
 **useEmpleadoForm**<br>
 Contiene query de getAreas y mutacion para Empleado<hr>
 
-**useEmpleadoList**<br>
+**useAvatar**<br>
+Contiene queries y mutaciones para subir, elimianar y cambiar avatares.<hr>
 
 **useEmpleadoList**<br>
 Contiene queries y mutaciones para la interfaz de la Tabla <hr>
+
+**usePagination**<br>
+Contiene la lógica necesaria para interactuar con el componente TablePagination <hr>
+
+**useAuthForm**<br>
+Contiene queries y mutaciones para el registro, el login regular y a través de Google <hr>
 
 <br>
 <br>
@@ -231,4 +273,3 @@ las especificaciones de React Hook Form. <hr>
 <br>
 
 La aplicación consta de cinco rutas las cuales cuatro son hijas de la primera, siendo la app principal.<br>
-Contiene un falso sign in que despliega el componente de la tabla.<hr>
