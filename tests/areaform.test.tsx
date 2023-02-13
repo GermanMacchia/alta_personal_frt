@@ -11,6 +11,13 @@ describe('AreaInput', () => {
     )
     expect(screen.getByRole('textbox')).toBeInTheDocument()
   })
+
+  test('should have a text', () => {
+    render(
+      <WithFormProvider children={<AreaInput />} handleSubmit={() => {}} />
+    )
+    expect(screen.getByText('Nombre')).toBeInTheDocument()
+  })
 })
 
 describe('AreaForm', () => {
@@ -32,5 +39,15 @@ describe('AreaForm', () => {
       />
     )
     expect(screen.getByRole('button')).toBeInTheDocument()
+  })
+
+  test('should have a button text', () => {
+    render(
+      <WithFormProvider
+        children={<AreaForm isLoading={false} />}
+        handleSubmit={() => {}}
+      />
+    )
+    expect(screen.getByText('Enviar')).toBeInTheDocument()
   })
 })

@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { AlertSnackBar } from '../src/shared/AlertSnackBar'
 import { WithFormProvider } from '../src/shared/WithFormProvider'
 import { AreaInput } from '../src/components/AreaForm/AreaInput'
+import { ConfirmDelete } from '../src/shared'
 
 describe('AlertSnackBar', () => {
   test('should have a text defined', () => {
@@ -19,5 +20,19 @@ describe('WithFormProvider', () => {
       <WithFormProvider children={<AreaInput />} handleSubmit={() => {}} />
     )
     expect(screen.findByRole('form')).toBeDefined()
+  })
+})
+
+describe('ConfirmDelete', () => {
+  test('should', () => {
+    render(
+      <ConfirmDelete
+        handleOpen={() => {}}
+        isOpen={true}
+        deleteHandler={{}}
+        data={{}}
+      />
+    )
+    expect(screen.findByText('Seguro deseas borrar')).toBeDefined()
   })
 })

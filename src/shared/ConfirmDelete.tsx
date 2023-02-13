@@ -38,7 +38,7 @@ export const ConfirmDelete: FC<Props> = ({
           <CircularProgress />
         ) : (
           <DialogContentText id='alert-dialog-description'>
-            Seguro deseas borrar {data.nombre.toUpperCase()}{' '}
+            Seguro deseas borrar {data.nombre?.toUpperCase()}{' '}
             {data.apellido?.toUpperCase()}
           </DialogContentText>
         )}
