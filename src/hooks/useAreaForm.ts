@@ -31,5 +31,6 @@ export const useAreaForm = () => {
     areas: areaQuery,
     areaDelete: areaDelete,
     areaEdit,
+    isFetching: areaQuery.isRefetching,
   }
 }

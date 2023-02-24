@@ -81,7 +81,7 @@ Firabase
 npm install
 ```
 
-3. Establecer Variables de entornod
+3. Establecer Variables de entorno
 
    a. URL API
 
@@ -152,31 +152,30 @@ npm i --save-dev @testing-library/jest-dom
 # Documentación del proyecto
 
 El proyecto es un CRUD elaborado con Vite+CWS y typescript.<br>
-Contiene una gran variedad de liberias muy útiles para implementar en cualquier proyecto.
+Contiene una liberias muy útiles para implementar en cualquier proyecto.
 El diseño fue elaborado a partir del desarrollo (sin maquetado previo).<br>
 Cuenta con responsive design para desktop y movil.<br>
 
 ## Tecnologías
 
 **React hook forms**<br>
-React hook forms nos permite hacer formularios sin necesidad de controlarlos por medio de
+React hook forms nos permite gestionar formularios sin necesidad de controlarlos por medio de
 funciones. De esta manera reducimos los renders de nuestros componentes.
 Además nos otorga hooks para evaluar errores, establecer requerimientos, saber si esta
-escrito el input ets.
+escrito el input etc.
 
 **React Router**<br>
 Esta libreria nos permite generar rutas en nuestro proyecto.<br>
-Aunque el desarrollado en esta ocación se trata de una implementación básica, React Router nos ofrece una variedad de utilidades.
+Aunque el desarrollado en esta ocación se trata de una implementación básica, React Router nos ofrece una gran variedad de utilidades.
 
 **TanStack React Query**<br>
 Esta libreria nos permite generar peticiones y mutaciones a una api determinada. <br>
-Una de las mayores utilidades que presenta esta librería es que guarda los datos en caché. Esto
-presenta un cambio rotundo en la forma que desarrollabamos ya que (dependiendo las necesidad)
-ya no es necesario establecer un store en la app.<br>
+Una de las mayores utilidades de la misma, es que guarda los datos en caché. Esto
+establece un cambio rotundo en la forma que desarrollabamos ya que (dependiendo las necesidades)
+ya no es necesario establecer un store en la app para guardar estados o información.<br>
 React query realizará una petición y si la necesitamos en otro componente podemos obtenerla
-mediante los hooks que provee. Además podemos establecer una enorme cantidad de configuraciones
-para realizarlas.<br>
-React Query nos provee un devtool incluido. Se trata de una ui que nos permite ver el estado
+mediante los hooks que provee. Además podemos establecer configuraciones para realizarlas.<br>
+React Query nos provee un devtool opcional. Se trata de una ui que nos permite ver el estado
 de nuestas query.
 
 **Material Ui**<br>

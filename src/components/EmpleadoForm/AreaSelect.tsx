@@ -20,10 +20,10 @@ interface Props {
 export const AreaSelect: FC<Props> = ({
   trigger,
   isDisabled,
-  initialValue = '',
+  initialValue,
 }) => {
   const { areas: listaAreas } = useEmpleadoForm()
-  const [area, setArea] = useState(initialValue)
+  const [area, setArea] = useState(initialValue ? initialValue : '')
   const {
     register,
     setError,
@@ -55,8 +55,8 @@ export const AreaSelect: FC<Props> = ({
         variant='standard'
         color='success'
         onChange={handleChange}
-        defaultValue={''}
-        value={initialValue}
+        defaultValue={area}
+        value={initialValue ?? area}
         displayEmpty>
         <MenuItem value='' disabled>
           {initialValue

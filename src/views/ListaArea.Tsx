@@ -19,7 +19,7 @@ const styles = {
 }
 
 export const ListaArea = () => {
-  const { altaArea, areas } = useAreaForm()
+  const { altaArea, areas, isFetching } = useAreaForm()
   const [isOpen, setIsOpen] = useState(false)
   const matches = useMediaQuery('(min-width:600px)')
 
@@ -33,6 +33,7 @@ export const ListaArea = () => {
   if (areas.isLoading)
     return <LinearProgress sx={styles.loading} color='success' />
 
+  if (isFetching) return <LinearProgress sx={styles.loading} color='success' />
   if (areas.data.length === 0) return <h2>Tabla sin datos</h2>
   if (areas.error) return <h4>Error de conexión</h4>
 

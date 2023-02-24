@@ -21,28 +21,12 @@ export const useAuthForm = () => {
 
   const loginWithGoogle = async () => {
     setIsLoadingGoogle(true)
-    const { user } = await signInWithPopup(auth, googleProvider).finally(() =>
+    const {
+      user: { accessToken },
+    }: any = await signInWithPopup(auth, googleProvider).finally(() =>
       setIsLoadingGoogle(false)
     )
-
-    await signIn
-      .mutateAsync({
-        email: user.email!,
-        password: user?.uid,
-      })
-      .catch(async () => {
-        await signUp
-          .mutateAsync({
-            email: user.email!,
-            password: user?.uid,
-          })
-          .then(() => {
-            signIn.mutateAsync({
-              email: user.email!,
-              password: user?.uid,
-            })
-          })
-      })
+    if (accessToken) setToken(accessToken)
   }
 
   const signUp = useMutation((usuario: User) => authSignup(usuario))
